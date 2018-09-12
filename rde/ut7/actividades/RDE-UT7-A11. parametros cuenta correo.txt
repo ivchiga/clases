@@ -1,0 +1,14 @@
+Configuración SSL/TLS segura
+
+Nombre de usuario: 	alumnosmr@iesharia.org
+Contraseña: 	smr1234
+Servidor entrante: 	sv31.byethost31.org
+
+    Puerto IMAP: 993
+    Puerto POP3: 995
+
+Servidor saliente: 	sv31.byethost31.org
+
+    Puerto SMTP: 465
+
+Se requiere autenticación para IMAP, POP3 y SMTP.

@@ -1,0 +1,12 @@
+
+https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04
+
+https://help.ubuntu.com/community/SwapFaq
+
+sudo mkswap /dev/sda6
+sudo swapon --all -v /dev/sda6
+
+Comprobar:
+  * sudo swapon -s
+  * free -h
+  * cat /proc/swaps

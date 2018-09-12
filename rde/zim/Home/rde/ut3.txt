@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-11-17T11:26:24+00:00
+
+====== UT3. La capa de red ======
+
+===== Recursos =====
+* [[https://smr.iesharia.org/mod/url/view.php?id=3198|Apuntes de clase]]
+
+===== Actividades IPv4 =====
+* [[./actividades/RDE-UT3-A2. Formato direcciones IPv2.odt|UT3-A2. Direcciones IP]]
+* [[./actividades/RDE-UT3-A3. Redes públicas y privadas.odt|UT3-A3. Redes públicas y privadas]]
+* [[./actividades/RDE-UT3-A4. Direcciones IPv4. ejercicios.odt|UT3-A4. Direcciones IPv4. Ejercicios]]
+* [[./actividades/RDE-UT3-A5. redes ip sin clase. Subredesv2.odt|UT3-A5. Redes IP sin clase. Subredes]]
+* [[./actividades/RDE-UT3-A6. Ejercicios de subnettingv4.odt|UT3-A6. Ejercicios subredes]]
+
+===== Actividades IPv6, protocolos y configuración la red =====
+* [[./actividades/RDE-UT3-A7. IPv6v6.odt|UT3-A7. IPv6]]
+* [[./actividades/RDE-UT3-A8. Direcciones IPv6. Ejerciciosv4.odt|UT3-A8. Direcciones IPv6. Ejercicios]]
+* [[./actividades/RDE-UT3-A9. ProtocoloARP.odt|UT3-A9. Protocolo ARP]]
+* [[./actividades/RDE-UT3-A10. Protocolo ICMP.odt|UT3-A10. Protocolo ICMP]]
+* [[./actividades/RDE-UT3-A11-configuración red Ubuntu.odt|UT3-A11. Configuración de la red en Linux]]
+* [[./actividades/RDE-UT3-A12-configuración red Ubuntu. consolidacion I.odt|UT3-A12. Configuración de la red en Linux. Consolidación I]]

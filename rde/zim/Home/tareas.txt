@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-06T13:01:38+01:00
+
+====== Tareas ======
+
+===== Actividades pendientes de entregar =====
+
+==== RDE - Redes de area local ====
+[ ] UT3-A6. Direccionamiento IP. Ejercicios subredes
+[*] UT3-A5. Redes IP sin clase. Subredes
+[*] UT3-A4. Direcciones IPv4. Ejercicios
+[*] UT3-A3. Redes IP sin clase. Subredes
+[*] UT3-A2. Direcciones IP
+[*] UT3-A1. Mapa conceptual. Características de la capa de red
+[*] UT2-A10. Supuestos prácticos. Ejercicios (II) (14/11/2017)
+[*] UT2-A9. Supuestos prácticos. Ejercicios (I) (10/11/2017 - 13/11/2017)
+[*] UT2-A8. Dominios de difusión y de colisión (10/11/2017)
+[*] UT2-A7. Práctica. PT. Conmutación de tramas. (7/11/2017)
+[*] UT2-A6.Cuestionario. Técnicas de acceso al medio (dos intentos, el segundo con el mapa conceptual)(3/11/2017)
+[*] Estudiar apuntes sobre técnicas de control de acceso al medio(3/11/2017)
+[*] UT2-A5. Mapa conceptual. Técnicas de control de acceso al medio (3/11/2017)
+[*] UT2-A4. Direccionamiento físico y elementos de la capa de enlace (31/10 - 2/11/2017)
+[*] UT2-A3. Mapa conceptual. La capa de enlace (27/10 - 30/10)
+[*] UT2-A2. Introducción a packet tracer
+[*] UT2-A1. La tarjeta de red
+[*] UT1-A10. Análisis de PDU con Wireshark
+[*] UT1-A9. Lección. Arquitectura de redes
+[*] Instalar Firefox quantum
+[*] Crear máquina virtual de Windows 7
+	[*] Importar OVA
+	[*] Cambiar RAM
+	[*] Cambiar nº procesadores
+	[*] Red en modo puente
+	[*] Cambiar MAC
+	[*] Instalar firefox quantum windows
+	[*] Instalar putty
+	[*] Instalar guest additions
+	[*] Instalar Winscp
+[*] UT1-AER1. Recuperación. Prueba de evaluación(I)
+[*] UT1-AC3
+[*] UT1-A5. Preguntas. Características generales de las redes locales
+[*] UT1-A7. Internet por satélite (2017-10-09)
+[*] Repaso velocidad transferencia de archivos
+[ ] UT1-AC2. Actividad complementaria. Intercambio de archivos por ssh
+
+==== AIF -  Aplicaciones ofimáticas ====
+
+===== Exámenes y controles =====
+[ ] Miércoles
+
+ 11/10 RDE control primera parte UT1
+

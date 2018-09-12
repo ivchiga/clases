@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-06T11:35:03+01:00
+
+====== Curso 2017-18 ======
+
+===== Recursos =====
+* [[http://smr.iesharia.org|Aula Virtual]]
+* [[http://smr.iesharia.org/wiki|Wiki de clase]]
+* [[smb://nas/intercambio|Acceso a Intercambio en NAS]]
+* [[smb://nas/modulos|Acceso a módulos en NAS]]
+* [[+tareas|Tareas pendientes]]
+* [[+test|Página de prueba]]
+
+===== Módulos =====
+* [[+rde|RDE. Redes de área local]]
+

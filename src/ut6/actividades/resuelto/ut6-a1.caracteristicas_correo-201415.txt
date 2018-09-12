@@ -1,0 +1,189 @@
+1. Cuenta de correo electrónico¿Qué es?
+Una cuenta de correo electrónico es un servicio de red que permite a los usuarios enviar y recibir mensajes. (Fabio)
+Servicio online que provee un espacio para la recepción, envío y almacenamiento de mensajes de correo electrónico en internet.(Óliver)
+Es un servicio de red que permite a los usuarios enviar y recibir mensajes mediante sistemas de comunicación electrónica.(Luis)
+¿De qué partes se compone una dirección de correo?. 
+ Una dirección de correo, está compuesta por tres partes:
+
+·Nombre del usuario: El nombre del usuario (a la izquierda de la arroba), en este ejemplo, nombre. Este nombre es único el cual depende normalmente de la elección del usuario y es un identificador cualquiera, que puede tener letras, números, y algunos signos. Es importante construir un nombre que se recuerde fácilmente.
+·      El signo @ (arroba). Una dirección de correo se reconoce fácilmente porque siempre tiene la @ que significa “pertenece a…”
+·     El dominio. A la derecha del signo arroba, está el dominio que es el nombre del proveedor que da el correo, y por lo tanto es algo que el usuario no puede cambiar.
+
+Ejemplo: carlosbastidas@gmail.com (juanma)
+http://pressroom.hostalia.com/wp-content/themes/hostalia_pressroom/images/partes-correo-electronico-configurar-email-blog-hostalia-hosting.jpg (Óliver)
+¿Qué tipo de caracteres puede incluir una dirección de correo electrónico?. 
+"+"El signo más se permite en las direcciones de correo y no hay razón para no usarlo. Un uso común es para la definición de sub-direcciones. Ejemplo: Joe 'El usuario' a 'joe@example.com el correo electrónico puede crear direcciones de correo como "Joe + list@example.com' si necesita más de una dirección.
+"-"Se permite en las direcciones de correo electrónico. A menudo se utiliza en la lista de correo electrónico como list-request@example.com. No utilizar como primer carácter en las direcciones de correo electrónico, ya que podría parecer una opción de línea de comando para los programas típicos de UNIX como sendmail.
+"."Se permite en las direcciones de correo electrónico. A menudo se utiliza para las direcciones con el formato "nombre.apellido @ example.com '. Sin embargo existen restricciones no se permiten 2 puntos consecutivos ni tampoco al principio ni al final del nombre local. La razón es que en RFC2822 el punto se utiliza como un separador de encadenamiento de la dirección de correo electrónico. Puntos en los lugares con nombre significaría un símbolo vacío, que no está permitido. Sin embargo, hay personas que lo utilizan. Algunos MTAs lo aceptan y otros no.
+"0-9"Permitido sin restricciones 
+"A-Z"Permitido sin restricciones
+"_"Permitido sin restricciones. A menudo se utiliza en las direcciones de correo de la firstname_lastname@example.com formulario.
+"a-z"Permitido sin restricciones.(juanma)
+
+¿Cuál es su longitud máxima?
+La parte local no puede exceder los 64 caracteres.
+La parte del dominio no puede ser más de 255 caracteres.(joseba)
+
+2. Alias de correo¿Qué son?
+Un alias de correo es una variedad de redireccionamiento de una cuenta de correo a otra. Su principal característica es que la cuenta alias no necesariamente debe existir. (Fabio)
+Un alias de correo es una dirección especial en tu dominio que redirige todos los mensajes que recibe a otra cuenta. (Óliver)
+¿Para qué se emplean?
+Puede usarse tanto para ocultar la identidad como para cambiarla o embellecerla. (Fabio)
+¿Qué tipo de alias podemos crear?
+Cualquiera que sea verdad o mentira (joseba)
+
+    Alias específico a otra(s) dirección(es): Puede ser a una cuenta de tu dominio o a una dirección externa. Un alias puede tener uno o varios destinos.
+
+    Alias universal que recibe cualquier dirección de tu dominio. (Óliver)
+
+
+3. Elementos del servicio de correo electrónico. Los servicios de correo electrónico se basan en un modelo cliente-servidor y pueden utilizarse en cualquier red TCP/IP. En el proceso de envío y recepción del correo participan tres tipos de programas: MTA, MDA y MUA. Explicar que es cada uno y para qué sirve.
+
+
+MUA: Mail User Agent (Agente Usuario de Correo). Es un programa instalado en el sistema del usuario, se llama cliente de correo electrónico (tales como Mozilla Thunderbird, Microsoft Outlook, Eudora Mail, Incredimail o Lotus Notes).  (Elliot)
+ 
+MTA: Mail Transport Agent (Agente de Transporte de Correo). Actúan como la oficina de correo el área de clasificación y de transmisión, que se encarga del transporte del mensaje (Elliot)
+ 
+MDA: Es un software que recibe mensajes de correo electrónico desde un Mail Transport Agent y se encarga de entregarlos a los buzones de correo de sus destinatarios. (Fabio)
+
+Link PARA MÁS INFORMACION : http://es.kioskea.net/contents/115-como-funciona-el-correo-electronico-mta-mda-mua (Elliot)
+
+4. Inserta una imagen del esquema de funcionamiento del servicio de correo electrónico en el que aparezcan el cliente que envía un mensaje, el MTA, el MDA el MUA y el receptor del mensaje.
+
+https://networkcata.files.wordpress.com/2010/02/16.jpg (Fabio)
+http://madzone.comoj.com/image_host/images/funcsmtp.png (Óliver)
+http://fundamentos-redes.wikispaces.com/file/view/3.3.3_Servidor_de_correo_electronico_MDA-2.jpg/255331226/3.3.3_Servidor_de_correo_electronico_MDA-2.jpg (gregoflow)
+http://2.bp.blogspot.com/_4v75j1YsByo/SYXCS4q3ilI/AAAAAAAAAB4/o2ySDHrf6VM/s320/SMTP.JPG
+5. Explica el proceso que sigue un correo desde que es enviado hasta que llega a su destino:
+El proceso comienza habitualmente cuando un usuario, usando su programa de correo electrónico favorito, escribe un mensaje y lo envía a un destinatario, indicando la dirección de correo de éste.
+
+En primer lugar, el programa compone un mensaje válido conforme a las indicaciones del rfc2822 (Ver "Introducción al Correo Electrónico" y "Anatomía de un mensaje de correo-e"). Para ello antepone unas cabeceras al texto escrito, y posiblemente codifica éste de alguna forma. Si el mensaje incluye ficheros adjuntos, compone el mensaje según la especificación MIME.
+
+Lo siguiente en entregar este mensaje a un ordenador de nuestra institución, o de nuestro proveedor de acceso a Internet, que es quien se encargará de hacerlo llegar a su destino. Ya hemos mencionado en la Introducción las razones por las que el programa de usuario no se hace cargo de esa tarea. Para esta entrega, establece una comunicación según el protocolo SMTP con el ordenador que tengamos configurado en el programa en el apartado 'Servidor de correo saliente', 'SMTP server' o algo parecido, según el programa que usemos.
+
+    Mediante dicho protocolo, nuestro programa proporciona al servidor tres cosas:
+    La dirección de correo-e de quien envía el mensaje (dirección remite del sobre)
+    La dirección destino. Pueden ser una o varias (dirección/es destino del sobre)
+    El mensaje en sí, incluyendo las cabeceras.
+
+El servidor normalmente aceptará el mensaje (más adelante veremos las causas por las que un servidor SMTP puede no aceptarlo) y lo pondrá en su cola de trabajos (mensajes a enviar) que puede estar más o menos cargada según el tráfico que soporte, aunque habitualmente ningún mensaje se retrasa más de unos segundos.
+
+Que el mensaje sea aceptado no significa que vaya a ser entregado finalmente, pues tanto este servidor como otros por los que puede pasar el mensaje en el futuro en el camino a su destino, pueden estar configurados para someter los mensajes que procesan a filtros como por ejemplo:
+
+    Detectar si tienen virus
+    Intentar detectar si es correo basura o ilícito
+    Si su tamaño es superior a un umbral permitido
+    En el caso del MTA final, puede ocurrir que la dirección no exista (por ejemplo, hemos enviado a ' jperz@univer.es', sin darnos cuenta del error en la dirección, que hasta que no llega el mensaje al MTA de 'univer.es' no se detecta el problema) o que haya algún problema técnico que impida su entrega.
+Supondremos en lo que sigue que el mensaje es válido, dejamos para otro documento los casos de fraudes y correo basura.
+
+El servidor que ha recibido el mensaje antepone una cabecera 'Received:' (Ver "Anatomía de un mensaje de correo-e") a las que ya existan, indicando de qué ordenador ha recibido el mensaje y la fecha y hora.
+
+A continuación tiene que decidir qué hacer con él, y lo hace en función de la dirección destino del sobre. Si hay varias, típicamente actuará como si fueran varios mensajes, uno destinado a cada dirección final. Supondremos el caso de un sólo destinatario.
+
+La decisión de lo que hacer, más concretamente, se basa en la parte 'dominio' de la dirección, es decir, lo que va a continuación del carácter '@'. Entre los parámetros de configuración de un servidor SMTP (un MTA), suelen figurar:
+
+- El dominio o los dominios para los cuales es el responsable final.
+
+Ejemplos:
+
+        El MTA de la UCO sabe que los mensajes dirigidos a direcciones del tipo ' xxx@uco.es' debe entregarlos al usuario 'xxx'
+        Una empresa usa direcciones del tipo ' xxx@empresa.com', y su correo es gestionado por un proveedor de servicios de Internet (un ISP), llamado por ejemplo Poptel. El MTA de Poptel sabe que debe entregar los mensajes dirigidos a ' xxx@empresa.com' a un buzón local (cuyo usuario y clave posee el cliente, esa empresa), lo mismo que a todos los demás dominios que gestione (aparte de los mensajes a ' xxx@poptel.com', para su personal o sus direcciones de contacto).
+(juanma)
+
+6. Formato de los mensajes de correo electrónico. El protocolo SMTP fija que los mensajes de correo electrónico deben llevar una cabecera y un cuerpo. Qué campos debe llevar la cabecera y para qué sirve cada uno.
+Remitente,destinatario y el asunto (juanma)
+Normas para el correcto uso del correo electrónico
+From: (De:)
+
+Subject (Asunto)
+Contenido de los mensajes
+Formato de los mensajes
+Mayúsculas
+Configuración
+Archivos adjuntos
+Longitud de las líneas de texto
+Responder el correo
+
+Firmas automáticas
+
+From: (De:)
+Contiene el nombre del emisor del mensaje y su dirección de correo electrónico. Los programas de correo recogen esta información de la configuración sobre el mail que hayamos introducido, normalmente al configurar por primera vez el programa.
+Para modificarla en Netscape podemos acceder a través de: Editar/Preferencias/Correo/Identidad . En Outlook: Herramientas/cuentas/propiedades/general/nombre
+Nunca deberíamos poner acentos o caracteres especiales, como la "ñ" en esta parte ya que lo más problable es que el nombre llegue ilegible al destinatario debido a los ordenadores intermedios que recogen el correo y lo llevan de un sitio a otro y que no pueden manejar estos caracteres.
+
+Subject (Asunto)
+
+El asunto es una breve pero suficiente descripción del contenido del mensaje. En las listas de distribución es extremadamente importante ya que por él se guiarán los usuarios para leer o no la carta.
+En esta parte tampoco deberían colocarse nunca acentos, por el mismo motivo que no los debe hacer en el caso anterior.
+Contenido del mensaje
+Cuando enviemos un texto a una lista de distribución hay que tener muy presente que nos van a leer varios cientos de personas. Es recomendable pensar bien lo que se escribirá y evitar expresiones locales que pueden no ser entendidas o mal interpretadas por miembros de otros países. También debemos considerar que lo que a nosotros nos resulta gracioso a otros les puede parecer de muy mal gusto por lo que deberemos extremar el cuidado del lenguaje.
+Con más motivo se pondrá énfasis en no molestar, despreciar o hablar despectivamente de otro/s. Jamás se enviará una carta en estos términos a la lista. Si se quiere mantener una disputa personal deberá hacerse en privado.(gabriel)
+
+Formato del mensaje
+
+MAYÚSCULAS. El uso de palabras enteras escritas con mayúsculas se utiliza para gritar. Por lo tanto, un mensaje escrito en mayúsculas produce muy mal efecto en quién lo lee ya que da la impresión de que el remitente está gritando.
+CONFIGURACIÓN. El programa de correo debe estar configurado para enviar los mensajes en formato MIME (quoted printable) de esta forma el receptor podrá leer los acentos y otros caracteres especiales. En la actualidad todos los programas de correo basados en un entorno gráfico como Windows o Mac, permiten el uso de acentos, por lo que éste no debería ser un motivo para no leer correctamente los mensajes por parte del destinatario.
+Netscape: Editar/Preferencias/Correo
+Outlook: Herramientas/Opciones/Enviar/HTML/Configuración
+              Herramientas/Opciones/Enviar/Texto sin formato/Configuración
+El formato HTML permite enviar mensajes con tipos de letras, colores, fondo, tablas, etc. Es un sistema muy potente para facilitar la comunicación. Pero tiene el inconveniente que ocupa mucho más espacio que el texto normal por lo que puede molestar a algunos usuarios. Todos los programas de correo actuales admiten HTML, la recomendación es mandar mensajes en este formato sólo cuando sea necesario (inclusión de tablas o gráficos). Tanto Netscape como Outlook se pueden configurar para que manden mensajes en HTML sólo cuando sea necesario, o cuando sea posible:
+Netscape: Editar/Preferencias/Correo/Formato/Preguntarme al mandar mensajes HTML
+Outlook: Herramientas/Opciones/Enviar/Responder a mensajes en el formato en el que fueron enviados
+               Herramientas/Opciones/Enviar/Texto sin formato (esta opción es para enviar los mensajes en formato texto por defecto)
+
+Archivos adjuntos
+Nunca se deben mandar archivos voluminosos a una lista sin el previo consentimiento de todos los miembros de la misma. Lo mejor es preguntar quién quiere el archivo y mandárselo personalmente a todos ellos. Por poner un ejemplo, un archivo de 1Mb distribuido a 200 suscriptores supone un tráfico de 200Mb, lo que carga innecesariamente la red y molesta en gran forma a los que no lo quieren. Ademas, hay que tener presente que muchos usuarios tienen limitado el espacio de correo por lo que se les puede saturar y hay otros que pagan por Kb recibido.
+
+Longitud de las líneas de texto
+
+Debe configurarse adecuadamente el programa de correo para que las líneas no superen los 70 caracteres de ancho, ya que de otra forma los usuarios pueden recibir las líneas truncadas, haciendo difícil la lectura.
+
+Netscape: Editar/Preferencias/Correo/Mensajes
+
+Outlook: Herramientas/Opciones/Enviar/Texto sin formato/Configuración/
+
+
+Responder el correo
+
+Para responder a una carta se debe pulsar el botón de réplica que todos los programas poseen. Es conveniente citar el texto original al que se está respondiendo, borrando el texto irrelevante o al que no se responde.
+
+
+Firmas automáticas
+
+Todos los mensajes deberían ir firmados con nombre y la localidad desde la que se escribe, si es pertinente se pone también el cargo desempeñado. Debe incluirse igualmente la dirección de correo electrónico para facilitar las réplicas personales.
+
+7. Protocolos y servicios de descarga de correo electrónico. Existen diversos servicios de recepción del correo electrónico. Los más utilizados son POP e IMAP. Qué puertos utilizan en su versión normal y en su versión segura. En qué se diferencian POP e IMAP.
+Los protocolos de descaga de un correo electronico son POP3 y IMAP.
+ Dejar por defecto (110 para POP, 143 para IMAP, 995 para POP SSL, o 993 para IMAP SSL).
+ diferencias http://ayuda.jimdo.com/emails/programas-de-email/diferencia-entre-pop-imap/ (joseba)
+
+8. Protocolos y servicios de envío de correo electrónico. Existen distintos tipos de servicios de correo electrónico. Los más utilizados son los basados en SMTP. ¿Cuáles son sus características principales (puerto, codificación de los mensajes, versión segura)?
+El Simple Mail Transfer Protocol (SMTP) (Protocolo para la transferencia simple de correo electrónico), es un protocolo de red utilizado para el intercambio de mensajes de correo electrónico entre computadoras u otros dispositivos (PDA, teléfonos móviles, etc.)
+Los administradores de servidor pueden elegir si los clientes utilizan TCP puerto 25 (SMTP) o el puerto 587 (Presentación) para retransmitir el correo saliente a una inicial del servidor de correo. Las especificaciones y muchos servidores soportan ambos. Aunque algunos servidores soportan el puerto 465 para el legado SMTP seguro en violación de las especificaciones.
+
+9. Tipos MIME. ¿Que son?
+Son una serie de convenciones o especificaciones dirigidas al intercambio a través de Internet de todo tipo de archivos (texto, audio, vídeo, etc.) de forma transparente para el usuario. (Fabio)
+Multipurpose Internet Mail Extensions o MIME (en español "extensiones multipropósito de correo de internet") son una serie de convenciones o especificaciones dirigidas al intercambio a través de Internet de todo tipo de archivos (texto, audio, vídeo, etc.) de forma transparente para el usuario.(juanma)
+
+    - Texto: texto de datos legible text/rfc822 [RFC822]; text/plain [RFC2646]; text/html [RFC2854].
+
+    - Imagen: datos binarios que representan imágenes digitales: image/jpeg, image/gif, image/png.
+
+    - Audio: datos de sonido digital: audio/basic, audio/wav
+
+    - Video: datos de vídeo: video/mpeg
+
+    - Aplicación: Otros datos binarios: application/octet-stream, application/pdf  (Elliot)
+
+¿Para que sirven?
+(Extensiones Multipropósito de Correo Internet) es un estándar propuesto en 1991 por Bell Communications para expandir las capacidades limitadas del correo electrónico y en particular para permitir la inserción de documentos. (Elliot)
+
+¿Por qué se crearon?
+Para expandir las capacidades limitadas del correo electrónico. (Elliot)
+
+10. Correo seguro
+El Correo Electrónico Seguro es la primera fase del Apartado Postal Electrónico. Suministra a ciudadanos y empresas una dirección electrónica permanente asociada a diferentes aplicaciones, de tal forma que a través de un único punto puedan acceder a toda su documentación en formato electrónico. (Elliot)
+Imagen link: http://201.217.156.91/images/firewall.jpg
+
+
+

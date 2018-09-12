@@ -1,0 +1,18 @@
+Cuidado con las faltas de ortografía.
+Imagen 3: seleccionamos si vamos a crear un nuevo disco duro o vamos a usar uno existente
+Imagen 5: muestra un resumen de la máquina virtual que se va a crear
+Imagen 6: nos aseguramos de que la máquina virtual arranca en primer lugar desde CD
+Imagen 9: se escoge el espacio de disco sobre el que se va a realizar la instalación.
+Imagen 13: se formatea la partición
+Imagen 14: se copian los archivos de instalación al disco duro
+Imagen 18: se ejecuta asistente para terminar la configuración 
+Imagen 7: conectamos a la máquina virtual el CD de instalación de Windows XP
+Imagen 10: nos pregunta el tamaño de la partición a crear. Escogemos utilizar todo el espacio disponible
+Imagen 17: se ajusta automáticamente la resolución de pantalla y la apariencia
+Imagen 19: nos pregunta si queremos activar las actualizaciones automáticas
+Imagen 20: pregunta cómo se conecta el equipo a Internet; a través de una red local o directamente
+Imagen 22: pregunta nombre de los usuarios que van a usar el equipo para crearles las cuentas
+Imagen 12: seleccionamos el tipo de partición (NTFS o FAT32) y cómo se va a formatear (normal o rápido)
+Imagen 11: seleccionamos la partición sobre la que vamos a instalar Windows
+Imagen 21: nos da la opción de registrarnos en Windows
+Imagen 16: seleccionamos el nombre del PC y le ponemos contraseña al usuario administrador

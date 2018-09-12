@@ -1,0 +1,309 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-13T11:33:41+01:00
+
+====== UT0-A1. Uso básico del equipo ======
+
+===== 1. El terminal =====
+Permite la ejecución de programas y comandos.
+Funciona en modo texto (sin modo gráfico).
+
+==== 1.1 Prompt del sistema ====
+Da información al usuario del sistema.
+Es de la forma ''usuario@maquina:carpeta$'' o ''usuario@maquina:carpeta#''
+* **usuario**: indica el nombre del usuario con el que estamos trabajando.
+* **Maquina**: indica el nombre del equipo con el que estoy trabajando.
+* **Carpeta**: indica el directorio o carpeta de trabajo actual.
+* **$** : indica que el usuario tiene privilegios de usuario normal.
+* **#**:  indica que el usuario tiene privilegios de usuario administrador del sistema (root)
+
+===== 2. El sistema de archivos =====
+
+==== 2.1 Nautilus ====
+Programa que nos permite navegar por el sistema de archivos  de manera gráfica.
+
+==== 2.2 Jerarquía estándar de carpetas ====
+Carpeta raíz /
+Es el directorio del que cuelgan todos los archivos y carpetas del sistema de archivos.
+Carpeta home del usuario
+Es la carpeta del sistema de archivos en la que se almacenan los datos de los usuarios.
+Carpetas estándar del usuario
+Son carpetas que se crean automáticamente dentro de la carpeta de inicio del usuario en el momento de crearlo.
+
+==== 2.3 Desde el terminal ====
+**pwd**: permite comprobar el directorio actual
+{{{code: lang="sh" linenumbers="True"
+$ pwd
+/home/ivan
+}}}
+
+**ls**: muestra el contenido de la carpeta actual
+{{{code: lang="sh" linenumbers="True"
+$ ls
+Descargas   Escritorio  Música      prueba   temp
+Documentos  Imágenes    Plantillas  Público  Vídeos
+}}}
+
+**ls -l** : muestra el contenido en formato largo
+{{{code: lang="sh" linenumbers="True"
+$ ls -l
+total 40
+drwxr-xr-x 2 ivan ivan 4096 sep  6 10:47 Descargas
+drwxr-xr-x 2 ivan ivan 4096 sep 18 12:22 Documentos
+drwxr-xr-x 2 ivan ivan 4096 sep  6 10:47 Escritorio
+drwxr-xr-x 2 ivan ivan 4096 sep  6 10:47 Imágenes
+drwxr-xr-x 2 ivan ivan 4096 sep  6 10:47 Música
+drwxr-xr-x 2 ivan ivan 4096 sep  6 10:47 Plantillas
+drwxrwxr-x 2 ivan ivan 4096 sep 18 12:27 prueba
+drwxr-xr-x 2 ivan ivan 4096 sep  6 10:47 Público
+drwxrwxr-x 2 ivan ivan 4096 sep 18 12:24 temp
+drwxr-xr-x 2 ivan ivan 4096 sep  6 10:47 Vídeos
+}}}
+
+**ls -a** : muestra archivos y carpetas incluyendo los ocultos (empiezan por “.”)
+{{{code: lang="sh" linenumbers="True"
+$ ls -a
+.              .gnome2          Público
+..             .gnome2_private  .sudo_as_admin_successful
+.adobe         .gnupg           temp
+.bash_history  .ICEauthority    .thumbnails
+.bash_logout   Imágenes         Vídeos
+.bashrc        .local           .vnc
+.cache         .macromedia      .Xauthority
+.config        .mozilla         .Xdefaults
+Descargas      Música           .xscreensaver
+Documentos     Plantillas       .xsession-errors
+Escritorio     .profile         .xsession-errors.old
+.gconf         prueba
+}}}
+
+**cd:** nos permite cambiar de directorio o carpeta. Para subir en la estructura de carpetas ponemos cd ..
+**pwd**: nos devuelve el directorio actual
+{{{code: lang="sh" linenumbers="True"
+$ pwd
+/home/ivan
+$ cd Escritorio/
+$ pwd
+/home/ivan/Escritorio
+$ cd ..
+$ pwd
+/home/ivan
+}}}
+
+
+**mkdir**: permite crear directorios o carpetas dentro de la carpeta actual
+{{{code: lang="sh" linenumbers="True"
+$ ls
+Descargas   Escritorio  Música      prueba   Vídeos
+Documentos  Imágenes    Plantillas  Público
+$ mkdir temp
+$ ls
+Descargas   Escritorio  Música      prueba   temp
+Documentos  Imágenes    Plantillas  Público  Vídeos
+}}}
+
+**rmdir**: permite borrar una carpeta que esté vacía
+{{{code: lang="sh" linenumbers="True"
+$ mkdir test
+$ ls
+Descargas   Escritorio  Música      prueba   temp  Vídeos
+Documentos  Imágenes    Plantillas  Público  test
+$ rmdir test
+$ ls
+Descargas   Escritorio  Música      prueba   temp
+Documentos  Imágenes    Plantillas  Público  Vídeos
+}}}
+
+
+===== 3. Gestión de software =====
+
+==== 3.1 Repositorios ====
+Deposito centralizado de software desde el que podemos descargar los programas. En el equipo se configura el acceso a los mismos.
+
+==== 3.2 Actualización de la lista de paquetes disponibles ====
+Operación de sincronizar el software disponible en los repositorios con la lista de software disponible que tengo en mi equipo. Se realiza ejecutando
+{{{code: lang="sh" linenumbers="True"
+$ sudo apt update
+}}}
+
+
+==== 3.3 Instalación de software ====
+Se utiliza el comando:
+{{{code: lang="sh" linenumbers="True"
+$ sudo apt install <nombre programa>
+}}}
+
+
+Para actualizar todo el software que tengo instalado en mi equipo ejecuto:
+{{{code: lang="sh" linenumbers="True"
+$ sudo apt upgrade
+}}}
+
+
+Para eliminar software obsoleto que ya no está siendo utilizado en nuestro sistema ejecutamos
+{{{code: lang="sh" linenumbers="True"
+$ sudo apt autoremove
+}}}
+
+
+Para eliminar un software en concreto, ejecutamos:
+{{{code: lang="sh" linenumbers="True"
+$ sudo apt remove <nombre programa>
+}}}
+
+
+===== 4. Herramientas =====
+
+==== 4.1 Lanzadores de aplicaciones ====
+Herramientas que permiten de manera rápida iniciar programas y ejecutar acciones.
+En nuestro ordenador tenemos instalado el lanzador kupfer que se inicia con la combinación de teclas **ctrl+espacio** y el lanzador del menú principal que se inicia pulsando la tecla de windows (**Super L**)
+
+==== 4.2 Captura de pantallas ====
+Podemos utilizar un programa llamado shutter para realizar capturas de pantalla y para, posteriormente, retocarlas.
+
+==== 4.3 Compresión/descompresión de archivos y carpetas ====
+Comprimir es la operación mediante la cual reducimos el tamaño y empaquetamos en un único archivo varios archivos y carpetas que previamente hemos seleccionado. A la operación inversa se le llama descomprimir.
+En Ubuntu podemos comprimir/descomprimir directamente utilizando nautilus. Para ello seleccionamos los archivos a comprimir, hacemos clic en el botón derecho del ratón y seleccionamos la opción comprimir. Nos aparecerá un asistente desde el que podemos seleccionar el nombre del archivo resultante, la ubicación y el formato del mismo. Por defecto trabajaremos siempre en formato zip.
+{{../imagenes/43.png?height=400}}
+
+==== 4.4. Cambiar contraseña ====
+Para cambiar la contraseña ejecutamos el comando passwd nos pedirá la contreseña actual y deberemos confirmar la nueva contraseña.
+
+===== 5. Cambio del nombre del equipo =====
+En linux, los cambios en la configuración del sistema se suelen hacer modificando fichero de configuración que suelen tener formato en modo texto.
+Los fichero de configuración del sistema se suelen almacenar dentro la carpeta ''/etc''
+Para cambiar el nombre a nuestro equipo damos los siguientes pasos:
+1. Editamos el fichero ''/etc/hostname'' y ponemos el nuevo nombre
+
+==== 5.1 Ejecutando tareas administrativas ====
+
+===== 6. Configuración de la red =====
+
+==== 6.1 Averiguar la dirección IP ====
+Para averiguar la dirección de red de nuestro equipo ejecutamos
+{{{code: lang="sh" linenumbers="True"
+$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether f4:6d:04:92:d4:6e brd ff:ff:ff:ff:ff:ff
+    inet 172.17.200.1/16 brd 172.17.255.255 scope global dynamic enp3s0
+       valid_lft 7109sec preferred_lft 7109sec
+    inet6 fe80::e727:5cce:483f:1963/64 scope link 
+       valid_lft forever preferred_lft forever
+
+}}}
+
+Nos aparecerá la configuración de las tarjetas de red de nuestro equipo. En la segunda aparecerá la dirección empezando por 172.17.x.y, esa será la dirección IP de la tarjeta de red de nuestro equipo.
+
+===== 7. Acceso remoto =====
+
+==== 7.1. Acceso por ssh desde el terminal ====
+Para acceder de forma remota a un equipo por ssh debe tener el servicio iniciado y el cortafuegos deshabilitado o permitir conexiones por ssh.
+Para comprobar si el servicio ssh está activo ejecutamos:
+{{{code: lang="sh" linenumbers="True"
+$ sudo service ssh status
+● ssh.service - OpenBSD Secure Shell server
+   Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+   Active: active (running) since vie 2017-10-13 11:21:26 WEST; 1h 35min ago
+  Process: 1360 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)
+ Main PID: 1017 (sshd)
+   CGroup: /system.slice/ssh.service
+           └─1017 /usr/sbin/sshd -D
+
+}}}
+
+Si no estuviera activo lo iniciamos ejecutando 
+{{{code: lang="sh" linenumbers="True"
+$ sudo service ssh start
+}}}
+
+Si quisieramos parar el servicio ejecutamos
+{{{code: lang="sh" linenumbers="True"
+$ sudo service ssh stop
+}}}
+
+
+=== 7.1.1 Comprobar accesos por ssh a nuestro equipo ===
+Para averiguar si alguien **está conectado actualmente** a nuestro equipo lo podemos hacer de dos maneras
+1. Con **finger** 
+Lo instalamos ejecutando
+{{{code: lang="sh" linenumbers="True"
+$ sudo apt install finger
+}}}
+
+Si ejecutamos finger nos debería mostrar todas las sesiones iniciadas en nuestro equipo, entre ellas las sesiones iniciadas de forma remota por ssh:
+
+2. Utilizando **netstat**
+Ejecutando netstat con las opciones -ptan vemos todas las conexiones de nuestro equipo, entre ellas debería aparecer la conexión entrante de alguien que este conectado en ese momento a nuestro equipo por ssh
+
+Para averiguar si alguien se conectó a nuestro equipo lo podemos hacer comprobando los **logs** del sistema. Para filtrar en el fichero de logs de autenticaciones en el sistema las que se han producido desde equipos externos ejecutamos:
+
+{{{code: lang="sh" linenumbers="True"
+$ cat /var/log/auth.log | grep 172
+}}}
+
+
+=== 7.1.2. Acceso remoto utilizando ssh ===
+Para acceder desde el terminal a un equipo remoto utilizando ssh ejecutamos:
+{{{code: lang="sh" linenumbers="True"
+$ ssh usuario@ip -p npuerto
+}}}
+
+Donde:
+* **usuario: **es el nombre del usuario en la máquina remota al que voy a acceder.
+* **@** es un separador
+* **ip** es la dirección del equipo remoto
+* **npuerto** es el puerto por el que está a la escucha el servidor remoto. En caso de utilizar el puerto por defecto (22) no es necesario  especificar este parámetro.
+
+Para cerrar la conexión ejecutamos:
+{{{code: lang="sh" linenumbers="True"
+$ exit
+}}}
+
+
+==== 7.2 Acceso por ssh desde el explorador de archivos ====
+
+==== 7.3 Acceso al NAS por Samba desde Nautilus ====
+En la red local de clase tenemos un servidor NAS que utilizaremos para almacenar archivos de gran tamaño y para el intercambio de archivos entre alumnos y profesores.
+Para acceder al servidor NAS abrimos nautilus, pulsamos la combinación de teclas **ctrl + L** y en la barra de direcciones que aparece tecleamos:
+{{{code: lang="sh" linenumbers="True"
+smb://nas
+}}}
+
+{{../imagenes/captura2.png?width=400}}
+Nos aparecerán una serie de carpetas que están compartidas en el servidor. Durante el curso utilizaremos sobre todo las carpetas con nombre intercambio y modulos. 
+{{../imagenes/captura3.png}}
+Para acceder a las mismas hacemos doble clic y ponemos como usuario y contraseña: generico (en minúscula y sin tilde) 
+
+===== 8. Cortafuegos =====
+Es un software que nos permite restringir el tráfico de red en nuestro equipo. En la configuración actual del cortafuegos está permitido todo el tráfico saliente y restringido todo el tráfico entrante, por lo que podremos realizar cualquier conexión externa, pero nadie podrá acceder a ningún servicio en nuestro equipo.
+
+El software en nuestro equipo que gestiona el cortafuegos se llama **ufw** Podemos configurarlo desde la línea de comandos o utilizando la herramienta gráfica **gufw** 
+
+Operaciones que podemos realizar:
+* Ver el estado actual del cortafuegos
+{{{code: lang="sh" linenumbers="True"
+$ sudo ufw status
+[sudo] password for ivan: 
+Estado: inactivo
+}}}
+
+* Activar el cortafuegos
+{{{code: lang="sh" linenumbers="True"
+$ sudo ufw enable
+El cortafuegos está activo y habilitado en el arranque del sistema
+}}}
+
+* Desactivar el cortafuegos
+{{{code: lang="sh" linenumbers="True"
+$ sudo ufw disable
+El cortafuegos está detenido y deshabilitado en el arranque del sistema
+}}}
+
+* Crear reglas. Lo veremos el próximo curso, con suerte.
+

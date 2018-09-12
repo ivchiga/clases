@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-17T09:09:10+01:00
+
+====== UT8. La capa física ======
+
+===== Recursos =====
+
+===== Actividades =====
+* [[https://smr.iesharia.org/mod/assign/view.php?id=3095|U8-A1. Esquema de la red del aula]]
+	* [[./actividades/dia/ut8-a1-aula.dia|fichero de la actividad]]
+* [[https://smr.iesharia.org/mod/lesson/view.php?id=3097|UT8-A2. Capa física, tipos de comunicación y medios físicos]]
+* [[./actividades/RDE-UT8-A5. incumplimientos-normativav2.odt|UT8-A5. Incumplimientos normativa]]
+	* [[./actividades/ut2-a9.plano-de-planta.pdf|Plano planta edificio]]
+* [[./actividades/RDE-UT8-A6. Ejercicio.Dimensionado_elementos_SCE.odt|UT8-A6. Ejercicios. Dimensionado SCE]]
+* [[./actividades/RDE-UT8-A9. Etiquetado_SCE.odt|UT8-A9. Supuesto. Etiquetado SCE]]
+* [[./actividades/RDE-UT8-AC1. Practica-consolidación. SCE.odt|UT8-AC1. Práctica-consolidación. SCE]]
+

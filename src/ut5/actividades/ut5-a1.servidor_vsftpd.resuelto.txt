@@ -1,0 +1,186 @@
+Creamos las carpetas iniciales de los Hosts virtuales
+
+    $ sudo mkdir -p /var/www/user1/public_html
+
+    $ sudo mkdir -p /var/www/user2/public_html
+
+
+Nos aseguramos de que Apache esté instalado
+
+    $ sudo apt-get install apache2
+
+
+    Contenido:
+
+
+    <VirtualHost *:80>
+
+    ServerName lanzarote.com
+
+    ServerAlias www.lanzarote.com
+
+
+    DocumentRoot /var/www/user1/public_html
+
+    <Directory /var/www/user1/public_html/>
+
+    DirectoryIndex index.html index.php
+
+    </Directory>
+
+
+    </VirtualHost>
+
+
+Creamos una página de prueba:
+
+    $ sudo nano /var/www/user1/public_html/index.html
+
+
+Contenido:
+
+    <h1>Bienvenido a Lanzarote.com</h1>
+
+
+Habilitamos el Host Virtual:
+
+    $ sudo a2ensite lanzarote.com.conf
+
+
+Reiniciamos Apache
+
+    $ sudo service apache2 restart
+
+
+Para comprobar su funcionamiento editamos el fichero /etc/hosts de nuestro equipo y añadimos:
+
+172.16.x.y    lanzarote.com www.lanzarote.com # IP del servidor (máquiina virtual)
+
+Abrimos el navegador e introducimos:
+
+    http://lanzarote.com
+
+
+Damos los mismos pasos para crear el host virtual mevoyaforrar.com
+
+
+Paso 4:
+
+
+chroot:
+
+Set User HOME Directory to /var/www/ , if you want to change for existing user then you can use :
+$ usermod  --home /var/www/  username
+
+then set required permission on /var/www/
+
+Chroot v2.4 #Alejandro:
+
+    $ sudo nano  /etc/vsftpd.conf
+
+
+Para que los usuarios  del sistema sean enjaulados en entorno chroot al acceder por FTP hemos  de editar el fichero de configuración de FTP y descomentar la siguiente  línea:
+
+    #chroot_local_user=YES
+
+
+Quedará:
+
+    chroot_local_user=yes
+
+
+3.  Añadimos al final del archivo:
+ 
+ allow_writeable_chroot=YES
+
+4.  $ sudo service vsftpd restart
+
+
+Editamos el fichero de configuración de vsftpd:
+
+    $ sudo nano /etc/vsftpd.conf
+
+
+Descomentamos la línea
+
+
+
+
+
+
+
+
+
+
+
+Paso 5 (Correccion)
+
+
+5.1) Nos aseguramos de que el usuario y el grupo propietario son www-data en /var/www
+
+
+
+
+Paso 2) Modificación. Instalación de la última versión de vsftpd en Ubuntu para poder dar permiso de escritura en el directorio raiz a los usuario por chroot
+
+    sudo apt-get install python-software-properties <- para añadir repositorios ppa
+
+
+    sudo add-apt-repository ppa:thefrontiergroup/vsftpd
+
+
+    sudo add-apt-repository ppa:thefrontiergroup/vsftpd
+
+    sudo apt-get update
+
+    sudo apt-get install vsftpd
+
+
+                                   
+3.1) Instalar el software que nos permite añadir repositorios ppa a nuestro sistema:
+
+$sudo apt-get install python-software-properties 
+
+3.2) Añadimos el repositorio ppa, actualizamos la lista de paquetes disponibles e instalamos vsftpd
+
+$sudo add-apt-repository ppa:thefrontiergroup/vsftpd  <- Este paso y sólo es necesarios para Ubuntu Server 10.04
+$sudo apt-get update
+$sudo apt-get install vsftpd 
+
+3.3) Configuración inicial. Por defecto los usuarios locales pueden conectarse, sólo hemos de permitir que los usuarios puedan subir ficheros. Editamos el fichero de configuración de vsftp:
+
+$ sudo nano /etc/vsftpd.conf
+        
+write_enable=YES  ← descomentar
+
+
+
+Si solo te permite entrar en modo anonymous esta es la solucion:  editamos el fichero de configurción de vsftpd (/etc/vsftpd.conf) y
+buscas la linea #local_enable=SI y la descomentas, de esta forma los usuarios locales del sistemas podrían acceder por ftp al sistema , y te daria permiso para los usuarios locales.
+
+Cuando hayas modificado el fichero reinicia el servicio para que se apliquen los cambios:
+
+    $ sudo service vsftpd restart
+
+
+Paso 4) 
+
+Para que los usuarios del sistema sean enjaulados en entorno chroot al acceder por FTP hemos de editar el fichero de configuración de FTP y descomentar la siguiente línea:
+
+    chroot_local_user=YES
+
+
+
+
+
+Para que además, los usuarios al acceder en modo chroot puedan tener permiso de escritura en su carpeta de inicio añadimos la siguiente línea al fichero de configuración de vsftpd
+
+    allow_writeable_chroot=YES 
+
+
+No olvides reiniciar el servicio cada vez que modifiques el fichero de configuración
+
+
+
+
+

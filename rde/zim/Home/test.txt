@@ -1,0 +1,62 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-06T11:45:23+01:00
+
+====== Página de prueba ======
+
+===== Título de nivel 2 =====
+aSDFASDFASDF
+
+==== Título de nivel ====
+ASDFASSHGD
+
+=== nivel 4 ===
+
+== nivel 5 ==
+Podemos insertar listas no numeradas
+* elemento 1
+* elemento2
+	* elemento 2.1. Utilizando el tabulador
+	* elemento 2.2
+* elemento 3
+Podemos insertar listas numeradas
+1. primer elemento
+2. segundo elemento
+	a. sub 2 -1 
+	b. sub 2.2
+		1. sdgsdfg
+			a. ñlkjlkj
+				1. ñlkjlk
+					a. ñljñlkj
+3. tercer elemento
+
+Podemos insertar listas de selección
+[ ] @primer elemento
+[ ] @segundo elemento
+	[ ] sub elemento
+	[ ] segundo subelemento
+[ ] tercero
+Podemos escribir el texto en **negritas, **__subrayado__**, **~~tachado~~**, **''monoespaciado''**, **^{superíndice} y _{subíndice}**.**
+También podemos insertar tablas
+| Column 1 |  dos  |   tres | cuatro     |
+|:---------|:-----:|-------:|:-----------|
+| asdfasdf | asdfa | asdasf | aqsdfasddf |
+|          |       |        |            |
+
+
+También podemos insertar imágenes
+{{../imagenes/zorro.png?href=http%3A%2F%2Fgoogle.com&width=200}}
+Podemos crear [[../archivos/REO-UT1-A6-velocidad de transmision.odt|enlaces a un archivo]]
+
+{{{code: lang="sh" linenumbers="True"
+$ sudo apt install zim
+$ ls -la
+$ cd Escritorio
+$ mkdir test
+}}}
+
+
+
+
+
+

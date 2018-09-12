@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-13T11:31:01+01:00
+
+====== UT0. Tema 0 ======
+
+===== Actividades =====
+* [[+ut0-a1|UT0-A1. Uso básico del equipo]]
+

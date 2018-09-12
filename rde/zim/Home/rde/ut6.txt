@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-14T11:29:09+00:00
+
+====== UT6. La capa de transporte ======
+
+===== Recursos =====
+* [[https://smr.iesharia.org/wiki/doku.php/rde:ut6:inicio|Apuntes de clase]]
+
+===== Actividades =====
+* [[./actividades/RDE-UT6-A2. Observacion-tcp-con-ss.odt|UT6-A2. Observación del protocolo TCP con ss]]
+* [[./actividades/RDE-UT6-A3. Supuesto netstat.odt|UT6-A3. Supuesto práctico. ss/netstat]]
+* [[./actividades/RDE-UT6-A4. PortAddressTranslation-PAT.odt|UT6-A4. Práctica. Port address translation]]
+* [[./actividades/RDE-UT6-A5. Supuesto práctico. PAT-1-1.odt|UT6-A5. Supuesto teórico-práctico. Port Address Translation]]
+* [[./actividades/RDE-UT6-A6. Capa de transporte. consolidacion-2.odt|UT6-A6. Capa de transporte. Netstat. Consolidación]]
+* [[./actividades/RDE-UT6-A7. PAT con linux.odt|UT6-A7. Redireccionamiento de puertos con Linux]]
+* [[./actividades/rde-ut6-a8. Consolidación. PAT y netstat.odt|UT6-A8. Consolidación/repaso. PAT y netstat]]

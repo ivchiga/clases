@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-06T12:34:27+01:00
+
+====== Redes de área local ======
+
+===== Unidades de trabajo =====
+* [[+ut0|UT0. Tema 0]]
+* [[+ut1|UT1. Introducción a las redes locales]]
+* [[+ut2|UT2. La capa de enlace]]
+* [[+ut3|UT3. La capa de red]]
+* [[+ut4|UT4. Enrutamiento en redes locales]]
+* [[+ut5|UT5. VLAN]]
+* [[+ut6|UT6. La capa de transporte]]
+* [[+ut7|UT7. La capa de aplicación]]
+* [[+ut8|UT8. La capa física]]

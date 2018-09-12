@@ -1,0 +1,703 @@
+Tarea:
+Contestar las preguntas que se plantean y realizar los pasos de la práctica. Como equipo servidor utilizarás una máquina virtual de Ubuntu Server. En general se harán los pasos que se solicitan y se comprobará que funcionan correctamente.
+
+
+Pasos de la práctica:
+
+0. Configuración de la red
+
+Asignamos a la máquina virtual en la que hemos instalado Apache la IP 172.16.190.x/16 donde x es nuestro número de equipo en el aula. La tarjeta de red deberá estar configurada en modo puente
+
+1. Instalar en tu equipo el servidor apache2 y la documentación del mismo (apache2-doc).
+
+    $ sudo apt-get install apache2 apache2-doc
+
+
+
+2. El script apache2ctl permite enviar señales al servidor web. Que diferencia hay entre las señales restart y graceful.
+
+restart Esta forma de reiniciar el servidor web es lo mismo que enviar una señal HUP a los procesos httpd (enviar señales a un proceso)
+
+graceful Esta forma de reiniciar Apache hace que se envíe una señal USR1,  lo cual hace que en lugar de reiniciar todos los procesos hijos de vez,  el proceso padre permite que cada uno de los child termine de servir la  peticion (Sergio)
+
+Diferentes formas de reiniciar el servidor Apache:
+
+    $ sudo apache2ctl restart
+
+    $ sudo apache2ctl graceful
+
+    $ sudo service apache2 restart
+
+    $ sudo /etc/init.d/apache2 restart
+
+
+
+3. Establecer el nombre del servidor como www.unnombre.com
+
+Editamos el fichero de configuración del Host virtual por defecto de Apache /etc/apache2/sites-available/000-default.conf
+
+descomentamos la linea de de ServerName y ponemos a continuación de la directiva el nombre de nuestra web. Si además quisiéramos poder acceder a la misma web por otros nombres alternativos los introducimos a continuación de la directiva ServerAlias
+
+    <VirtualHost *:80>
+
+       
+
+        ServerName www.unnombre.com
+
+        ServerAlias unnombre.com minombre.com
+
+
+        ServerAdmin webmaster@localhost
+
+        DocumentRoot /var/www/html
+
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+     
+
+    </VirtualHost>
+
+
+Comprueba desde el navegador que accedes al servidor con dicho nombre
+
+Para poder acceder desde nuestro equipo a la web que hemos creado hemos de itendicarle a nuestro equipo como llegar a dicha web, para ello editamos en nuestro equipo el fichero /etc/hosts e introducimos en el mismo la IP y los nombre con los que podemos acceder a nuestra 
+
+    127.0.0.1        localhost
+
+    127.0.1.1        ubuntu
+
+    172.16.190.x     www.unnombre.com unnombre.com minombre.com
+
+
+    # The following lines are desirable for IPv6 capable hosts
+
+    ::1     ip6-localhost ip6-loopback
+
+    fe00::0 ip6-localnet
+
+    ff00::0 ip6-mcastprefix
+
+    ff02::1 ip6-allnodes
+
+    ff02::2 ip6-allrouters
+
+
+Ya sólo nos restaría introducir en el navegador la URL http://www.unnombre.com para acceder a la web que instala por defecto Apache en Ubuntu
+
+Habilitando y deshabilitando un Host Virtual
+
+Si accedemos a la carpeta /etc/apache2/sites-enabled y mostramos su contenido en formato largo: 
+
+usuario@ubuntu:/etc/apache2/sites-enabled$ ls -l
+total 0
+lrwxrwxrwx 1 root root 35 ene  4  2015 000-default.conf -> ../sites-available/000-default.conf
+
+Vemos que tenemos un enlace que apunta al fichero de configuración del host virtual por defecto que está en la carpeta sites-available. Esta es la forma que tiene Apache de saber si un host virtual debe cargarse o no. Estos enlaces los podemos crear y eliminar a mano mediante los comandos ln y rm, pero para simplificar la tarea Apache provee dos herramientas que nos permiten hacerlo:
+
+Para deshabilitar el host virtual por defecto ejecutamos:
+
+    $ sudo a2dissite 000-default.conf
+
+
+Si comprobamos  el contenido de la carpeta /etc/apache2/sites-enabled veremos que se ha eliminado el enlace.
+
+Además, si reiniciamos Apache e intentamos acceder a la web veremos que esta ya no está visible.
+
+Para volver a activar el Host Virtual utilizamos la herramienta a2ensite y reiniciamos Apache para que se apliquen los cambios:
+
+    $ sudo a2ensite 000-default.conf
+
+    $ sudo service apache2 restart
+
+
+4.Apache nos permite utilizar diferentes módulos multiprocesamiento o MPM que se encargan de las funciones internas más elementales del servidor Apache como pueden ser procesar las peticiones HTTP, administrar procesos o hilos de Apache y un largo etc.
+
+Podemos tener varios módulos MPM instalados, pero solamente uno puede estar cargado y en funcionamiento.
+
+
+Cuál es el módulo MPM que instala Apache por defecto en Ubuntu. Ejecuta comando para averiguarlo.                                                           
+
+    $ apache2ctl -V
+
+
+
+Qué ventajas e inconvenientes tienen los diferentes módulos MPM que puede utilizar Apache (mpm-prefork, mpm-worker, mpm-event)
+
+mpm-worker:Al iniciar Apache Worker se crean varios procesos hijo y a su vez cada  proceso hijo emplea varios threads. Con esto se consigue que cada  proceso hijo pueda manejar varias peticiones simultaneas gracias a los  threads.
+
+    Inconvenientes de mod_php: consume más recursos.
+
+    Inconvenientes de php-fpm: configuración más compleja.
+
+
+mpm-event: Es una mejora de Worker, MPM Event mejora el rendimiento de Apache durante las peticiones con Keep Alive, que son muy comunes, tiene las mismas ventajas e inconvenientes que este, por lo que obviamente MPM Event no es compatible con mod_php, habrá que usar php-fpm.
+
+mpm-prefork
+
+    MPM activado por default en todas las instalaciones de apache.
+
+    Mucho mas amigable con el uso intensivo de PHP. Compatible con librerías de seguridad de PHP (thread-safe), esto lo hace mucho más estable.
+
+    Especialmente adecuado cuando se quiere manejar de manera  independiente cada petición realizada a apache, es decir, un proceso de  apache para cada cliente, una vez termina de atender a un cliente puede  atender a otro (MaxRequestsPerChild).
+
+    Este MPM tiene menos capacidad de atender muchos clientes a la vez (max_clients).
+
+    Al manejar un proceso por cada cliente este MPM consume muchos más recursos (memoria RAM y CPU).
+
+
+    Características del MPM Worker
+
+    Para activar este MPM se debe modificar la configuración por default de apache.
+
+    Presenta dificultades cuando se tienen módulos no thread-safe, especialmente con los aceleradores de PHP.
+
+    Este MPM maneja un servidor hibrido multiproceso – multihilo, esto  quiere decir que un solo proceso puede manejar múltiples hilos (ThreadsPerChild), lo cual garantiza una gran capacidad de manejar muchos clientes con menos recursos.
+
+    Ideal para manejo de contenido estático.
+
+    Al manejar procesos hijos por cada proceso padre este MPM consume  muchos menos recursos (memoria RAM y CPU) ofreciendo mejor crecimiento  del servicio.
+
+5. Configurar el email del Webmaster como tunombre@nombremaquina.com
+
+/etc/apache2/sites-available/000-default.conf 
+
+cambiamos el contenido de la directiva ServerAdmin
+
+    <VirtualHost *:80>
+
+       
+
+        ServerName www.unnombre.com
+
+        ServerAlias unnombre.com minombre.com
+
+
+        ServerAdmin tunombre@nombremaquina.com
+
+
+        DocumentRoot /var/www/html
+
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+     
+
+    </VirtualHost>
+
+
+6. Configurar el servidor para que cada usuario tenga su propia pagina web en un directorio llamado directorioweb que se encuentra en su directorio personal. Restringir esta posibilidad al root del sistema.
+
+Para que cada usuario del sistema tenga su propia web hemos de habilitar el módulo userdir de Apache:
+
+    $ sudo a2enmod userdir
+
+
+Una vez habilitado el usuario puede tener su espacio web personal dentro de la carpeta public_html en su carpeta home. Por tanto si creamos dentro de la misma una página en HTML podremos acceder a la misma desde el navegador:
+
+    usuario@ubuntu:/etc/apache2$ cd ~
+
+    usuario@ubuntu:~$ pwd
+
+    /home/usuario
+
+    usuario@ubuntu:~$ mkdir public_html
+
+    usuario@ubuntu:~$ cd public_html
+
+    usuario@ubuntu:~/public_html$ 
+
+
+Para acceder debemos introducir en el navegador la URL http://www.unnombre.com/~usuario
+
+Pero en la práctica nos piden que la carpeta raiz para la web del usuario sea directorioweb en lugar de public_html. Para conseguirlo editamos el fichero de configuración del módulo y modificamos su contenido:
+
+    $ sudo nano /etc/apache2/mods-available/userdir.conf
+
+
+Y modificamos su contenido 
+
+    <IfModule mod_userdir.c>
+
+            UserDir directorioweb
+
+            UserDir disabled root
+
+
+            <Directory /home/*/directorioweb>
+
+                    AllowOverride FileInfo AuthConfig Limit Indexes
+
+                    Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+
+                    <Limit GET POST OPTIONS>
+
+                            Require all granted
+
+                    </Limit>
+
+                    <LimitExcept GET POST OPTIONS>
+
+                            Require all denied
+
+                    </LimitExcept>
+
+            </Directory>
+
+    </IfModule>
+
+
+
+
+Inserta captura de pantalla con comprobaciones
+
+
+7. Cambiar el puerto en el que escucha por defecto el servidor web por el 8000. Comprobar y dejar como estaba anteriormente.
+sudo nano /etc/apache2/ports.conf > listen 8000
+sudo nano /etc/apache2/sites-available/000-default.conf > virtualhost *:8000
+
+8. Cuando no se indique una página en concreto mostrara indice.html y si esta no se localiza mostrara pagina.html.
+
+Para ello se utiliza la directiva DirectoryIndex que nos permite especificari qué páginas se muestran por defecto si no especificamos ninguna en la URL:
+
+    <VirtualHost *:80>
+
+       
+
+        ServerName www.unnombre.com
+
+        ServerAlias unnombre.com minombre.com
+
+
+        ServerAdmin tunombre@nombremaquina.com
+
+
+        DocumentRoot /var/www/html
+
+        <Directory /var/www/html/>
+
+                  DirectoryIndex indice.html pagina.html
+
+         </Directory>
+
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+
+    </VirtualHost>
+
+
+Si ahora intentamos acceder a la web veremos que ya no se muestra la página por de sino que se nos muestra el contenido de la carpeta. Para que se muestre la indice.html debemos renombrar index.html
+
+    $ cd /var/www/html
+
+    $ sudo mv index.html index.html
+
+
+Ahora si que se nos mostrará en el navegador la página por defecto.
+
+Si crearamos en la carpeta /var/www/html un archivo de nombre pagina.html, este sólo se mostrara si no existe el archivo indice.html en dicha carpeta:
+
+    $ sudo echo "<h1>Estoy en pagina.html</h1>" > pagina.html
+
+    $ sudo mv indice.html index.html
+
+
+Lo comprobamos accediendo desde el navegador.
+
+9. Restringir el acceso a nuestro servidor a una máquina en concreto.
+ejecutar los comandos necesarios para restringir el acceso a una maquina en concreto
+
+Editamos el fichero de configuración del Host Virtual por defecto /etc/apache2/sites-availble/000-default.conf y añadimos:
+
+    <VirtualHost *:80>
+
+       
+
+        ServerName www.unnombre.com
+
+        ServerAlias unnombre.com minombre.com
+
+
+        ServerAdmin tunombre@nombremaquina.com
+
+
+        DocumentRoot /var/www/html
+
+        <Directory /var/www/html/>
+
+                  DirectoryIndex indice.html pagina.html
+
+                  Order Allow,Deny
+
+                  Allow from All  ( con ese apartado permitimos a todo el mundo)
+
+                  Deny from 172.16.x.y  (con este denegamos el permiso a esta IP)
+
+         </Directory>
+
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+
+    </VirtualHost>
+
+
+Donde 172.16.x.y es la dirección IP del equipo al que queremos denegar el acceso. Order indica en que orden se aplican las reglas, en este caso primero evaluamos las reglas de permitir y luego de denegar y luego especificamos que le vamos a permitir el acceso a todo el mundo y que sólo se lo vamos a denegar el equipo con la IP 172.16.x.y
+
+Si por el contrario lo que quisieramos es denegar a todo el mundo salvo a un equipo pondríamos:
+
+    Order Deny,Allow
+
+    Deny from All
+
+    Allow from 172.16.x.y 172.16.w.v
+
+
+Si sólo le quisieramos permitir el acceso a los equipos de la red local:
+
+    Order Deny,Allow
+
+    Deny from All
+
+    Allow from 172.16.0.0/16
+
+
+Captura de pantalla con comprobación
+
+
+10. Cuando se accede a una pagina que no existe, mostraremos la pagina error.html. Inserta pasos necesarios y comprobación
+
+Primero creamos la página con el mensaje de error:
+
+
+    Introducimos el código HTML del mensaje de error que queramos mostrar
+
+
+Despues tenemos que indicarle a nuestro Host Virtual que muestre dicha página en caso de que se intente acceder a un recurso que no exista en el equipo
+
+    <VirtualHost *:80>
+
+       
+
+        ServerName www.unnombre.com
+
+        ServerAlias unnombre.com minombre.com
+
+
+        ServerAdmin tunombre@nombremaquina.com
+
+
+        DocumentRoot /var/www/html
+
+
+     ErrorDocument 404 /error-pages/404.html
+
+
+        <Directory /var/www/html/>
+
+                  DirectoryIndex indice.html pagina.html
+
+Options -Indexes (para que no se muestre el contenido de la carpeta)
+
+                  Order Allow,Deny
+
+                  Allow from All  ( con ese apartado permitimos a todo el mundo)
+
+                  Deny from 172.16.x.y  (con este denegamos el permiso a esta IP)
+
+
+         </Directory>
+
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+
+    </VirtualHost>
+
+
+Después de reiniciar Apache, si en el navegado intentamos acceder a una página que no existe en nuestro servidor devolverá la página de error personalizada.
+
+11. Hospedaje virtual:
+a) Configurar el servidor para que pueda alojar dos páginas web diferentes en el mismo servidor. Una responderá a www.uga.net y se encuentra en /var/www/www.uga.net, pagina por defecto uga.html y webmaster webmaster@uga.com . La otra página es www.orzola.com, directorio /var/www/www.orzola.com, pagina por defecto orzola.html y webmaster webmaster@orzola.com.
+Pasos
+
+Tenemos que crear un nuevo Host Virtual, parea ello aprovechamos el que ya tenemos:
+
+    $ cd /etc/apache2/sites-avalaible
+
+    $ sudo cp 000-default.conf  www.uga.net.conf
+
+
+Modificamos su contenido para que quede de la forma
+
+    <VirtualHost *:80>
+
+            ServerName www.uga.net
+
+            ServerAlias uga.net
+
+
+            ServerAdmin webmaster@uga.com
+
+            DocumentRoot /var/www/www.uga.net
+
+            <Directory /var/www/www.uga.net/>
+
+                    DirectoryIndex uga.html
+
+                    Options -Indexes
+
+            </Directory>
+
+
+            ErrorLog ${APACHE_LOG_DIR}/error.log 
+
+            CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    </VirtualHost>
+
+
+Creamos la carpeta inicial del nuevo sitio y creamos una página de prueba:
+
+    $ sudo mkdir /var/www/www.uga.net
+
+    $ cd /var/www/www.uga.net
+
+    $ sudo nano uga.html
+
+
+    Insertamos algo como:
+
+
+    <h1>Estas en Uga<h1>
+
+
+A continuación habilitamos el Host Virtual y reiniciamos Apache:
+
+    $ sudo a2ensite www.uga.net.conf
+
+    $ sudo service apache2 restart
+
+
+Para poder comprobar su funcionamiento editamos el fichero /etc/hosts y añadimos el nombre a la IP del servidor.
+
+    172.16.190.x     www.unnombre.com unnombre.com minombre.com www.uga.net uga.net
+
+
+
+Comprobaciones
+
+
+b) Configurar el servidor para que los dos sitios anteriores escuchen cada uno en un puerto distinto (80 www.uga.net y 8000 www.orzola.com)
+Pasos
+
+
+Comprobaciones
+
+
+12. Comprobar, mediante tail -f,  los accesos en tiempo real al servidor.
+
+
+13. Comprobar el fichero donde se lleva el registro de los errores producidos en e servidor.
+
+#################################################
+# UT4-A5. Control de acceso a usuario en apache #
+#################################################
+                                   
+1. Explica. Qué dos formas de autenticación permite Apache y en que se diferencian.
+
+2. Crea el host  virtual www.teguise.org, configúralo de forma que sólo pueda acceder al mismo un usuario de nombre user1 mediante autenticación básica.
+Tutorial: http://www.server-world.info/en/note?os=Ubuntu_14.04&p=httpd&f=9
+
+Para hacerlo deberemos hacer dos cosas, primero configurar la carpeta del host virtual para que le restrinja el acceso y luego crear el usuario/contraseña al que queremos permitir el acceso:
+
+Editamos el fichero de configuración del host virtual /etc/apache2/sites-available/www.teguise.org.conf
+
+Dentro de la configuración de opciones de la carpeta inicial del host virtual añadimos:
+<VirtualHost *:80>    
+
+    ServerName www.teguise.org 
+
+  ServerAlias teguise.net www.teguise.org www.teguise.net 
+
+
+    ServerAdmin webmaster@teguise.org
+
+  DocumentRoot /var/www/www.teguise.org 
+  ErrorDocument 404 /error-pages2/teguise.html
+  <Directory /var/www/www.teguise.org/>
+      DirectoryIndex teguise.html indice.html  index.html  index.html
+      
+      AuthType Basic                             # tipo de autenticación a utilizar
+      AuthName "Basic Authentication"            # Nombre del recurso protegido
+      AuthUserFile /etc/apache2/.htpasswd        # Fichero en el que se almacenan las credenciales de los usuarios
+      require user user1                        # Usuarios a los que se les permite el acceso. 
+
+    </Directory>
+
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+A continuación generamos el usuario utilizando la utilidad htpasswd. Primero hemos de instalarla. Viene incluida en el paquete apache2-utils
+
+    $ sudo apt-get install apache2-utils
+
+
+Para añadir usuario y contraseña
+
+
+    $ 
+
+
+Después de reiniciar Apache, si accedemos a la web www.teguise.org nos solicitará usuario/contraseña para poder validarnos
+
+
+
+
+3. Crea el host virtual www.yaiza.com y configúralo de forma que sólo pueda acceder al mismo el usuario de nombre yaiza mediante el modo de autenticación digest.
+creamos el sitio www.yaiza.com
+sudo nano /etc/apache2/sites-available/www.yaiza.com.conf
+una ves dentro configuramos los datos correspondientes y añadimos el modo de autenticacion digest
+
+dentro de directory añadimos
+
+    ServerName www.yaiza.com
+
+            ServerAlias yaiza.com www.yaiza.com
+
+
+            ServerAdmin yaiza@yaiza.com
+
+            DocumentRoot /var/www/yaiza.com
+
+
+            ErrorDocument 404 /error-pages/404.html
+
+
+
+        <Directory /var/www/yaiza.com>
+
+                    DirectoryIndex indice.html
+
+                    AuthType Digest
+
+                    AuthName "restringido"
+
+                   AuthUserFile /etc/apache2/.htpasswd_digest
+
+                    Require user user2
+
+       </Directory>cd
+
+
+Habilitamos el módulo de autenticación Digest
+
+    $ sudo a2enmod auth_digest
+
+
+
+la creacion de los achivos donde se almacena los usuarios y sus contrseñas
+
+
+    $ sudo htdigest -c /etc/apache2/.htpasswd_digest restringido user2
+
+    Donde:
+
+  - /etc/apache2/.htpasswd_digest es el fichero en el que se almacenan las credenciales de los usuarios
+  - restringido es el nombre del recurso. Lo que ponemos en la directiva AuthName
+  - user2 el nombre del usuario que vamos a crear
+  - La opción -c hace que se cree el fichero si no existe. Si existe borraría su contenido
+  
+Sólo restaría reiniciar Apache y acceder a www.yaiza.com. Nos debería solicitar usuario y contraseña para mostrar el contenido.
+
+
+
+4. Crea el host virtual www.soo.net y configúralo de forma que sólo pueda acceder al mismo los usuarios pertenecientes al grupo soo mediante el modo de autenticación básica.
+
+    añadimos la fila al firectory del grupo
+
+
+     ServerName www.soo.net
+
+            ServerAlias www.soo.net soo.net
+
+
+            ServerAdmin soo@soo.net
+
+            DocumentRoot /var/www/www.soo.net
+
+
+            ErrorDocument 404 /error-pages/404.html
+
+            <Directory /var/www/www.soo.net>
+
+                    DirectoryIndex indice.html
+
+                    AuthType Basic
+
+                    AuthName "Basic Authentication"
+
+                    AuthUserFile /etc/apache2/.htpasswd
+
+                    AuthGroupfile /etc/apache2/.groups
+
+    Require group group1
+
+            </Directory>
+
+
+
+en /etc/apache2/  creamos .groups
+
+
+    $ sudo nano .groups
+
+
+añadimos las linea para decirle quien estan en el grupo
+
+
+     grupo1:user1 user3
+
+
+
+crear el usuario 3 utilizando htpasswd
+
+    $ sudo htpasswd  /etc/apache2/.htpasswd user3
+
+
+     
+
+
+habilitamos el mod de grupos
+
+    sudo a2enmod authz_groupfile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

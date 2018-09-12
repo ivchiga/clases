@@ -1,0 +1,16 @@
+software de red
+topología
+método de acceso a la red
+protocolo - protocolo de comunicaciones
+encapsulación
+cabecera - información de control
+PDU
+segmento
+paquete
+trama
+proceso
+fragmentar
+token ring
+fddi
+wifi
+colisión

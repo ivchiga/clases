@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet href="treestyles.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!--This file has been created with toxhtml.xsl--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>DNS</title><link rel="stylesheet" href="DNSmm.html_files/treestyles.css" type="text/css"/><script type="text/javascript" src="DNSmm.html_files/marktree.js"> 
+	</script></head><body><div class="basetop"><a href="#" onclick="expandAll(document.getElementById('base'))">Expand</a> -
+<a href="#" onclick="collapseAll(document.getElementById('base'))">Collapse</a></div><div id="base" class="basetext"><ul>
+	<li class="col" id="FMID_123042994FM"><div class="nodecontent" style="color:#000000;font-size:167%;">DNS</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1435806084FM"><div class="nodecontent" style="color:#0033ff;font-size:150%;">arquitectura</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1803866011FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">cliente</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1556574052FM"><div class="nodecontent" style="color:#990000;font-size:117%;">solicita resolución nombre o IP</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_211372068FM"><div class="nodecontent" style="color:#111111;">Orden de búsqueda</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_612922362FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">Linux - Fichero /etc/nsswitch.conf</div><div class="note-and-attributes"><span class="note"><p><font face="Monospaced"># /etc/nsswitch.conf </font></p><p><font face="Monospaced"># </font></p><p><font face="Monospaced"># Example configuration of GNU Name Service Switch functionality. </font></p><p><font face="Monospaced"># If you have the `glibc-doc-reference' and `info' packages installed, try: </font></p><p><font face="Monospaced"># `info libc "Name Service Switch"' for information about this file. </font></p><p/><p><font face="Monospaced">passwd:         compat </font></p><p><font face="Monospaced">group:          compat </font></p><p><font face="Monospaced">shadow:         compat </font></p><p/><p><font face="Monospaced">hosts:          files  dns # Primero busca en /etc/hosts y despues consulta al servidor de DNS </font></p><p><font face="Monospaced">networks:       files </font></p><p/><p><font face="Monospaced">protocols:      db files </font></p><p><font face="Monospaced">services:       db files </font></p><p><font face="Monospaced">ethers:         db files </font></p><p><font face="Monospaced">rpc:            db files </font></p><p/><p><font face="Monospaced">netgroup:       nis</font></p></span></div></div></li></ul></li></ul></li>
+	<li class="basic" id="FMID_1326457222FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Incluye una o varias IPs del servidor</div></li>
+	<li class="col" id="FMID_690445262FM"><div class="nodecontent" style="color:#990000;font-size:117%;">configuración</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_933039617FM"><div class="nodecontent" style="color:#111111;">Se almacena</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1801770399FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">Linux - /etc/resolv.conf </div><div class="note-and-attributes"><span class="note"><p>
+      #Contenido del fichero /etc/resolv.conf
+    </p><p>
+      domain dominio.local                                           # Nombre del dominio al que pertenece el host (parámetro opcional)
+    </p><p>
+      search dominio.local dominio2.es dominio3.net  # Nombres de dominio que se añaden en las búsquedas (parámetro opcional)
+    </p><p>
+      nameserver 192.168.1.16                                   # Dirección IP del primer servidor
+    </p><p>
+      nameserver 195.235.113.3                                 # Dirección IP del segundo servidor (parámetro opcional)
+    </p></span></div></div></li>
+	<li class="col" id="FMID_553644652FM"><div class="nodecontent" style="color:#111111;">Windows - Configuración del dispositivo</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1633514611FM"><div class="nodecontent" style="color:#111111;"><img src="../../../../../datos/Imágenes/temp/dns-cliente-windows.png"/></div></li></ul></li></ul></li>
+	<li class="col" id="FMID_291975542FM"><div class="nodecontent" style="color:#111111;">se hace</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1650378137FM"><div class="nodecontent" style="color:#111111;">De forma estática</div></li>
+	<li class="basic" id="FMID_1042969508FM"><div class="nodecontent" style="color:#111111;">Por DHCP</div></li></ul></li></ul></li>
+	<li class="col" id="FMID_1789863750FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Dos posibilidades para resolver nombres</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_214605085FM"><img src="DNSmm.html_files/icons/full-1.png" alt="full-1"/> <div class="nodecontent" style="color:#111111;">Fichero de hosts</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_812038216FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">Linux - /etc/hosts</div><div class="note-and-attributes"><span class="note"><p>
+      127.0.0.1          localhost
+    </p><p>
+      127.0.1.1          nmaquina
+    </p><p>
+      192.168.1.1      router
+    </p><p>
+      209.85.169.99  google.es
+    </p><p/><p>
+      # The following lines are desirable for IPv6 capable hosts
+    </p><p>
+      ::1     ip6-localhost ip6-loopback
+    </p><p>
+      fe00::0 ip6-localnet
+    </p><p>
+      ff00::0 ip6-mcastprefix
+    </p><p>
+      ff02::1 ip6-allnodes
+    </p><p>
+      ff02::2 ip6-allrouters
+    </p></span></div></div></li>
+	<li class="col" id="FMID_1164897871FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">Windows - c:\windows\system32\drivers\etc\hosts</div><div class="note-and-attributes"><span class="note"><p>
+      # Copyright (c) 1993-1999 Microsoft Corp.
+    </p><p>
+      #
+    </p><p>
+      # Éste es un ejemplo de archivo HOSTS usado por Microsoft TCP/IP para Windows.
+    </p><p>
+      #
+    </p><p>
+      # Este archivo contiene las asignaciones de las direcciones IP a los nombres de
+    </p><p>
+      # host. Cada entrada debe permanecer en una línea individual. La dirección IP
+    </p><p>
+      # debe ponerse en la primera columna, seguida del nombre de host correspondiente.
+    </p><p>
+      # La dirección IP y el nombre de host deben separarse con al menos un espacio.
+    </p><p>
+      #
+    </p><p>
+      #
+    </p><p>
+      # También pueden insertarse comentarios (como éste) en líneas individuales
+    </p><p>
+      # o a continuación del nombre de equipo indicándolos con el símbolo "#"
+    </p><p>
+      #
+    </p><p>
+      # Por ejemplo:
+    </p><p>
+      #
+    </p><p>
+      #      102.54.94.97     rhino.acme.com          # servidor origen
+    </p><p>
+      #       38.25.63.10     x.acme.com              # host cliente x
+    </p><p/><p>
+      127.0.0.1       localhost
+    </p></span></div></div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_241662057FM"><div class="nodecontent" style="color:#111111;"><img src="../../../../../datos/Imágenes/temp/windows-hosts.png"/></div></li></ul></li></ul></li>
+	<li class="basic" id="FMID_1722132575FM"><img src="DNSmm.html_files/icons/full-2.png" alt="full-2"/> <div class="nodecontent" style="color:#111111;">Servidor de DNS</div></li></ul></li></ul></li>
+	<li class="col" id="FMID_88306478FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">servidor</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_215044649FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Guarda base datos de hosts y direcciones</div></li>
+	<li class="basic" id="FMID_16349021FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Resuelve peticiones de los clientes</div></li>
+	<li class="col" id="FMID_629804492FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Software que se ejecuta</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_544088710FM"><div class="nodecontent" style="color:#111111;">Windows Server</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_633840712FM"><div class="nodecontent" style="color:#111111;">Microsoft DNS - Incluido en el sistema operativo</div></li>
+	<li class="basic" id="FMID_1686554168FM"><div class="nodecontent" style="color:#111111;">Simple DNS Plus</div></li></ul></li>
+	<li class="col" id="FMID_1097976147FM"><div class="nodecontent" style="color:#111111;">Linux</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_467650051FM"><div class="nodecontent" style="color:#111111;">bind9 - mas popular</div></li>
+	<li class="basic" id="FMID_1992691708FM"><div class="nodecontent" style="color:#111111;">Dnsmasq</div></li></ul></li></ul></li></ul></li></ul></li>
+	<li class="col" id="FMID_101540923FM"><div class="nodecontent" style="color:#0033ff;font-size:150%;">Esquema funcionamiento</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1826094031FM"><div class="nodecontent" style="color:#00b439;font-size:133%;"><img src="../../../../../datos/Imágenes/temp/funcionamiento-dns.png"/></div></li></ul></li>
+	<li class="col" id="FMID_28729528FM"><div class="nodecontent" style="color:#0033ff;font-size:150%;">resolución nombres</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1650535533FM"><div class="boxed"><div class="nodecontent" style="color:#00b439;font-size:133%;">Obtener IP a partir nombre host</div><div class="note-and-attributes"><span class="note"><p style="padding-right: 0px; padding-bottom: 0px; text-align: justify; margin-left: 0px; margin-top: 0px; padding-left: 0px; line-height: 20px; padding-top: 0px; margin-bottom: 10px; margin-right: 0px" align="justify">
+      Cuando una aplicación desea conectarse con un host conocido a través de su nombre de dominio (por ejemplo, "www.iesharia.net"), ésta interroga al servidor de nombre de dominio definido en la configuración de su red. De hecho, todos los equipos conectados a la red tienen en su configuración las direcciones IP de ambos servidores de nombre de dominio del proveedor de servicios.
+    </p><p style="padding-right: 0px; padding-bottom: 0px; text-align: justify; margin-left: 0px; margin-top: 0px; padding-left: 0px; line-height: 20px; padding-top: 0px; margin-bottom: 10px; margin-right: 0px" align="justify">
+      Entonces se envía una solicitud al primer servidor de nombre de dominio (llamado el "servidor de nombre de dominio principal"). Si este servidor de nombre de dominio tiene el registro en su caché, lo envía a la aplicación; de lo contrario, interroga a un servidor de nivel superior (en nuestro caso un servidor relacionado con el TLD ".net"). El servidor de nombre de nivel superior envía una lista de servidores de nombres de dominio con autoridad sobre el dominio (en este caso, las direcciones IP de los servidores de nombres de dominio principal y secundario para iesharia<i style="padding-right: 0px; padding-bottom: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; margin-bottom: 0px; margin-right: 0px">.net</i>).
+    </p><p style="padding-right: 0px; padding-bottom: 0px; text-align: justify; margin-left: 0px; margin-top: 0px; padding-left: 0px; line-height: 20px; padding-top: 0px; margin-bottom: 10px; margin-right: 0px" align="justify">
+      A continuación el servidor de nombres de dominio principal con autoridad sobre el dominio será interrogado y devolverá el registro correspondiente al dominio del servidor (en nuestro caso <i style="padding-right: 0px; padding-bottom: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; margin-bottom: 0px; margin-right: 0px">www</i>).
+    </p></span></div></div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_449595962FM"><div class="nodecontent" style="color:#990000;font-size:117%;"><img src="../../../../../datos/Imágenes/temp/proceso-resolucion-dns.png"/></div></li></ul></li>
+	<li class="col" id="FMID_1323517668FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">Tipos de consultas</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1762021815FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Iterativas</div></li>
+	<li class="basic" id="FMID_1409488006FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Recursivas</div></li></ul></li>
+	<li class="col" id="FMID_1284829265FM"><div class="nodecontent" style="color:#00b439;font-size:133%;"><a href="http://es.wikipedia.org/wiki/Tiempo_de_vida_(inform%C3%A1tica)">Consultas tienen TTL</a> <a href="http://es.wikipedia.org/wiki/Tiempo_de_vida_(inform%C3%A1tica)"><img src="DNSmm.html_files/ilink.png" alt="User Link" style="border-width:0"/></a></div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1555069901FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Resultado se almacena por un periodo de tiempo localmente</div></li>
+	<li class="basic" id="FMID_399660257FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Definido por el servidor</div></li>
+	<li class="basic" id="FMID_400383335FM"><div class="boxed"><div class="nodecontent" style="color:#990000;font-size:117%;">Cambios en servidores tardan en propagarse</div><div class="note-and-attributes"><span class="note"><p><font size="medium"><strong>¿Por qué tardan los cambios de servidores DNS en propagar?</strong></font></p><p>
+      Otra situación sumamente común es que cuando cambiamos el direccionamiento de un dominio de unos servidores DNS a otros, nuestro proveedor nos indica que la “propagación” puede tardar 24 a 72 horas (normalmente es mucho menos). ¿Esto qué significa?
+    </p><p>
+      Lo que sucede es que para no sobrecargar los servidores raíz de internet y disminuir el tráfico por consultas de “traducciones” DNS de nombres de dominio a direcciones IP, el sistema de DNS funciona de tal forma que se guardan registros temporales de ciertas traducciones populares, por ejemplo: si uno hace una consulta para buscar www.hospedaje-web.com, el sistema DNS de nuestro proveedor de acceso a internet nos devolverá la IP resultante de dicha consulta. Para hacer esa traducción muy probablemente tuvimos que consultar directamente a un servidor raíz de internet, sin embargo, si nosotros mismos volvemos a buscar esa dirección (o alguien que esté en la misma red o “vecindario” la busca) muy probablemente la traducción ya se encuentre guardada temporalmente en un servidor DNS de nuestro proveedor de acceso a internet, con lo que éste se ahorra el tener que ir a buscar dicha traducción directamente a los servidores raíz de internet.
+    </p><p>
+      El aspecto negativo de esto (por así llamarlo), es que si cambiamos en este momento el mapeo dominio/IP de www.hospedaje-web.com, mucha gente en el mundo que esté accediendo a nuestra página web tendrá un periodo de tiempo de algunas horas en las que probablemente accederá aún a la dirección IP anterior que estará guardada en los servidores DNS de su proveedor de acceso a internet (el término correcto es que tiene el mapeo guardado en “caché”). Este mapeo, ahora incorrecto, se corregirá automáticamente cuando el cambio se “propague” hasta los servidores DNS de dicho proveedor de acceso a internet, lo cual por el tamaño de internet puede tardar varias horas.
+    </p></span></div></div></li></ul></li></ul></li>
+	<li class="col" id="FMID_1942856272FM"><div class="nodecontent" style="color:#0033ff;font-size:150%;">zonas de autoridad</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_786742024FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">porciones del espacio de nombres de dominio que almacenan datos</div></li>
+	<li class="basic" id="FMID_1779798469FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">cada zona de autoridad abarca al menos un dominio</div></li>
+	<li class="col" id="FMID_1282203362FM"><div class="boxed"><div class="nodecontent" style="color:#00b439;font-size:133%;">la autoridad sobre una zona se delega</div><div class="note-and-attributes"><span class="note"><p><font size="5"><b>Delegación</b></font></p><p>
+      Los dominios de primer nivel destinados a los países son gestionados por estos a su voluntad. Ésto es posible porque éstos dominios están delegados en administradores propios al país, de forma que son éstos los que los gestionan. Dicha delegación de autoridad sobre un dominio se puede realizar a cualquier nivel del espacio de nombres, de manera que si se dispone un dominio de segundo nivel para una empresa, se podrían crear dominios de niveles inferiores según la estructura organizativa de la empresa
+    </p><p>
+      .
+    </p><p>
+      Más concretamente, la delegación consiste en la cesión del control de una zona del espacio de nombre a otro servidor DNS. Una zona es una porción del espacio de nombres, de forma que se posee autoridad desde el nodo raíz de dicha zona dentro del árbol jerárquico, pudiendo crear o eliminar nuevos subdominios a partir del nivel en el que se encuentre dicho nodo raíz.
+    </p><p/><p>
+      La diferencia entre dominio y zona suele ser confusa en un principio. Se trata de dos conceptos relacionados en diferentes capas: dominio es un concepto del espacio de nombres, mientras que zona es la forma en la que se distribuye la autoridad sobre un determinado dominio. Así pues, un dominio contiene todas las máquinas que están dentro de dicho dominio, incluidos subdominios, mientras que una zona incluye solo las máquinas del dominio que cuelgan del subdominio o subdominios sobre el que se posee la autoridad.
+    </p></span></div></div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_858874255FM"><div class="nodecontent" style="color:#990000;font-size:117%;"><img src="../../../../../datos/Imágenes/temp/division-zonas.png"/></div></li></ul></li>
+	<li class="col" id="FMID_972859497FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">Datos forma de registros</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1426559519FM"><div class="nodecontent" style="color:#990000;font-size:117%;"><img src="../../../../../datos/Imágenes/temp/estructura-registro.png"/></div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1199094458FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">Nombre de dominio</div><div class="note-and-attributes"><span class="note"><p>
+      Nombre de dominio<font face="Arial, Helvetica, sans-serif" color="rgb(48, 48, 48)">:</font> el nombre de dominio debe ser un nombre FQDN, es decir, debe terminar con un punto. En caso de que falte el punto, el nombre de dominio es relativo, es decir, el nombre de dominio principal incluirá un sufijo en el dominio introducido
+    </p></span></div></div></li>
+	<li class="basic" id="FMID_990846038FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">TTL Tiempo de vida</div><div class="note-and-attributes"><span class="note"><p>
+      Permite que los servidores intermediarios conozcan la fecha de caducidad de la información y por lo tanto que sepan si es necesario verificarla o no.
+    </p></span></div></div></li>
+	<li class="col" id="FMID_243407095FM"><div class="boxed"><div class="nodecontent" style="color:#111111;font-size:100%;">Tipo</div><div class="note-and-attributes"><span class="note"><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Arial" size="2"><b>Tipo</b>: un valor sobre 16 bits que define el tipo de recurso descrito por el registro. El tipo de recurso puede ser uno de los siguientes:</font></p><ul><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Arial" size="2"><b>A</b>: este es un tipo de base que hace coincidir el nombre canónico con la dirección IP. Además, pueden existir varios registros A relacionados con diferentes equipos de la red (servidores).</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Arial" size="2"><b>CNAME</b>(<i>Nombre Canónico</i>): Permite definir un alias para el nombre canónico. Es particularmente útil para suministrar nombres alternativos relacionados con diferentes servicios en el mismo equipo.</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Arial" size="2"><b>HINFO</b>: éste es un campo solamente descriptivo que permite la descripción en particular del hardware del ordenador (CPU) y del sistema operativo (OS). Generalmente se recomienda no completarlo para evitar suministrar información que pueda ser útil a piratas informáticos.</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Arial" size="2"><b>MX</b>(<i>Mail eXchange</i>): es el servidor de correo electrónico. Cuando un usuario envía un correo electrónico a una dirección (user@domain), el servidor de correo saliente interroga al servidor de nombre de dominio con autoridad sobre el dominio para obtener el registro MX. Pueden existir varios registros MX por dominio, para así suministrar una repetición en caso de fallas en el servidor principal de correo electrónico. De este modo, el registro MX permite definir una prioridad con un valor entre 0 y 65,535</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Arial" size="2"><b>NS</b>: es el servidor de nombres de dominio con autoridad sobre el dominio.</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Arial" size="2"><b>PTR</b>: es un puntero hacia otra parte del espacio de nombres del dominios.</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Arial" size="2"><b>SOA</b>(<i>Start Of Authority (Inicio de autoridad)</i>): el campo SOA permite la descripción del servidor de nombre de dominio con autoridad en la zona, así como la dirección de correo electrónico del contacto técnico (en donde el carácter "@" es reemplazado por un punto).</font></p></li></ul></span></div></div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_833110067FM"><div class="nodecontent" style="color:#111111;font-size:100%;">A - Address. Nombres de hosts a direcciones IPv4</div></li>
+	<li class="basic" id="FMID_259203297FM"><div class="nodecontent" style="color:#111111;">AAA - Address. Nombres de hosts a direcciones IPV6</div></li>
+	<li class="basic" id="FMID_434592845FM"><div class="nodecontent" style="color:#111111;">NS - Name server. Asocia nombre de dominio y servidor(es) que almacenan el dominio</div></li>
+	<li class="basic" id="FMID_311705534FM"><div class="nodecontent" style="color:#111111;">MX - Mail eXchange. Asocia nombre de dominio a servidor(es) de intercambio de correo para es dominio</div></li>
+	<li class="basic" id="FMID_1335735131FM"><div class="nodecontent" style="color:#111111;">PTR - Pointer. Registro inverso. Traduce IPs a nombres de dominio</div></li>
+	<li class="basic" id="FMID_1746058357FM"><div class="nodecontent" style="color:#111111;"><a href="http://www.codigomaestro.com/dns/registros-soa-en-servidores-dns/">SOA - Autoridad de la zona. Proporciona información sobre el servidor DNS primario de la zona</a> <a href="http://www.codigomaestro.com/dns/registros-soa-en-servidores-dns/"><img src="DNSmm.html_files/ilink.png" alt="User Link" style="border-width:0"/></a></div></li>
+	<li class="basic" id="FMID_1066821733FM"><div class="nodecontent" style="color:#111111;">TXT - Información textual. Permite a dominios identificarse de modos arbitrarios</div></li></ul></li>
+	<li class="basic" id="FMID_768104542FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">Clase</div><div class="note-and-attributes"><span class="note"><p>
+      Clase<font face="Arial, Helvetica, sans-serif" color="rgb(48, 48, 48)">:</font> la clase puede ser<font face="Arial, Helvetica, sans-serif" color="rgb(48, 48, 48)"> </font>IN<font face="Arial, Helvetica, sans-serif" color="rgb(48, 48, 48)"> </font>(relacionada a protocolos de Internet, y por lo tanto, éste es el sistema que utilizaremos), o<font face="Arial, Helvetica, sans-serif" color="rgb(48, 48, 48)"> </font>CH<font face="Arial, Helvetica, sans-serif" color="rgb(48, 48, 48)"> </font>(para el sistema caótico);
+    </p></span></div></div></li>
+	<li class="basic" id="FMID_1708400266FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">Rdata</div><div class="note-and-attributes"><span class="note"><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>RDATA</b>: estos son los datos relacionados con el registro. Aquí se encuentra la información esperada según el tipo de registro:</font></p><ul><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-top: 0.13cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4">A: la dirección IP de 32 bits:</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-top: 0.13cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4">CNAME: el nombre de dominio;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-top: 0.13cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4">MX: la prioridad de 16 bits, seguida del nombre del ordenador;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-top: 0.13cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4">NS: el nombre del ordenador; PTR: el nombre de dominio</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-top: 0.13cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4">PTR: el nombre de dominio;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-top: 0.13cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4">SOA: varios campos.</font></p></li></ul></span></div></div></li></ul></li></ul></li></ul></li>
+	<li class="col" id="FMID_157749466FM"><div class="nodecontent" style="color:#0033ff;font-size:150%;">Jerarquía</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_988793218FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">Estructura de árbol</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_692526999FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Formado por nodos con etiqueta</div></li>
+	<li class="basic" id="FMID_1902289700FM"><div class="boxed"><div class="nodecontent" style="color:#990000;font-size:117%;">Dominios de nivel superior</div><div class="note-and-attributes"><span class="note"><h3 class="western" style="font-style: normal; font-weight: normal"><font color="#303030" face="Serif" size="4"><b>Dominios de nivel superior</b></font></h3><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm" align="justify"><font color="#303030" face="Serif" size="4">Existen dos categorías de <b>TLD</b> (<i>Dominios de Nivel Superior</i>):</font></p><ul><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4">Los dominios que se conocen como "genéricos", llamados <b>gTLD</b> (<i>TLD genérico</i>). Los gTLD son nombres de dominio de nivel superior genéricos que ofrecen una clasificación de acuerdo con el sector de la actividad. Entonces cada gTLD tiene sus propias reglas de acceso:</font></p><ul><li><p style="padding-right: 0cm; border: none; padding-bottom: 0cm; font-style: normal; margin-top: 0.13cm; padding-left: 0cm; line-height: 0.53cm; padding-top: 0cm; margin-bottom: 0cm; margin-right: 0.42cm; font-weight: normal"><font color="#303030" face="Serif" size="4">gTLD historial:</font></p><ul><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.arpa</b> relacionado con equipos pertenecientes a la </font><a href="http://es.kioskea.net/contents/histoire/internet.php3"><font color="#3487bc" face="Serif" size="4"><u>red original</u></font></a><font color="#303030" face="Serif" size="4">;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.com</b> inicialmente relacionado con empresas con fines comerciales. Sin embargo, este TLD se convirtió en el "TLD predeterminado" y hasta personas reales pueden adquirir dominios con esta extensión.</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.edu</b> relacionado con las organizaciones educativas;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.gov</b> relacionado con las organizaciones gubernamentales;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.int</b> relacionado con las organizaciones internacionales;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.edu</b> relacionado con las organizaciones militares;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.net</b> inicialmente relacionado con las organizaciones que administran redes. Con el transcurso de los años este TLD se ha convertido en un TLD común, y hasta personas reales pueden adquirir dominios con esta extensión.</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.org</b> está normalmente relacionado con organizaciones sin fines de lucro.</font></p></li></ul></li><li><p style="padding-right: 0cm; border: none; padding-bottom: 0cm; font-style: normal; margin-top: 0.13cm; padding-left: 0cm; line-height: 0.53cm; padding-top: 0cm; margin-bottom: 0cm; margin-right: 0.42cm; font-weight: normal"><font color="#303030" face="Serif" size="4">nuevos gTLD presentado en noviembre de 2000 por ICANN:</font></p><ul><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.aero</b> relacionado con la industria aeronáutica;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.biz</b> (<i>negocios</i>) relacionado con empresas comerciales;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.museum</b> relacionada con los museos;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.name</b> relacionada con el nombre de personas reales o imaginarias;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.info</b> relacionado con organizaciones que manejan información;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.coop</b> relacionado con cooperativas;</font></p></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.pro</b> relacionado con profesiones liberales.</font></p></li></ul></li><li><p style="padding-right: 0cm; border: none; padding-bottom: 0cm; font-style: normal; margin-top: 0.13cm; padding-left: 0cm; line-height: 0.53cm; padding-top: 0cm; margin-bottom: 0cm; margin-right: 0.42cm; font-weight: normal"><font color="#303030" face="Serif" size="4">gTLD especial:</font></p><ul><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; margin-right: 0.85cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4"><b>.arpa</b> relacionado con las infraestructuras para la administración de redes. El arpa gTLD también sirve para la resolución inversa de equipos en red y permite hallar el nombre relacionado con una dirección IP.</font></p></li></ul></li></ul></li><li><p style="padding-bottom: 0cm; line-height: 0.53cm; margin-bottom: 0cm; padding-left: 0cm; padding-top: 0cm; border: none; font-style: normal; font-weight: normal; padding-right: 0cm"><font color="#303030" face="Serif" size="4">Los dominios que se conocen como "nacionales", se llaman <b>ccTLD</b> (código de país TLD). El ccTLD está relacionado con los diferentes países y sus nombres refieren a las abreviaturas del nombre del país definidas en la norma ISO 3166. Ejemplos: es - España, uk - Inglaterra</font></p></li></ul><p style="margin-bottom: 0cm"><br/></p></span></div></div></li></ul></li>
+	<li class="col" id="FMID_1516489073FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">nombre de dominio completo</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1488533247FM"><div class="nodecontent" style="color:#990000;font-size:117%;">concatenación etiquetas de un camino</div></li>
+	<li class="basic" id="FMID_1920416483FM"><div class="nodecontent" style="color:#990000;font-size:117%;">separadas por punto</div></li>
+	<li class="col" id="FMID_719354291FM"><div class="nodecontent" style="color:#990000;font-size:117%;">termina en . (nodo raíz)</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1429884415FM"><div class="nodecontent" style="color:#111111;">el punto final se omite normalmente</div></li></ul></li></ul></li>
+	<li class="col" id="FMID_714356811FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">Esquema</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_102107606FM"><div class="nodecontent" style="color:#990000;font-size:117%;"><img src="../../../../../datos/Imágenes/temp/jerarquia-dns.png"/></div></li></ul></li></ul></li>
+	<li class="col" id="FMID_1203467582FM"><div class="nodecontent" style="color:#0033ff;font-size:150%;">Tipos</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_766857228FM"><div class="boxed"><div class="nodecontent" style="color:#00b439;font-size:133%;">Primarios o maestro</div><div class="note-and-attributes"><span class="note"><h2 style="margin-bottom: 10px; font-size: 15px; margin-top: 35px; color: rgb(51, 102, 153); font-family: Verdana, Arial, Helvetica, sans-serif">
+      Servidor DNS maestro
+    </h2>
+    En este modo de funcionamiento, elservidor se comporta como un auténtico servidor DNS para la redl. Atenderá directamente a las peticiones de resolución de direcciones pertenecientes a la red local y reenviará a servidores DNS externos las peticiones del resto de direcciones de Internet.
+  </span></div></div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1802432168FM"><div class="nodecontent" style="color:#990000;font-size:117%;">guadan datos de espacio de nombres</div></li></ul></li>
+	<li class="col" id="FMID_1871699908FM"><div class="boxed"><div class="nodecontent" style="color:#00b439;font-size:133%;">Secundarios o esclavos</div><div class="note-and-attributes"><span class="note"><h2 style="margin-bottom: 10px; font-size: 15px; margin-top: 35px; color: rgb(51, 102, 153); font-family: Verdana, Arial, Helvetica, sans-serif">
+      Servidor DNS esclavo
+    </h2>
+    Un servidor esclavo actuará como un servidor espejo de un servidor DNS primario. Permanecerá sincronizado con el primario o maestro. Se utilizan para repartir las peticiones entre varios servidores aunque las modificaciones solo se realicen en el maestro
+  </span></div></div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1907494313FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Obtienen datos de servidor primario</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_746810689FM"><div class="nodecontent" style="color:#111111;">Proceso de transferencia de zona</div></li></ul></li></ul></li>
+	<li class="col" id="FMID_1487197219FM"><div class="boxed"><div class="nodecontent" style="color:#00b439;font-size:133%;">Cache o locales</div><div class="note-and-attributes"><span class="note"><h2 style="margin-bottom: 10px; font-size: 15px; margin-top: 35px; color: rgb(51, 102, 153); font-family: Verdana, Arial, Helvetica, sans-serif">
+      Servidor caché DNS
+    </h2>
+    En este modo de funcionamiento, el servidor se comporta como si fuera un auténtico servidor DNS para nuestra red local aunque realmente no sea un servidor DNS propiamente dicho. Cuando recibe una petición de DNS por parte de un cliente de nuestra red, la trasladará a un DNS maestro que puede estar en nuestra red o fuera, almacenará en una memoria caché la respuesta y a la vez la comunicará a quien hizo la petición. Si un segundo cliente vuelve a realizar la misma petición, como nuestro servidor tiene la respuesta almacenada en su memoria caché, responderá inmediatamente sin tener que cursar la petición a ningún servidor DNS de Internet.
+
+    <p>
+      Disponer de un servidor caché DNS en nuestra red local aumenta la velocidad de la conexión a Internet pues cuando navegamos por diferentes lugares, continuamente se están realizando peticiones DNS. Si nuestro caché DNS almacena la gran mayoría de peticiones que se realizan desde la red local, las respuestas de los clientes se satisfarán prácticamente de forma instantánea proporcionando al usuario una sensación de velocidad en la conexión.
+    </p></span></div></div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1167027590FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Mismo software  que primarios o secundarios</div></li>
+	<li class="basic" id="FMID_1723628268FM"><div class="nodecontent" style="color:#990000;font-size:117%;">No contienen base datos para resolución nombres</div></li>
+	<li class="basic" id="FMID_955856068FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Al recibir consulta consultan servidor primario o secundario</div></li>
+	<li class="col" id="FMID_1777288090FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Almacenan respuestas en su base de datos</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1676281215FM"><div class="nodecontent" style="color:#111111;">Agilizan futuras peticiones</div></li>
+	<li class="basic" id="FMID_34173729FM"><div class="nodecontent" style="color:#111111;">por un determinado periodo de tiempo</div></li></ul></li></ul></li></ul></li>
+	<li class="col" id="FMID_1847867668FM"><div class="nodecontent" style="color:#0033ff;font-size:150%;">Software bind9</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1185579924FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">Ficheros de configuración en el directorio /etc/bind</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1662832579FM"><div class="boxed"><div class="nodecontent" style="color:#990000;font-size:117%;">named.conf - archivo principal de configuración</div><div class="note-and-attributes"><span class="note"><p>
+      // This is the primary configuration file for the BIND
+    </p><p>
+      DNS server named.
+    </p><p>
+      //
+    </p><p>
+      // Please read /usr/share/doc/bind9/README.Debian.gz
+    </p><p>
+      for information on the
+    </p><p>
+      // structure of BIND configuration files in Debian,
+    </p><p>
+      *BEFORE* you customize
+    </p><p>
+      // this configuration file.
+    </p><p>
+      //
+    </p><p>
+      // If you are just adding zones, please do that in /etc/bind/named.conf.local
+    </p><p>
+      include "/etc/bind/named.conf.options";
+    </p><p>
+      include "/etc/bind/named.conf.local";
+    </p><p>
+      include "/etc/bind/named.conf.default­zones";
+    </p></span></div></div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1397227369FM"><div class="nodecontent" style="color:#111111;font-size:100%;"/>
+		<ul class="subexp">
+	<li class="col" id="FMID_1586890322FM"><div class="nodecontent" style="color:#111111;font-size:100%;">Inserta tres archivos</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_1438083620FM"><div class="nodecontent" style="color:#111111;font-size:100%;">named.conf.options</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1540283406FM"><div class="nodecontent" style="color:#111111;">Opciones genéricas del servidor</div></li></ul></li>
+	<li class="col" id="FMID_432373786FM"><div class="boxed"><div class="nodecontent" style="color:#111111;font-size:100%;">named.conf.default-zones</div><div class="note-and-attributes"><span class="note"><p>
+      // prime the server with knowledge of the root servers
+    </p><p>
+      zone "." {
+    </p><p>
+      type hint;
+    </p><p>
+      file "/etc/bind/db.root";
+    </p><p>
+      };
+    </p><p>
+      zone "localhost" {
+    </p><p>
+      type master;
+    </p><p>
+      file "/etc/bind/db.local";
+    </p><p>
+      };
+    </p><p>
+      zone "127.in-addr.arpa" {
+    </p><p>
+      type master;
+    </p><p>
+      file "/etc/bind/db.127";
+    </p><p>
+      };
+    </p></span></div></div>
+		<ul class="subexp">
+	<li class="col" id="FMID_25564979FM"><div class="nodecontent" style="color:#111111;">Especifica ficheros configuración zonas por defecto</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_388372938FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">zone "."</div><div class="note-and-attributes"><span class="note"><p>
+      La zona “.”. Es la zona correspondiente a los 13 servidores raices.
+    </p><p>
+      /etc/bind/db.root es el fichero que contiene la IP de dichos 13 servidores raices.
+    </p></span></div></div></li>
+	<li class="basic" id="FMID_1536847431FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">zone "localhost"</div><div class="note-and-attributes"><span class="note"><p>
+      La zona “localhost” es para la resolución directa del dispositivo virtual localhost cuya IP es 127.0.0.1
+    </p></span></div></div></li>
+	<li class="basic" id="FMID_621501295FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">zone "127.in-addr.arpa"</div><div class="note-and-attributes"><span class="note"><p>
+      la zona “127.in-addr-arpa” es para la resolución inversa del dispositivo virtual de localhost
+    </p></span></div></div></li></ul></li></ul></li>
+	<li class="basic" id="FMID_844027451FM"><div class="boxed"><div class="nodecontent" style="color:#111111;font-size:100%;">named.conf.local</div><div class="note-and-attributes"><span class="note"><p>
+      Se especifican los ficheros de configuración para las zonas que administra el servidor.
+    </p><p/><p>
+      Ejemplo de contenido del fichero puede ser
+    </p><p/><p>
+      zone "red.local" {
+    </p><p>
+          type master;
+    </p><p>
+          file "/etc/bind/db.red.local";
+    </p><p>
+      };
+    </p><p>
+      zone "0.168.192.in-addr.arpa" {
+    </p><p>
+          type master;
+    </p><p>
+          file "/etc/bind/db.192.168.1";
+    </p><p>
+      };
+    </p></span></div></div></li></ul></li></ul></li></ul></li>
+	<li class="basic" id="FMID_1635014610FM"><div class="boxed"><div class="nodecontent" style="color:#990000;font-size:117%;">db.red.local - Archivos de configuración de búsqueda directa</div><div class="note-and-attributes"><span class="note"><p><font face="Courier New">; Ejemplo de contenido del fichero db.red.local </font></p><p><font face="Courier New">;</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">; BIND data file for red.local</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">; </font></p><p><font face="Courier New">$TTL 2d</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">@ IN SOA red.local. root.red.local. (</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">             1 ; Serial</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">        604800 ; Refresh</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">         86400 ; Retry</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">       2419200 ; Expire</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">      604800 ) ; Default TTL</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New"><br face="Courier New"/></font><font face="Courier New" color="rgb(0, 0, 0)"> </font><font face="Courier New">              IN      NS     ns.red.local.</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">               IN      MX 10  mail.red.local.</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New"><br face="Courier New"/></font><font face="Courier New" color="rgb(0, 0, 0)">a</font><font face="Courier New">ula5pc1       IN      A      192.168.0.101</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">aula5pc2       IN      A      192.168.0.102</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">www            IN      A      192.168.0.111</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">ns             IN      A      192.168.0.112</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">mail           IN      A      192.168.0.112 </font></p><p><font face="Courier New">web                        IN             CNAME    www</font></p></span></div></div></li>
+	<li class="basic" id="FMID_951716871FM"><div class="boxed"><div class="nodecontent" style="color:#990000;font-size:117%;">db.0.168.192.in-addr.arpa</div><div class="note-and-attributes"><span class="note"><p><font face="Courier New">; Ejemplo de fichero de base de datos para búsqueda inversa </font></p><p><font face="Courier New">;</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">; BIND reverse data file for 192.168.0.0</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">;</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">@ IN SOA red.local. root.red.local. (</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">              1 ; Serial</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">         604800 ; Refresh</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">          86400 ; Retry</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">        2419200 ; Expire</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">       604800 ) ; Default TTL</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New"><br face="Courier New"/></font><font face="Courier New" color="rgb(0, 0, 0)"> </font><font face="Courier New">         IN     NS       ns.red.local.</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New"><br face="Courier New"/></font><font face="Courier New" color="rgb(0, 0, 0)">1</font><font face="Courier New">01       IN     PTR      aula5pc1.red.local.</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">102       IN     PTR      aula5pc2.red.local.</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">111       IN     PTR      www.red.local.</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">112       IN     PTR      ns.red.local.</font><font face="Courier New" color="rgb(0, 0, 0)"><br style="white-space: pre; font-variant: normal; text-indent: 0px; letter-spacing: normal; text-transform: none; line-height: 13px; word-spacing: 0px" align="justify" face="Courier New"/></font><font face="Courier New">112       IN     PTR      mail.red.local. </font></p></span></div></div></li></ul></li>
+	<li class="col" id="FMID_1300188953FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">Configuraciones</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1886593930FM"><div class="boxed"><div class="nodecontent" style="color:#990000;font-size:117%;">Cache</div><div class="note-and-attributes"><span class="note"><p><font size="5"><b>Servidor sólo cache</b></font></p><p/><p>
+      Después de instalar bind9 con <font face="Monospaced"><b>sudo apt-get install bind9</b></font></p><p/><p>
+      Para que actue como servidor de cache de la red local sólo hemos de editar el fichero <font face="Monospaced"><b>/etc/bind/named.conf.options</b></font> y descomentar el apartado forwarders e incluirle los servidores de nombre a los que se va a consultar. Normalmente los de nuestro ISP(Telefónica) o el servidor maestro de la red.
+    </p><p/><p>
+      El fichero quedaría:
+    </p><p/><pre>options {
+        directory "/var/cache/bind";
+
+        // If there is a firewall between you and nameservers you want
+        // to talk to, you may need to fix the firewall to allow multiple
+        // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+        // If your ISP provided one or more IP addresses for stable
+        // nameservers, you probably want to use them as forwarders.
+        // Uncomment the following block, and insert the addresses replacing
+        // the all-0's placeholder.
+
+        forwarders {
+                195.235.113.3;
+                195.235.96.90;
+        };
+
+        auth-nxdomain no;    # conform to RFC1035
+        listen-on-v6 { any; };
+};</pre></span></div></div></li>
+	<li class="basic" id="FMID_659800559FM"><div class="boxed"><div class="nodecontent" style="color:#990000;font-size:117%;">Maestro o principal</div><div class="note-and-attributes"><span class="note"><h2 style="padding-right: 0px; padding-bottom: 2px; margin-left: 0px; font-size: 1.3em; margin-top: 0px; padding-left: 0px; color: rgb(90, 51, 32); line-height: 1.2em; padding-top: 2px; margin-bottom: 0px; margin-right: 0px; font-weight: normal" id="Primary_Master_Server_configuration">
+      Primary Master Server configuration
+    </h2><p class="line862">
+      In this section BIND9 will be configured as the primary master for the domain <strong>example.com</strong>. Simply replace <em>example.com</em> with your fully qualified domain name.
+    </p><p class="line867"/><h3 style="padding-right: 0px; padding-bottom: 2px; margin-left: 0px; font-size: 1.1em; margin-top: 0px; padding-left: 0px; color: rgb(90, 51, 32); line-height: 1.2em; padding-top: 2px; margin-bottom: 0px; margin-right: 0px; font-weight: normal" id="Zone_File">
+      Zone File
+    </h3><p class="line862">
+      To add a DNS zone to BIND9, turning BIND9 into a Primary Master server, all you have to do is edit <tt>named.conf.local</tt>:
+    </p><p class="line867"/><pre style="white-space: pre-wrap; padding-right: 4pt; border-bottom-width: 1px; padding-bottom: 4pt; font-family: courier, monospace; border-right-width: 1px; padding-left: 4pt; background-color: rgb(240, 238, 230); padding-top: 4pt; border-left-width: 1px; border-top-width: 1px">        [...]
+
+        zone "example.com" {
+             type master;
+             file "/etc/bind/db.example.com";
+        };
+
+        [...]</pre><p class="line874">
+      Now use an existing zone file as a template:
+    </p><p class="line867"/><pre style="white-space: pre-wrap; padding-right: 4pt; border-bottom-width: 1px; padding-bottom: 4pt; font-family: courier, monospace; border-right-width: 1px; padding-left: 4pt; background-color: rgb(240, 238, 230); padding-top: 4pt; border-left-width: 1px; border-top-width: 1px">sudo cp /etc/bind/db.local /etc/bind/db.example.com</pre><p class="line862">
+      Edit the new zone file <tt>/etc/bind/db.example.com</tt> change <tt>localhost.</tt> to the FQDN of your server, leaving the additional "." at the end. Change <tt>127.0.0.1</tt> to the nameserver's IP Address and <tt>root.localhost</tt> to a valid email address, but with a "." instead of the "@". also leaving the "." at the end.
+    </p><p class="line862">
+      Also, create an <strong>A record</strong> for <em>ns.example.com</em> the name server in this example:
+    </p><p class="line867"/><pre style="white-space: pre-wrap; padding-right: 4pt; border-bottom-width: 1px; padding-bottom: 4pt; font-family: courier, monospace; border-right-width: 1px; padding-left: 4pt; background-color: rgb(240, 238, 230); padding-top: 4pt; border-left-width: 1px; border-top-width: 1px">;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     ns.example.com. root.example.com. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      ns.example.com.
+ns      IN      A       192.168.1.10
+
+box     IN      A       192.168.1.10</pre><p class="line874">
+      You must increment the serial number every time you make changes to the zone file. If you make multiple changes before restarting BIND9, simply increment the serial once.
+    </p><p class="line874">
+      Now, you can add DNS records to the bottom of the zone.
+    </p><p class="line867"><strong>Tip</strong>: Many people like to use the last date edited as the serial of a zone, such as <tt> 2005010100 </tt> which is yyyymmddss (where s is serial)
+    </p><p class="line874">
+      Once you've made a change to the zone file BIND9 will need to be restarted for the changes to take affect:
+    </p><p class="line867"/><pre style="white-space: pre-wrap; padding-right: 4pt; border-bottom-width: 1px; padding-bottom: 4pt; font-family: courier, monospace; border-right-width: 1px; padding-left: 4pt; background-color: rgb(240, 238, 230); padding-top: 4pt; border-left-width: 1px; border-top-width: 1px">sudo /etc/init.d/bind9 restart</pre><p/><h3 style="padding-right: 0px; padding-bottom: 2px; margin-left: 0px; font-size: 1.1em; margin-top: 0px; padding-left: 0px; color: rgb(90, 51, 32); line-height: 1.2em; padding-top: 2px; margin-bottom: 0px; margin-right: 0px; font-weight: normal" id="Reverse_Zone_File">
+      Reverse Zone File
+    </h3><p class="line874">
+      Now that the zone file is setup and resolving names to IP Adresses a Reverse zone is also required. A Reverse zone allows DNS to convert from an address to a name.
+    </p><p class="line862">
+      Edit<span class="Apple-converted-space"> </span><tt>/etc/bind/named.conf.local</tt><span class="Apple-converted-space"> </span>and add the following:
+    </p><p class="line867"/><pre style="white-space: pre-wrap; padding-right: 4pt; border-bottom-width: 1px; padding-bottom: 4pt; font-family: courier, monospace; border-right-width: 1px; padding-left: 4pt; background-color: rgb(240, 238, 230); padding-top: 4pt; border-left-width: 1px; border-top-width: 1px">zone "1.168.192.in-addr.arpa" {
+        type master;
+        notify no;
+        file "/etc/bind/db.192";
+};</pre><p class="line867"><strong>Note:</strong><span class="Apple-converted-space"> </span>replace<span class="Apple-converted-space"> </span><strong>1.168.192</strong><span class="Apple-converted-space"> </span>with the first three octets of whatever private network you are using. Also, name the zone file<span class="Apple-converted-space"> </span><strong>db.192</strong><span class="Apple-converted-space"> </span>in the example appropriately.
+    </p><p class="line862">
+      Now create the<span class="Apple-converted-space"> </span><tt>db.192</tt><span class="Apple-converted-space"> </span>file:
+    </p><p class="line867"/><pre style="white-space: pre-wrap; padding-right: 4pt; border-bottom-width: 1px; padding-bottom: 4pt; font-family: courier, monospace; border-right-width: 1px; padding-left: 4pt; background-color: rgb(240, 238, 230); padding-top: 4pt; border-left-width: 1px; border-top-width: 1px">sudo cp /etc/bind/db.127 /etc/bind/db.192</pre><p class="line862">
+      Next edit<span class="Apple-converted-space"> </span><tt>/etc/bind/db.192</tt><span class="Apple-converted-space"> </span>changing the basically the same options as in<span class="Apple-converted-space"> </span><tt>/etc/bind/db.example.com</tt>:
+    </p><p class="line867"/><pre style="white-space: pre-wrap; padding-right: 4pt; border-bottom-width: 1px; padding-bottom: 4pt; font-family: courier, monospace; border-right-width: 1px; padding-left: 4pt; background-color: rgb(240, 238, 230); padding-top: 4pt; border-left-width: 1px; border-top-width: 1px">;
+; BIND reverse data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     ns.example.com. root.example.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      ns.
+10      IN      PTR     ns.example.com.</pre><p class="line862">
+      The serial number in the reverse zone needs to be incremented on each changes as well. For each<span class="Apple-converted-space"> </span><strong>A record</strong><span class="Apple-converted-space"> </span>you configure in<tt>/etc/bind/db.example.com</tt><span class="Apple-converted-space"> </span>you need to create a<span class="Apple-converted-space"> </span><strong>PTR record</strong><span class="Apple-converted-space"> </span>in<span class="Apple-converted-space"> </span><tt>/etc/bind/db.192</tt>.
+    </p><p class="line862">
+      After creating the reverse zone file restart<span class="Apple-converted-space"> </span><strong>bind9</strong>:
+    </p><p class="line867"/><pre style="white-space: pre-wrap; padding-right: 4pt; border-bottom-width: 1px; padding-bottom: 4pt; font-family: courier, monospace; border-right-width: 1px; padding-left: 4pt; background-color: rgb(240, 238, 230); padding-top: 4pt; border-left-width: 1px; border-top-width: 1px">sudo /etc/init.d/bind9 restart</pre></span></div></div></li>
+	<li class="basic" id="FMID_1563681872FM"><div class="boxed"><div class="nodecontent" style="color:#990000;font-size:117%;">Esclavo o secundario</div><div class="note-and-attributes"><span class="note"><h2 style="background-position: initial initial; background-repeat: repeat; background-attachment: scroll; color: rgb(32, 96, 32); font-family: Verdana, Arial, Helvetica, serif; font-weight: normal; background-image: initial"><a name="Configuración de un DNS secundario">Configuración de un DNS secundario</a></h2><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px">
+      El DNS primario debe apuntar <font color="rgb(96, 32, 32)"><tt style="color: rgb(96, 32, 32)">ns2</tt></font> al servidor BIND que va a actuar de DNS secundario. En el fichero db.red.local del servidor principal añadimos los registros
+    </p><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px"/><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px">
+      ns2         IN     NS   ns2.red.local.
+    </p><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px">
+      ns2         IN     A     192.168.1.205
+    </p><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px"/><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px">
+      Edita <font color="rgb(96, 32, 32)"><tt style="color: rgb(96, 32, 32)">named.conf.local</tt></font> en el DNS primario y agrega a la zona la instrucción <font color="rgb(96, 32, 32)"><tt style="color: rgb(96, 32, 32)">allow-transfer</tt></font>,
+    </p><div class="block" style="background-image: initial; background-attachment: scroll; padding-right: 0; border-bottom-width: 1px; background-position: initial initial; padding-bottom: 0px; margin-left: 0; margin-top: 0; border-right-width: 1px; padding-left: 0; background-color: rgb(248, 248, 255); color: rgb(0, 0, 0); padding-top: 0px; border-left-width: 1px; margin-bottom: 0; border-top-width: 1px; margin-right: 0; background-repeat: repeat"><pre>zone "red.local" {
+        type master;
+        file "/etc/bind/db.red.local";
+        allow-query { any; };
+        allow-transfer { 192.168.1.205; };
+};</pre></div><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px">
+      en donde <font color="rgb(96, 32, 32)"><tt style="color: rgb(96, 32, 32)">allow-transfer</tt></font> debe llevar el número IP del servidor DNS secundario indicado en el archivo de zona.
+    </p><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px">
+      Edita <font color="rgb(96, 32, 32)"><tt style="color: rgb(96, 32, 32)">named.conf.local</tt></font> en el DNS secundario y agrega al final del archivo,
+    </p><div class="block" style="background-image: initial; background-attachment: scroll; padding-right: 0; border-bottom-width: 1px; background-position: initial initial; padding-bottom: 0px; margin-left: 0; margin-top: 0; padding-left: 0; border-right-width: 1px; background-color: rgb(248, 248, 255); color: rgb(0, 0, 0); padding-top: 0px; border-left-width: 1px; margin-bottom: 0; border-top-width: 1px; margin-right: 0; background-repeat: repeat"><pre>zone "red.local" {
+        type slave;
+        file "/etc/bind/db.red.local";
+        allow-query { any; };
+        masters { 192.168.1.201; };
+};</pre></div><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px">
+      en donde <font color="rgb(96, 32, 32)"><tt style="color: rgb(96, 32, 32)">masters</tt></font> debe llevar el número IP del servidor DNS primario indicado en el archivo de zona.
+    </p><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px"/><p class="Body" style="margin-bottom: 0; margin-right: 0px; text-indent: 0; margin-top: 0px; margin-left: 0px">
+      El fichero db.red.local no hay que crearlo en el secundario. Los registros se cargan automáticamente del servidor maestro
+    </p></span></div></div></li>
+	<li class="basic" id="FMID_1468908643FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Delegación de autoridad</div></li></ul></li>
+	<li class="col" id="FMID_726977151FM"><div class="nodecontent" style="color:#00b439;font-size:133%;">Comandos y comprobaciones</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_534267736FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Reiniciar servicio</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_963089669FM"><div class="nodecontent" style="color:#111111;font-size:100%;">sudo /etc/init.d/bind9 restart</div></li></ul></li>
+	<li class="col" id="FMID_122242888FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Log del servicio</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1658470794FM"><div class="nodecontent" style="color:#111111;font-size:100%;">/var/log/syslog</div></li>
+	<li class="col" id="FMID_497646854FM"><div class="nodecontent" style="color:#111111;font-size:100%;">Comprobación en vivo</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1890179384FM"><div class="nodecontent" style="color:#111111;">tail -f /var/log/syslog</div></li></ul></li></ul></li>
+	<li class="col" id="FMID_1547629778FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Comprobacion de zonas</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_188761140FM"><div class="boxed"><div class="nodecontent" style="color:#111111;font-size:100%;">named-checkzone </div><div class="note-and-attributes"><span class="note"><p>
+      Ejemplo 1: comprobación de la zona red.local cuyos registros se almacenan en db.red.local
+    </p><p/><p>
+                named-checkzone red.local.  /etc/bind/db.red.local
+    </p><p/><p>
+      Ejemplo 2: comprobación de la zona de resolución inversa
+    </p><p/><p>
+                named-checkzone 0.168.192.in-addr.arpa
+    </p></span></div></div></li></ul></li>
+	<li class="col" id="FMID_1222756135FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Comprobación ficheros configuración</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_1300399260FM"><div class="nodecontent" style="color:#111111;font-size:100%;">Comprueba errores en fichero de configuración y en todos los que incluye</div></li>
+	<li class="basic" id="FMID_1227400160FM"><div class="nodecontent" style="color:#111111;font-size:100%;font-weight:bold;">named-checkconf /etc/bind/named.conf</div></li></ul></li>
+	<li class="col" id="FMID_1631164127FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Puerto</div>
+		<ul class="subexp">
+	<li class="col" id="FMID_571295283FM"><div class="nodecontent" style="color:#111111;font-size:100%;">DNS escucha por defecto puerto 53 en los protocolos TCP y UDP</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_373740153FM"><div class="boxed"><div class="nodecontent" style="color:#111111;">sudo netstat -tapun</div><div class="note-and-attributes"><span class="note"><p>
+      Muestra protocolos y puertos a la escucha
+    </p></span></div></div></li></ul></li></ul></li>
+	<li class="col" id="FMID_261046735FM"><div class="nodecontent" style="color:#990000;font-size:117%;">Comandos cliente</div>
+		<ul class="subexp">
+	<li class="basic" id="FMID_885875266FM"><div class="nodecontent" style="color:#111111;font-size:100%;">nslookup</div></li>
+	<li class="basic" id="FMID_90929115FM"><div class="nodecontent" style="color:#111111;font-size:100%;">dig</div></li>
+	<li class="basic" id="FMID_1379750032FM"><div class="nodecontent" style="color:#111111;font-size:100%;">host</div></li></ul></li></ul></li></ul></li></ul></li></ul></div></body></html>

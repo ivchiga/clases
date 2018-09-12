@@ -1,0 +1,147 @@
+* Referencias
+
+http://koo.fi/blog/2013/03/20/linux-ipv6-router-radvd-dhcpv6/
+http://www.dickson.me.uk/2011/03/08/setting-up-a-ipv6-gateway-on-hurricane-electric-using-ubuntu-lucid-lynx-10-04-2/
+
+* Topología
+
+Server: modo puente + red interna
+Cliente: red interna
+
+Red ULA
+fd5f:12c9:2201::/48 ULA prefijo de enrutamiento y la subred fd5f:12c9:2201:1::/64 como prefijo de red
+
+* Configuración red en servidor
+
+Tarjeta de red conectada a la red interna
+
+$ sudo ifdown enp0s8
+
+$ sudo nano /etc/network/interfaces
+
+# añadimos
+
+auto enp0s8
+iface enp0s8 inet6 static
+  address fd5d:12c9:2201:1::1
+  netmask 64
+  autoconf 0
+  dad-attempts 0
+  accept_ra 0
+
+* Publicando configuración de red para los clientes
+
+A continuación instalamos y configuramos el servicio de publicación de enrutamiento que nos permitirá que los equipos que se conecten a la misma red obtengan de forma automática dirección IPv6 de la red publicada.
+
+sudo apt-get install radvd
+
+$ sudo nano /etc/radvd.conf
+interface enp0s3
+{
+    AdvSendAdvert on;
+    prefix fd5d:12c9:2201:1::/64 {
+        AdvOnLink on;
+        AdvAutonomous on;
+    };
+    #Send DNS Server setting - assumes there is a DNS server setup at the address below
+    RDNSS fd5d:12c9:2201:1::2{
+    };
+};
+
+Activamos el enrutamiento por ipv6
+
+sudo nano /etc/sysctl.conf
+# Uncomment the next line to enable packet forwarding for IPv6
+# net.ipv6.conf.all.forwarding=1
+
+Now were going to enable IPv6 forwarding on the fly.
+sudo sysctl -p
+1
+	
+sudo sysctl -p
+
+$ sudo su
+# echo "1" > /proc/sys/net/ipv6/conf/all/forwarding
+
+Para que se active el enrutamiento por IPv6 cada vez que se reinicie el equipo añadimos en la penúltima línea del fichero /etc/rc.local el comando anterior
+
+# exit
+$ sudo nano /etc/rc.local
+
+echo "1" > /proc/sys/net/ipv6/conf/all/forwarding
+
+
+Aplicamos la configuración de la red y reiniciamos el servicio radvd
+
+$ sudo ifup enp0s8
+
+$ sudo systemctl restart radvd
+
+Si en el servidor/router comprobamos la dirección del dispositivo debería aparecer
+
+Y si arrancamos el equipo cliente o le reiniciamos la red debería tener una dirección IPv6 de la red definida en el servicio radvd
+
+Para comprobarlo ejecutamos en ambos
+
+$ ip -6 addr
+
+Si hacemos ping del cliente al servidor deberíamos obtener respuesta:
+
+$ ping6 fd5d:12c9:2201:1::1
+
+* Configuración de servicios de DHCP y DNS.
+
+Con radvd los clientes obtienen dirección Ipv6 de la red que publiquemos, pero tiene como inconvenientes que no proporciona otros parámetros de red y que no podemos fijar la dirección que obtienen los clientes.
+
+Para que el router use un servidor de DHCP tenemos que configurar el servicio de radvd de forma que indique a los nodos cliente que contacten con un servidor de DHCP para obtener el resto de la configuración. Para ello añadimos dos líneas al fichero /etc/radvd.conf de forma que quede:
+
+interface eth0
+{
+     AdvSendAdvert on;
+     prefix fd5d:12c9:2201:1::1/64 {
+        AdvOnLink on;
+        AdvAutonomous on;
+        AdvManagedFlag on; # obtener dirección IP de servidor de DHCP
+        AdvOtherConfigFlag on; # obtener resto de parámetros de red de servidor de DHCP
+    };
+};
+
+Instalamos servidor de DHCP
+
+$ sudo apt-get install isc-dhcp-server
+
+/etc/dhcp/dhcpd6.conf
+
+ddns-update-style interim;
+ddns-updates on;
+
+update-conflict-detection false;
+update-optimization false;
+
+option domain-name "testipv6.local";
+option dhcp6.name-servers fd5d:12c9:2201:1::1;
+
+default-lease-time 600;
+max-lease-time 7200;
+include "/etc/dhcp/rndc.key";
+
+log-facility local7;
+
+zone testipv6.local. {
+                          primary 127.0.0.1;
+                          key rndc-key;
+}
+
+
+zone 1.0.0.0.1.0.2.2.c.9.2.1.d.5.d.f {
+        primary 127.0.0.1;
+        key rndc-key;
+}
+
+subnet6 fd5d:12c9:2201:1::/64 {
+     range6 fd5d:12c9:2201:1::100 fd5d:12c9:2201:1::200;
+}
+
+$ sudo systemctl restart isc-dhcp-server6.service
+
+

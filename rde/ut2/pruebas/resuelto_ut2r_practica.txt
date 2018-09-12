@@ -1,0 +1,46 @@
+1 0,6
+a) cable eléctrico y de datos no apantallado
+b) No cumple la norma. Para cable de datos y eléctrico no apantallados la separación sin divisor debería ser de 200mm <- 20cm
+c) No cumple la norma. La separación del cable de motores eléctricos debería ser de 120 cm
+d) No cumple la norma. Las rosetas de clase D equivalen a la categoría 5e y nuestra instalación debería ser de categoría 6.
+e) No cumple la norma. El espacio que se debe dejar alrededor de las puertas debería ser de 120 cm.
+f) No cumple la norma porque el cambio completo de aire debería hacerse cada hora
+g) Cumple la norma porque los distribuidores de todas las plantas están conectados directamente el de edificio.
+
+2) 
+
+Número de tomas
+300 usuarios x 2 tomas/usuario = 600 tomas
+15 despachos x 2 tomas/despacho = 30 tomas
+3 s reuniones x 4 tomas/s reuniones = 12 tomas
+
+Total = 642 tomas
+
+Grupos 24 U
+642tomas x 1 grupo 24U / 24 tomas = 26,75 grupos 24U = 27 grupos 24U
+
+27U <- parcheo
+27U <- electrínica de red
+27U <- organizadores de cable
+27/6 = 4,5 = 5U <- módulos alimentación
+0,3 x 86 =  25,8 = 26 U de espacio libre
+
+Total = 112 U
+
+Número de armarios = 112 U / 42U/armario = 2,6 = 3 armarios
+
+3) Cables en canalización
+
+120x50 = 6000 mm2 <- espacio para cables = 3000 mm2
+
+2 cables ------> 125 mm2
+x cables ------> 3000 mm2
+
+x = 2 x 3000 / 125 = 48 cables
+
+135x55 = 7425 mm2 <- espacio para cables = 3712,5 mm2
+
+2 cables ------> 125 mm2
+x cables ------> 3712,5 mm2
+
+x = 2 x 3712,5 / 125 = 59,4 = 59 cables

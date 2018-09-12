@@ -1,0 +1,74 @@
+<map version="0.9.0">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node COLOR="#000000" CREATED="1347915008448" ID="ID_1648583783" MODIFIED="1347918949271" TEXT="Clasificaci&#xf3;n redes">
+<font NAME="SansSerif" SIZE="20"/>
+<hook NAME="accessories/plugins/AutomaticLayout.properties"/>
+<node COLOR="#0033ff" CREATED="1347915034471" ID="ID_394613630" MODIFIED="1347919046238" POSITION="left" STYLE="fork" TEXT="Por la titularidad">
+<edge STYLE="sharp_bezier" WIDTH="8"/>
+<font NAME="SansSerif" SIZE="18"/>
+<node COLOR="#00b439" CREATED="1347915058589" ID="ID_1839893721" MODIFIED="1347918878928" TEXT="Atiende a la propiedad de la red">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="16"/>
+</node>
+<node COLOR="#00b439" CREATED="1347915081655" ID="ID_1782933081" MODIFIED="1347918878929" TEXT="Tipos">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="16"/>
+<node COLOR="#990000" CREATED="1347915090476" ID="ID_1792677679" MODIFIED="1347918878929" TEXT="Dedicadas o privadas">
+<font NAME="SansSerif" SIZE="14"/>
+<node COLOR="#111111" CREATED="1347915114894" ID="ID_1289135400" MODIFIED="1347918878930" TEXT="propietario no p&#xfa;blico"/>
+<node COLOR="#111111" CREATED="1347915178431" ID="ID_1824771583" MODIFIED="1347918878931" TEXT="pueden ser alquiladas para uso exlusivoa compa&#xf1;&#xed;as">
+<node COLOR="#111111" CREATED="1347915216543" ID="ID_1275946503" MODIFIED="1347918878931" TEXT="privadas"/>
+<node COLOR="#111111" CREATED="1347915229236" ID="ID_1783094549" MODIFIED="1347918878932" TEXT="p&#xfa;blicas"/>
+</node>
+</node>
+<node COLOR="#990000" CREATED="1347915099710" ID="ID_1644537749" MODIFIED="1347918878933" TEXT="Compartidas o p&#xfa;blicas">
+<font NAME="SansSerif" SIZE="14"/>
+<node COLOR="#111111" CREATED="1347915255317" ID="ID_582854127" MODIFIED="1347918878933" TEXT="Propietario p&#xfa;blico"/>
+<node COLOR="#111111" CREATED="1347915272317" ID="ID_1441523655" MODIFIED="1347918878934" TEXT="Propietario normalmente compa&#xf1;&#xed;as">
+<node COLOR="#111111" CREATED="1347915323630" ID="ID_1012697850" MODIFIED="1347918878935" TEXT="telef&#xf3;nicas"/>
+<node COLOR="#111111" CREATED="1347915328304" ID="ID_1675141903" MODIFIED="1347918878935" TEXT="de cable"/>
+</node>
+<node COLOR="#111111" CREATED="1347915358012" ID="ID_1165744154" MODIFIED="1347918878936" TEXT="bajo cuota de alquiler por transferencia"/>
+<node COLOR="#111111" CREATED="1347915398800" ID="ID_722227469" MODIFIED="1347918878937" TEXT="Ejemplos">
+<node COLOR="#111111" CREATED="1347915403273" ID="ID_896431706" MODIFIED="1347918878937" TEXT="redes telef&#xf3;nicas conmutas">
+<node COLOR="#111111" CREATED="1347915691500" ID="ID_309957805" MODIFIED="1347918878938" TEXT="RTB"/>
+</node>
+<node COLOR="#111111" CREATED="1347915416846" ID="ID_678077420" MODIFIED="1347918878939" TEXT="redes de datos cable">
+<node COLOR="#111111" CREATED="1347915677333" ID="ID_1244328256" MODIFIED="1347918878939" TEXT="ADSL"/>
+<node COLOR="#111111" CREATED="1347915681006" ID="ID_520761650" MODIFIED="1347918878940" TEXT="CableModem"/>
+</node>
+<node COLOR="#111111" CREATED="1347915435378" ID="ID_9860444" MODIFIED="1347918878941" TEXT="redes m&#xf3;viles de datos">
+<node COLOR="#111111" CREATED="1347915460071" ID="ID_50943617" MODIFIED="1347918878941" TEXT="GSM"/>
+<node COLOR="#111111" CREATED="1347915463368" ID="ID_1889612929" MODIFIED="1347918878942" TEXT="3G"/>
+<node COLOR="#111111" CREATED="1347915469418" ID="ID_149357697" MODIFIED="1347918878943" TEXT="HDSPA"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node COLOR="#0033ff" CREATED="1347915783932" ID="ID_1272681870" MODIFIED="1347919079238" POSITION="left" TEXT="Por la topolog&#xed;a">
+<edge STYLE="sharp_bezier" WIDTH="8"/>
+<font NAME="SansSerif" SIZE="18"/>
+<node COLOR="#00b439" CREATED="1347915911610" ID="ID_815569362" MODIFIED="1347915949527" TEXT="Atiende a la forma de interconectar nodos">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="16"/>
+</node>
+<node COLOR="#00b439" CREATED="1347915923088" ID="ID_449182060" MODIFIED="1347915949528" TEXT="Tipos">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="16"/>
+</node>
+</node>
+<node COLOR="#0033ff" CREATED="1347915847567" ID="ID_738241379" MODIFIED="1347919251640" POSITION="right" TEXT="Por la transferencia de la informaci&#xf3;n">
+<edge STYLE="sharp_bezier" WIDTH="8"/>
+<font NAME="SansSerif" SIZE="18"/>
+</node>
+<node COLOR="#0033ff" CREATED="1347915874930" ID="ID_453463532" MODIFIED="1347915949530" POSITION="right" TEXT="Por el tama&#xf1;o">
+<edge STYLE="sharp_bezier" WIDTH="8"/>
+<font NAME="SansSerif" SIZE="18"/>
+</node>
+<node COLOR="#0033ff" CREATED="1347915886237" ID="ID_1569667136" MODIFIED="1347915949530" POSITION="right" TEXT="Por la relaci&#xf3;n funcional">
+<edge STYLE="sharp_bezier" WIDTH="8"/>
+<font NAME="SansSerif" SIZE="18"/>
+</node>
+</node>
+</map>

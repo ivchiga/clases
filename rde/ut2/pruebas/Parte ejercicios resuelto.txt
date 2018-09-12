@@ -1,0 +1,61 @@
+Ejercicio 1 (0)
+
+b) Si  cumple la normativa, la norma española UNE-EN 50174-2 establece las siguientes separaciones: Cable de datos UTP y cable eléctrico apantallado 30 mm  para con divisor no metálico, como es el de PVC.
+c) Cumple la normativa. En cualquier tipo de cable, no es necesario separación en los últimos 15 metros más cercanos a la roseta.
+d) Cumple porque la clase E europea equivale a la Cat6 americana. 
+e) No cumple porque debe estar a más de 15m del cuarto de T
+f) No cumple. Ya que el cuarto de telecomunicaciones tiene que estar en una sala para uso exclusivo de cableado de telecomunicaciones y de sistemas auxiliares(bastidores,concentradores,aire acondicionado)
+g) El distribuidor de planta debe ir conectado a un distribuidor de edificio de forma directa. El de la tercera planta no lo está.
+
+Ejercicio 2 (0)
+El número de conectores de red: 
+
+540 usuarios previstos x 2 tomas/usuario previsto = 1080 tomas
+1 puesto/despacho x 15 despachos x 2 tomas/puesto = 30 tomas
+2 puestos/sala de reuniones x 3 salas de reuniones x  2 tomas/puesto = 12 tomas
+1080 tomas + 30 tomas + 12 tomas = 1122 tomas
+
+El número de unidades de armario necesarios (U):
+
+1122 tomas / 24 tomas/panel de parcheo =  46,75 paneles de parcheo
+Utilizamos 47U de paneles de parcheo
+U de paneles de parcheo = U de pasahilos = U de switch = 47U
+Utilizamos 47U de pasahilos
+Utilizamos 47U de switch
+47U de switch / 5 switch/electroblock = 9,4U de electroblock
+Utilizamos 10U de electroblock
+47U de paneles de parcheo + 47U de switch + 47U de pasahilos + 10U de electroblock = 151U
+151U + 30% de espacio que ha de dejarse libre por normativa = 196,3
+Utilizamos 197U para la instalacion
+
+El número de armarios necesarios : 
+
+197U / 42U/armario = 4,6 armarios
+Utilizamos 5 armarios
+
+Ejercicio 3 (0)
+120x50mm :
+
+120mm x 50mm = 6000mm2 
+6000mm2 – 50% de espacio a dejar libre por normativa = 3000mm2
+3000mm2 / 125mm2/2 cables = 48 cables
+Instalamos 48 cables
+ 
+135x55mm : 
+
+135mm x 55mm = 7425mm2 
+7425mm2 – 50% de espacio a dejar libre por normativa = 3712,5mm2 
+3712,5mm2 / 125mm2/2 cables = 59,4 cables
+Instalamos 59 cables
+
+Ejercicio 4 (0)
+80mm x 55mm = 4400 mm2 
+120mm x 55mm = 6600 mm2 
+140mm x 70mm = 9800 mm2 
+75 cables x 125mm2/2cables = 4687,5 mm2 ocupados por cables
+mm2 ocupados por cables = mm2 que deben quedar libres por normativa
+4687,5 mm2 ocupados por cables + 4687,5 mm2 que deben quedar libres por normativa = 9375mm2 de area requerida para la canaleta
+4400 - 9375 = -4975 (No caben los 75 cables)
+6600 - 9375 = -2775 (Caben los 75 cables pero no se cumple la norma)
+9800 - 9375 = 425 (Caben los 75 cables cumpliendo la normativa)
+Utilizamos la canaleta de 140x70mm

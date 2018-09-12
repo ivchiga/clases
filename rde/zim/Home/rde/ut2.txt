@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-24T08:22:41+01:00
+
+====== UT2-La capa de enlace ======
+
+===== Recursos =====
+* [[https://smr.iesharia.org/mod/url/view.php?id=3150|Apuntes de la capa de enlace en wiki]]
+
+===== Actividades =====
+* [[./actividades/REO-UT2-A1. Tarjeta de red_NIC.odt|UT2-A1. La tarjeta de red]]
+* [[./actividades/REO-UT2-A2. Practica. Intro-packettracerv3.odt|UT2-A2. Introducción a packet tracer]]
+	* [[./actividades/ut2-a2.pkt|Archivo PT practica 2]]
+* [[./actividades/Capa de enlace.mm|UT2-A3. Mapa conceptual. Capa de enlace de datos]]
+* [[./actividades/REO-UT2-A4 Direccionamiento_fisicov2.odt|UT2-A4. Direccionamiento físico y elementos de la capa de enlace]]
+* [[https://smr.iesharia.org/mod/quiz/view.php?id=4507|UT2-A6.Cuestionario. Técnicas de acceso al medio]]
+* [[./actividades/REO-UT2-A7. conmutación de tramas.odt|UT2-A7. Práctica. PT. Conmutación de tramas.]]
+	* [[./actividades/ut2-a7-pt.pkt|Archivo de Packet Tracer]]
+* [[./actividades/REO-UT2-A8. Dominios de difusión y de colisión.odt|UT2-A8. Dominios de difusión y de colisión]]
+* [[./actividades/REO-UT2-A9. Supuestos prácticos-i.odt|UT2-A9. Supuestos prácticos. Ejercicios (I)]]
+* [[./actividades/REO-UT2-A10. Supuestos prácticos-ii.odt|UT2-A10. Supuestos prácticos. Ejercicios (II)]]
+

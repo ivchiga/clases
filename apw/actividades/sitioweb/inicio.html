@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html style="" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>The 1140px CSS Grid System · Fluid down to mobile</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	<!-- The 1140px Grid - http://cssgrid.net/ -->
+	<link rel="stylesheet" href="estilos/1140.css" type="text/css" media="screen">
+	
+	<!-- Your styles -->
+	<link rel="stylesheet" href="estilos/styles.css" type="text/css" media="screen">
+</head>
+
+
+<body>
+
+<div class="container header">
+	<div class="row">
+		<div class="logo"><h1>A 1140px wide, 12 column grid. Fluid all the way down to a mobile version.</h1></div>
+	</div> <!--/row-->
+</div> <!--/container-->
+
+<div class="container intro">
+	<div class="row">
+	
+		<div class="fourcol">
+		
+			<div class="cc">
+				<a rel="license" href="http://creativecommons.org/licenses/by/3.0/au/"><img src="images/cc.png" alt="Creative Commons Attribution 3.0 Australia License"></a>
+			</div>
+		
+			<div id="download">
+				
+				<div id="button"></div>
+				<img src="images/download.png" alt="Download">
+				
+			</div>
+			
+			
+			
+		</div> <!--/fourcol-->
+		
+		<div class="sevencol last introcopy">
+			<p>The 1140 grid fits perfectly into a 1280 monitor. On smaller monitors it becomes fluid and adapts to the width of the browser.</p>
+			<p>Beyond a certain point it uses media queries to serve up a mobile 
+version, which essentially stacks all the columns on top of each other 
+so the flow of information still makes sense.</p>
+			<p>Scrap 1024! Design once at 1140 for 1280, and with very little 
+extra work, it will adapt itself to work on just about any monitor, even
+ mobile.</p>
+		
+			
+			
+			<div id="influads_block" class="influads_block"> </div>
+			
+		</div>
+	</div>
+</div> <!--/container-->
+
+<div class="container details">
+	<div class="row">
+		<div class="fourcol">
+			<h2>Why 12 columns?</h2>
+			<p>Twelve divides into even columns of two, three, four or six.</p>
+			<p>Or into numerous uneven combinations like seven and five or five, four, three.</p>
+			<p>The last example is as simple as three divs with the classes <code>.fivecol</code>, <code>.fourcol</code> and <code>.threecol</code></p>
+			
+			<h2>Mobile version</h2>
+			<p>By mobile, I really mean smart phones. I'm not even attempting to 
+support WAP phones or anything old like that. But it does work on 
+devices that recognise 'handheld' in the style sheet media and/or media 
+queries. With media queries you can even include x2 images for the 
+iPhone 4 Retina Display.</p>
+			
+			<h2>Photoshop Template</h2>
+			<p>Download a Photoshop template of <a href="http://download.cssgrid.net/1140_CccGrid_Template.psd" class="ongreenlink">the grid at 1140px here</a>. It's based on how it's displayed in WebKit, so it's actually 1133px, as all browsers round sub-pixels slightly differently.</p>
+			
+		</div>
+		
+		<div class="fourcol">
+			<h2>New computers, old computers, netbooks, tablets, smartphones, some feature phones.</h2>
+			<p>So far I've tested it on a couple of MacBooks, an iMac, a PC 
+laptop, an old PC, an Eee PC, an iPad, an iPhone 3G, an iPhone 4, a few 
+Android phones, a Samsung Galaxy Tab, a BlackBerry and an older Nokia.</p>
+			
+			<h2>Browser support</h2>
+			<p>It works perfectly in Chrome, Safari, Firefox, IE7 &amp; IE8.</p>
+			<p>It works alright in IE6. IE6 doesn't support <code>max-width</code>,
+ so the grid doesn't fix to 1140px. It spans the full width of the 
+browser. Most people using IE6 probably don't have monitors with a 
+resolution higher than 1280x1024 though. Images are also not restrained 
+to the width of the column because of max-width. But the extra image is 
+hidden, rather than breaking the layout.</p>
+			<p><strong>Note:</strong> IE6 accounts for less than 1% of total traffic to <a href="http://www.catchingzebra.com/" class="ongreenlink">my blog</a>. Check your analytics.</p>
+		</div>
+		
+		<div class="fourcol last">
+			<h2>Bigger gutters</h2>
+			<p>Because it's all based off percentages, the gutters vary in size. But at full width the gutters are about 40px wide.</p>
+			<h2>Images</h2>
+			<p>If an image is smaller than the column it is contained in, it will
+ be displayed at its original size. If it is larger then it will be 
+shrunk to the width of the column. Don't define height and width of 
+images inline, it'll break the proportions if they're scaled down.</p>
+			<a href="http://www.flickr.com/photos/andytlr/3186450801/" title="Fingers of god in Tuscany by andytlr, on Flickr"><img src="images/goodfingers.jpg" alt="Fingers of god in Tuscany" height="334" width="500"></a>
+		</div>
+	</div> <!--/row-->
+</div> <!--/container-->
+
+
+
+
+
+</body></html>

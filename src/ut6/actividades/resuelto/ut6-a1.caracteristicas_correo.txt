@@ -1,0 +1,176 @@
+1. Cuenta de correo electrónico
+
+a) ¿Qué es?
+
+es un servicio de red que permite a los usuarios enviar y recibir mensajes (también denominados mensajes electrónicos o cartas digitales) mediante sistemas de comunicación electrónica. Para denominar al sistema que provee este servicio en Internet, mediante el protocolo SMTP,  aunque por extensión también puede verse aplicado a sistemas análogos  que usen otras tecnologías. Por medio de mensajes de correo electrónico  se puede enviar, no solamente texto, sino todo tipo de documentos  digitales dependiendo del sistema que se use.(sergio)
+Servicio online que provee un espacio para la recepción, envío y almacenamiento de mensajes de correo electrónico en internet.
+
+es un servicio que permite el intercambio de mensajes a través de  sistemas de comunicación electrónicos. El concepto se utiliza  principalmente para denominar al sistema que brinda este servicio vía Internet (jose fabian)
+
+b) Nombre o dirección de cuenta de correo¿De qué partes se compone?. ¿Qué tipo de caracteres puede incluir?. ¿Cuál es su longitud máxima?
+
+Una dirección de correo, está compuesta por tres partes:
+  - Nombre del usuario: El nombre del usuario (a la izquierda de la arroba), en este ejemplo, nombre. Este nombre es único el cual depende normalmente de la elección del usuario y es un identificador cualquiera, que puede tener letras, números, y algunos signos. Es importante construir un nombre que se recuerde fácilmente.
+  - El signo @ (arroba). Una dirección de correo se reconoce fácilmente porque siempre tiene la @ que significa “pertenece a…”
+  - El dominio. A la derecha del signo arroba, está el dominio que es el nombre del proveedor que da el correo, y por lo tanto es algo que el usuario no puede cambiar.
+Ejemplo: carlosbastidas@gmail.com (sergio)
+
+ ¿Qué tipo de caracteres puede incluir?
+
+Al elegir los nombres de usuario y contraseñas para los usuarios y grupos que añadas a tu cuenta, considera lo siguiente:
+    Los nombres de usuario pueden contener letras (a-z), números (0-9), guiones (-), guiones bajos (_) y puntos (.).
+    Los nombres de usuario no pueden contener un signo igual (=), paréntesis (<,>), signo más (+) o más de un punto (.) en una fila.
+    Las contraseñas pueden contener cualquier combinación de caracteres ASCII y deben incluir un mínimo de 8 caracteres.
+    Los nombres y apellidos admiten caracteres unicode/UTF-8, con un máximo de 60 caracteres.
+    Los puntos (.) no se omiten ya que aparecen en una cuenta de gmail.com . Si creas una cuenta de usuario denominada nombredeusuario, este usuario no podrá recibir mensajes dirigidos a nombre.usuario o nom.bre.usua.rio, o a cualquier otra combinación de puntos. Para permitir que un usuario reciba correo con estas variantes, crea un alias de correo electrónico para estas. (sergio)
+
+
+¿Cuál es su longitud máxima?
+
+64 para la parte local (la cuenta/nombre) y 255 para el dominio. Creo que el @ de la muestra será contado extra, de modo que las sumas a 320.(sergio)
+
+2. Alias de correo¿Qué son?¿Para qué se emplean?¿Qué tipo de alias podemos crear?
+
+Un alias de correo es una variedad de redireccionamiento de una cuenta de correo a otra(jose fabian)
+Un alias de correo es una direccion especial en tu dominio que redirige todos los mensajes que recibe a otra cuenta 
+TIpos de alias: 
+- Alias especifico: Puede ser una cuenta de tu dominio o a una direccion externa. Un alias puede tener uno o varios destinos.
+- Alias universal: Que recibe cualquier direccion de tu dominio.
+
+Ejemplo de uso 
+Un ejemplo muy común de implementanción de alias son las direcciones corporativas mas comunmente usadas. Si una mpresa quiere crear una dirección POP3:                         
+ventas@dominio.com
+En vez de tener una cuenta adicional POP3 puede crear un alias ventas@ que redireccione todos los mensajes que recibe al buzón POP3 de la persona encargada de atender las ventas. 
+
+3. Elementos del servicio de correo electrónico. Los servicios de correo electrónico se basan en un modelo cliente-servidor y pueden utilizarse en cualquier red TCP/IP. En el proceso de envío y recepción del correo participan tres tipos de programas: MTA, MDA y MUA. Explicar que es cada uno y para qué sirve
+
+El MTA, del inglés Mail Transport Agent (Agente de Transporte de Correo) y tiene la tarea de transportarlos hacia el MTA del destinatario.(Miguel)
+El MDA, del inglés Mail Delivery Agent (Agente de Entrega de Correo) almacena el correo electrónico mientras espera que el usuario lo acepte.(Miguel)
+El MUA, del inglés Mail User Agent (Agente Usuario de Correo) es el proceso de recuperación del correo(Miguel)
+
+4. Inserta una imagen del esquema de funcionamiento del servicio de correo electrónico en el que aparezcan el cliente que envía un mensaje, el MTA, el MDA el MUA y el receptor del mensaje.
+https://guioos.files.wordpress.com/2010/11/final1.png (Samuel)
+http://manuais.iessanclemente.net/images/c/c9/Correo-mua-mta-mda.png (jose fabian)
+http://www.suarezdefigueroa.es/manuel/SRI/imagenes/correo1.jpg (Paula)
+
+5. Explica el proceso que sigue un correo desde que es enviado hasta que llega a su destino:
+El proceso comienza habitualmente cuando un usuario, usando su  programa de correo electrónico favorito, escribe un mensaje y lo envía a  un destinatario, indicando la dirección de correo de éste.
+En primer lugar, el programa compone un mensaje válido conforme a las indicaciones del rfc2822
+Para  ello antepone unas cabeceras al texto escrito, y posiblemente codifica  éste de alguna forma. Si el mensaje incluye ficheros adjuntos, compone  el mensaje según la especificación MIME.
+Lo siguiente e entregar este mensaje a un ordenador de nuestra  institución, o de nuestro proveedor de acceso a Internet, que es quien  se encargará de hacerlo llegar a su destino
+Para esta entrega,  establece una comunicación según el protocolo SMTP con el ordenador que  tengamos configurado en el programa en el apartado 'Servidor de correo  saliente', 'SMTP server' o algo parecido, según el programa que usemos.
+
+Mediante dicho protocolo, nuestro programa proporciona al servidor tres cosas:
+  - La dirección de correo-e de quien envía el mensaje (dirección remite del sobre)
+  - La dirección destino. Pueden ser una o varias (dirección/es destino del sobre)
+  - El mensaje en sí, incluyendo las cabeceras.
+
+El servidor normalmente aceptará el mensaje y lo pondrá en su cola de trabajos
+que  puede estar más o menos cargada según el tráfico que soporte, aunque  habitualmente ningún mensaje se retrasa más de unos segundos.
+
+Que el mensaje sea aceptado no significa que vaya a ser entregado  finalmente, pues tanto este servidor como otros por los que puede pasar  el mensaje en el futuro en el camino a su destino, pueden estar  configurados para someter los mensajes que procesan a filtros como por  ejemplo:
+
+  - Detectar si tienen virus
+  - Intentar detectar si es correo basura o ilícito
+  - Si su tamaño es superior a un umbral permitido
+  - En el caso del MTA final, puede ocurrir que la dirección no exista (por ejemplo, hemos enviado a 'jperz@univer.es', sin darnos  cuenta del error en la dirección, que hasta que no llega el mensaje al  MTA de 'univer.es' no se detecta el problema) o que haya algún problema  técnico que impida su entrega
+
+En el caso de no pasar alguno de estos filtros de un MTA, éste  normalmente genera automáticamente un mensaje de correo de error que  envía al remitente del sobre el servidor que ha recibido el mensaje ana las que ya existan, indicando de qué ordenador ha recibido el mensaje y la fecha y hora.
+A continuación tiene que decidir qué hacer con él, y lo hace en función  de la dirección destino del sobre. Si hay varias, típicamente actuará  como si fueran varios mensajes, uno destinado a cada dirección final.  (ADRI)
+
+https://es.wikipedia.org/wiki/Correo_electr%C3%B3nico#/media/File:C%C3%B3mo_funciona_el_e-mail.svg [HECTOR]
+
+6. Formato de los mensajes de correo electrónico. El protocolo SMTP fija que los mensajes de correo electrónico deben llevar una cabecera y un cuerpo. Qué campos debe llevar la cabecera y para qué sirve cada uno.
+Formato de texto plano donde sabemos que permanecerá inalterable y todos los usuarios que reciban el correo lo verán de la misma manera
+Formato de texto enriquecido que nos permite trabajar como si fuera un documento de texto de Word añadiendo negritas, listas desordenadas, etc. 
+Formato HTML es el más rico de los tres y el que optan la  mayoría puesto que incorpora al mensaje al mundo de la web y no hay  problemas de lectura con otros servidores de correos distintos a  Exchange. Se trata de mostrar nuestro mensaje en un contexto en el que  se relacionan contenidos y adjuntos permitiendo que la exposición pueda  desarrollarse de forma más clara.
+
+El encabezado, un conjunto de líneas que contienen información  sobre la transmisión del mensaje, tales como la dirección del remitente,  la dirección del destinatario, o fechas y horas que muestran cuándo los  servidores intermediarios enviaron el mensaje a los agentes de  transporte (MTA), que actúan como una oficina de clasificación de correo
+
+CABECERA:
+Cada cabecera consta de un nombre, o identificador, y a continuación,  separado de éste por el carácter 'dos puntos' (:), su valor. Si una  línea de la parte de cabeceras (esto es, antes de la primera línea  vacía, que indica el fin de las mismas) comienza por espacios, se  considera que es continuación de la línea anterior. Las principales cabeceras que todo mensaje debe llevar son:
+
+    From: Remitente del mensaje
+
+    To: Destinatario
+
+    Subject: Asunto (breve descripción, típicamente de una línea o menos)
+
+    Date: Fecha en que se envió
+
+    Hay otras que aparecen a veces:
+
+    Cc: Otro/s destinatario/s, además de quien figura en el 'To:'
+
+    Reply-To: A qué dirección debe ir la respuesta del mensaje (si la  hay). Sólo aparece en caso de que el remitente no desee que se use para  eso la dirección que figura en 'From:'
+
+    Return-Path: El remitente 'del sobre' del mensaje. (Paula)
+
+
+7. Protocolos y servicios de descarga de correo electrónico.
+PROTOCOLOS:
+-Protocolo POP.
+-Protocolo IMAP.
+Existen diversos servicios de recepción del correo electrónico. Los más utilizados son POP e IMAP. Qué puertos utilizan en su versión normal y en su versión segura. En qué se diferencian POP e IMAP.
+POP Puertos:
+
+    Port 110 -  Este es el puerto por defecto no encriptado  de POP3
+
+    Port 995 - Este es el puerto que necesitas si quieres usar una conexión Segura POP3 (ALEJANDRO)
+
+IMAP Puertos.:
+
+    Port 143 -  Este es el puerto por defecto no encriptado  de  IMAP 
+
+    Port 993 - Este es el puerto que necesitas si quieres usar una conexión Segura IMAP  (ALEJANDRO)
+
+ POP e IMAP: (ALEJANDRO)
+
+    La principal diferencia es que IMAP permite leer el correo sin tener que descargarlo en el equipo local. Todas las operaciones se realizan en el servidor y no en el equipo de usuario como hace POP3.
+
+    Además, permite la conexión de múltiples usuarios o programas gestores de correo de forma simultánea a un mismo propietario.
+
+    Permite la obtención parcial o total de los mensajes y sus adjuntos, así como, soporte para búsquedas en la parte del servidor. (ALEJANDRO)
+
+
+A diferencia del POP, utilizando IMAP  la conexión entre la computadora local y el servidor de email debe  estar siempre activa pues hay una constante interacción entre ambos. (Paula)
+
+
+8. Protocolos y servicios de envío de correo electrónico.
+PROTOCOLOS:
+-Protocolo de transporte SMTP. 
+-Protocolos de acceso a correo.
+Existen distintos tipos de servicios de correo electrónico. Los más utilizados son los basados en SMTP. ¿Cuáles son sus características principales (puerto, codificación de los mensajes, versión segura)?
+PUERTOS SMTP:
+Puertos25/TCP
+587/TCP (alternativo para clientes de correo)
+465/TCP (SMTPS)
+El servidor SMTP admite la utilización de Seguridad de la capa de transporte (TLS) para cifrar las transmisiones.(Paula)
+
+El protocolo SMTP  (Protocolo simple de transferencia de correo) es el protocolo estándar que permite la transferencia de correo de un servidor a otro mediante una conexión punto a punto.
+Éste  es un protocolo que funciona en línea, encapsulado en una trama   TCP/IP. El correo se envía directamente al servidor de correo del   destinatario.  (ALEJANDRO)
+
+    SMTP – port 25 or 2525 or 587
+
+    Secure SMTP (SSL / TLS) – port 465 or 25 or 587, 2526 (Elastic Email)(ALEJANDRO)
+
+
+
+9. Tipos MIME. ¿Que son?¿Para que sirven?¿Por qué se crearon?
+MIME (Extensiones Multipropósito de Correo Internet) es un  estándar para expandir las  capacidades limitadas del correo electrónico y en particular para  permitir la inserción de documentos (como imágenes, sonido y texto) en  un mensaje.
+MIME está dedicada a mejorar las posibilidades de transferencia de texto en distintos idiomas y alfabetos. (Paula)
+
+MIME es un estándar para criptografía de clave pública y firmado de correo electrónico encapsulado  (jose fabian)
+funciones de MIME:
+
+    autenticación, integridad y no repudio (mediante el uso de firma digital) y
+
+    privacidad y seguridad de los datos (mediante el uso de cifrado)
+
+
+
+
+
+
+
+

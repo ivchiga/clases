@@ -1,0 +1,27 @@
+1. Configurar wireless desde la línea de comandos - clientes - herramientas
+  - wifi-radar
+  - http://caleudum.com/how-to-connect-wifi-using-command-line-on-ubuntubacktrack/
+  - https://help.ubuntu.com/community/WifiDocs/WiFiHowTo
+2. Distintos tipos de configuración punto de acceso
+  -adhoc
+  -infraestructure
+  - roaming
+  - configurar equipo con tarjeta de red wifi como punto de acceso y router para compartir acceso a internet
+
+3. Seguridad - Distintos tipos de cifrado
+  - monitorización trafico wifi
+  - detección intrusiones <- airsnare
+  - wep, wpa
+  - inssider
+
+
+4. Canales - ancho de banda herramientas para ver redes disponibles - antenas alcance
+
+2. Enlaces wireless punto punto + redes + enrutamiento
+
+3. Portal cautivo
+  - Easy hotspot: http://recursostic.educacion.es/observatorio/web/es/equipamiento-tecnologico/redes/1005-como-crear-tu-portal-cautivo-con-easy-hotspot
+  - Zentyal
+  - Subsistemas implicados
+  - Control de ancho de banda
+

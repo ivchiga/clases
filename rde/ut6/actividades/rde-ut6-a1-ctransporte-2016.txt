@@ -1,0 +1,102 @@
+LA CAPA DE TRANSPORTE
+1. Conceptos básicos
+1.1. ¿De qué se encarga la capa de transporte?
+
+
+1.2. ¿Cuáles son la capa superior e inferior de la capa de transporte?
+1.2.1.  En el modelo OSI
+
+
+1.2.2. En la arquitectura TCP/IP
+
+
+1.3.¿En qué se diferencian una aplicación y un proceso?
+
+1.4. ¿Puede haber más de un proceso de la misma aplicación (explicar)?
+
+1.5. En la capa de transporte 
+¿Qué es un puerto?
+
+¿Qué identifica un puerto?
+
+¿Qué tipos de puertos hay?
+
+2.1. Características del protocolo UDP
+2.1.1. Nombre del PDU de este protocolo
+
+2.1.2. Servicios que ofrece
+
+2.1.3. ¿Es fiable?¿garantiza la recepción?
+
+2.1.4. ¿Reordena los PDU recibidos?¿Garantiza el orden de los datos recibidos?
+
+2.1.5. ¿Incluye mecanismos de control de la congestión?
+
+2.2. Ventajas e inconvenientes del uso del protocolo UDP
+
+Ventajas:
+
+Inconvenientes:
+
+2.3. Formato PDU del protocolo UDP
+Nota: Incluir aquí los campos de información más importantes que incluye el encabezado del PDU del protocolo , la logitud de los campos y para qué sirve cada uno
+
+2.4. Proceso de transmisión de datos mediante UDP
+Nota: describir brevemente el proceso de transmisión cuando se utiliza este protocolo. Incluir también URL a imágenes en las que se muestre un esquema del proceso de transmisión con UDP
+
+2.5. Aplicaciones que utilizan UDP
+Nota: incluir varios servicios y aplicaciones que utilizan este protocolo para la transmisión de datos y explicar brevemente para que sirven
+
+3. Transmission Control Protocol (TCP)
+3.1 Características del protocolo TCP
+3.1.1. ¿Cómo se llama el PDU de este protocolo?
+
+3.1.2. ¿Se establece conexión lógica?¿De qué tipo es la conexión (punto a punto, multipunto)?
+
+3.1.3. ¿Es fiable la entrega de datos?
+
+3.1.4. ¿Qué pasa con los PDU que no llegan al destinatario?¿Qué pasa si llega un PDU duplicado?
+
+3.1.5. ¿Hay mecanismos de control de flujo?¿Hay mecanismos de detección de errores?
+
+3.2. Servicios que ofrece
+Nota: hablar aquí de los servicios que ofrece el protocolo TCP a la capa superior
+
+3.3. Ventajas e inconvenientes del protocolo TCP
+Nota: explicar las ventajas e inconvenientes de este protocolo, sobre todo respecto al protocolo UDP. Nombrar aplicaciones en las que se suele utilizar.
+ Ventajas:
+
+ Inconvenientes:
+
+3.4. Formato de la PDU
+Nota: Incluir aquí los campos de información más importantes que incluye el encabezado del PDU del protocolo , la logitud de los campos y para qué sirve cada uno
+
+
+3.5. Estados en una conexión TCP
+Nota: incluir aquí un listado con todos los estados por los que puede pasar una conexión TCP y explicar brevemente cada uno
+
+
+3.6. Transmisión de datos mediante TCP
+Nota: describir el proceso de transmisión cuando se utiliza este protocolo. ¿Qué sucede durante las etapas de establecimiento de la conexión, transmisión de datos y cierre de la conexión?
+Incluir también URL a imágenes en las que se muestre un esquema del proceso de transmisión
+
+4. Tabla comparativa de los protocolos TCP y UDP
+Completa la siguiente tabla comparativa de ambos protocolos
+
+
+|-------------------------------------|-------------|------------|
+|            Característica           |     TCP     |     UDP    |
+|-------------------------------------|-------------|------------|
+| Transporte fiable                   |             |            |
+|-------------------------------------|-------------|------------|
+| Orientado a conexión                |             |            |
+|-------------------------------------|-------------|------------|
+| Retransmisión de PDU                |             |            |
+|-------------------------------------|-------------|------------|
+| Control de flujo                    |             |            |
+|-------------------------------------|-------------|------------|
+| Secuenciación de PDU                |             |            |
+|-------------------------------------|-------------|------------|
+| Acuse de recibo                     |             |            |
+|-------------------------------------|-------------|------------|
+

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-26T11:57:06+00:00
+
+====== UT4. Enrutamiento en redes locales ======
+
+===== Recursos =====
+
+===== Actividades =====
+* [[./actividades/enrutamiento.mm|UT4-A1. Enrutamiento. Mapa conceptual]]
+* [[./actividades/ut4-a2.odt|UT4-A2. Tabla de enrutamiento de esquema de red]]
+* [[./actividades/RDE-UT4-A3-Tabla de enrutamiento de esquema de red(ii).odt|UT4-A3. Tabla de enrutamiento de esquema de red (II)]]
+* [[./actividades/RDE-UT4-A4. Pguiada. Enrutamiento estático con PTv4.odt|UT4-A4. Práctica guiada. Enrutamiento con Packet Tracer]]
+	* [[./actividades/ut4-a4.pkt|Fichero de packettracer]]
+* [[./actividades/rde-ut4-a5._practica._consolidacion._enrutamiento_estaticov3.odt|UT4-A5. Práctica de consolidación. Enrutamiento estático]]
+	* [[./actividades/ut4-a4.pkt|Fichero de packettracer]]
+* [[./actividades/RDE-UT4-A6. Práctica. Enrutamiento con Linux.odt|UT4-A6. Enrutamiento con Linux Tarea]] 

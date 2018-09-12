@@ -1,0 +1,25 @@
+dnscript
+keepassx
+cifrado de carpeta personal
+Honeypot:
+  * Serie de articulos con práctica completa: http://tecnoloxiaxa.blogspot.com.es/2011/08/manual-de-honeyd.html
+  * honeyd y enlace a otros honeypots entre ellos algunos online: https://nullpwd.wordpress.com/2011/08/26/honeyd-your-own-virtual-honeypot/
+  * Dionaea hotspot: dionaea.carnivore.it
+Uso de metaexploit
+  
+Práctica ataque diccionario FTP
+Vamos a hacer un ejercicio en el que averiguaremos la contraseña de un usuario de un
+servidor de ftp. Para ello usaremos el software Brutus, cuyo cometido es precisamente este,
+averiguar usuarios y contraseñas de servidores web, ftp, etc.
+1.- En primer lugar, vamos a instalar el servidor ftp Filezilla Server y un cliente ftp Filezilla.
+Vamos a crear un usuario llamado alumno con password 123. El directorio por defecto de este
+usuario puede ser la carpeta Mis Documentos, por ejemplo.
+2.- Vamos a tratar de averiguar la contraseña del usuario alumno empleando el método
+denominado de fuerza bruta ¿Cuánto tarda del programa en averiguarla?
+3.- A continuación, cambiaremos la contraseña del usuario para que sea 1234. Volvemos a
+repetir el proceso para encontrar la contraseña por el método de la fuerza bruta. ¿Cuánto ha
+tardado el programa en averiguarla ahora?
+4.- A continuación, añade al diccionario una contraseña, por ejemplo juande, y ponle esa
+contraseña al usuario alumno del ftp. Prueba ahora a encontrar la contraseña por el método
+del diccionario. ¿Cuánto ha tardado el programa ahora?
+

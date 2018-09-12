@@ -1,0 +1,65 @@
+Teoría
+
+Criptografía actual
+
+Ya en la época anterior a la II Guerra Mundial, tras la aparición de los primeros ordenadores y la posibilidad de realizar cálculos más complejos y, después de ella, que se empezaron a utilizar técn icas matemáticas y estadísticas para desarrollar el cifrado y el criptoanálisis, se dio paso a lo que conocemos como criptografía actual.
+
+Con la extensión de la informática y el uso de Internet, se ha hecho necesario el uso de la criptografía en muchos ámbitos de nuestra vida cotidiana, no sólo en el terreno político y militar.
+
+A mediados de los años setenta surgieron los avances importantes como la publicación de algorítmos de cifrado, como el DES, y el concepto de clave pública, que cambió la forma de funcionamiento de muchos sistemas de encriptación y que dio paso al desarrollo de algoritmos de cifrado asimétrico, frente a los algoritmos de cifrado simétrico usado hasta entonces
+
+GPG
+
+Pretty Good Privacy (PGP), es un software de cifrado creado por Phil Zimmerman en los años 90 que se convirtió en poco tiempo en el estándar criptográfico mundial a nivel de usuario
+¿Quien es el propietario actual de PGP?¿Cuánto cuesta actualmente utilizarlo?
+ el propietario es   Philip Zimmermann (jose fabian)
+Symantec
+http://buy.symantec.com/estore/clp/category-encryption 
+
+
+¿Qué es GPG o Gnu Privacy Guard?¿En qué sistemas operativos funciona?
+Es una herramienta de cifrado y firmas digitales desarrollado por Werner Koch, que viene a ser un reemplazo del PGP (Pretty Good Privacy) pero con la principal diferencia que es software libre licenciado bajo la GPL. GPG utiliza el estándar del IETF denominado OpenPGP.
+
+GPG también puede ser compilado en otras plataformas como Mac OS X y Windows GNU/Linux (sergio)
+
+-> Comúnmente incluido en los sistemas operativos como FreeBSD, OpenBSD, NetBSD y GNU/Linux.(@osvaldo)
+-> GNU Privacy Guard (GnuPG o- GPG) es una herramienta de cifrado y firmas digitales desarrollado por Werner Koch, que viene a ser un reemplazo del PGP (Pretty Good Privacy) pero con la principal diferencia que es software libre licenciado bajo la GPL.(@osvaldo)
+
+
+¿Qué tipo de información se puede cifrar con Gnu Privacy Guard?
+Cualquier tipo de archivo
+
+¿Qué es un certificado de revocación y por qué es buena idea crearlo?
+Servirá  para anular la clave que estés utilizando
+El certificado de revocación sirve, por si llegamos a extraviar o nos vulneran nuestra clave privada, avisamos, con este certificado, que la clave pública ya no debe ser usada. (fran)
+Es recomendable hacer este certificado una vez nuestra clave privada se encuentre en peligro, ya que si lo hacemos antes, y un usuario malintencionado logra hacerse con el certificado, podría usarlo y revocar nuestra clave. (Gustavo)
+
+
+¿Qué es un anillo de claves?                                 
+Un anillo de claves es un depósito abstracto en donde guardas claves como las PGP o contraseñas, por ejemplo la de hotmail, o la de este foro, hay depósitos de claves como el de gnome o el de kde (kwallet). 
+Un anillo de claves no te va a proteger de ataques, pero lo que hace es resguardar la contraseña de una cuenta en donde guardas información sensible, como tu correo, tu cuenta en linea del banco, es decir, cuando tengas activado el anillo de claves, tu no tendrás que escribir ni tu nombre usuario y contraseña en X aplicación o cuenta de internet, sólo pondrás una clave para desbloquear el anillo de claves, y este pone la información por ti, esto con el objeto de protegerte contra un keylogger.
+
+Utilizando gpg firma un archivo de texto digitalmente (sin encriptar) y envíaselo a un compañero junto con la firma. Inserta los pasos
+  nano documento.txt → lo rellenamos
+ gpg --clearsign documento.txt → lo estás firmando
+ cat documento.txt.asc → documento ya firmado
+ Para generar la contraseña a parte del documento escrito, generamos un documento y ejecutamos:
+$ gpg -a --detach-sign adriana2.txt 
+
+
+
+5. Firmando ficheros
+
+Una forma de garantizar la integridad de un fichero al ser trasmitido es firmarlo electrónicamente. Responde a las siguientes preguntas:
+¿En qué consiste el proceso de firmado de ficheros? 
+¿Con qué clave firma el remitente un archivo que desea enviar?
+¿Con que clave comprueba el receptor la integridad del archivo recibido?
+
+Proceso por el que se introduce informacion a un archivo que permite validar la identidad de la persona que lo ha generado y la integridad del archivo.
+
+Con la clave privada a partir de un resumen del archivo 
+
+Con la publica del remitente 
+
+
+

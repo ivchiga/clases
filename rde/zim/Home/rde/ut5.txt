@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-02-19T12:33:14+00:00
+
+====== UT5. VLAN ======
+
+===== Recursos =====
+* [[https://smr.iesharia.org/wiki/doku.php/rde:ut5:vlan|Apuntes de clase]]
+
+===== Actividades =====
+* [[./actividades/vlan/VLAN.mm|UT5-A1.VLAN. Características]]
+* [[./actividades/RDE-UT5-A2. Pguiada. VLAN con PT.odt|UT5-A2. Práctica guiada. VLAN con Paquet Tracer]]
+* [[./actividades/RDE-UT5-A3. Práctica VLAN con PT.pdf|UT5-A3. Práctica. VLAN con Paquet Tracer]]
+* [[./actividades/RDE-UT5-A4. Práctica VLAN-enrutamiento.pdf|UT5-A4. Práctica VLAN + enrutamiento (I)]]
+* [[./actividades/ut5-a6.odt|UT5-A6. Dominios de difusión en VLAN]]

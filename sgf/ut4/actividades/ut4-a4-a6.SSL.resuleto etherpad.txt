@@ -1,0 +1,344 @@
+Configuración de SSL en Apache2 (www.miempresaxy.com)
+
+Accedemos a la carpeta en la que se almacenan los hosts virtuales de Apache
+
+    $ cd /etc/apache2/sites-available
+
+
+copiamos el archivo default-ssl.conf
+
+    $ sudo cp default-ssl.conf www.miempresaxy.com.conf
+
+
+creamos carpeta dentro de apache donde guardaremos los certificados de nuestro servidor (miempresaxy.crt y miempresaxy.key)
+
+    $ cd /etc/apache2/
+
+    $ sudo mkdir ssl
+
+ 
+los archivos que tenemos que copiar esta en la carpeta ~/temp
+
+    $ cd ~/temp
+
+    $ sudo cp miempresaxy.key /etc/apache2/ssl/ 
+
+    $ sudo cp miempresaxy.crt /etc/apache2/ssl
+
+
+ahora vamos a editar el host www.miempresaxy.com.conf
+
+    $ sudo nano /etc/apache2/sites-available/www.miempresaxy.com.conf
+
+añadimos:
+
+    ServerName www.miempresaxy.com
+
+    ServerAlias www.miempresaxy.com
+
+    DocumentRoot /var/www/miempresaxy
+
+    <Directory /var/www/miempresaxy/>
+
+    DirectoryIndex index.html index.php
+
+    Options -Indexes
+
+    </Directory>
+
+
+Modificamos las directivas SSLCertificateFile y SSLCertificateKeyFile con la ruta de la clave pública y de la clave privada del certificado que hemos generado para el servidor
+
+    SSLCertificateFile /etc/apache2/ssl/miempresa12.crt
+
+    SSLCertificateKeyFile /etc/apache2/ssl/miempresa12.key
+
+
+Descomentamos la línea en la que se especifica la autoridad certificadora
+
+    #SSLCACertificateFile /etc/apache2/ssl.crt/ca-bundle.crt
+
+
+Quedará
+
+    SSLCACertificateFile /etc/ssl/certs/cacert.pem
+
+
+Al final el contenido del fichero de configuración del Host Virtual debería quedar de la forma
+
+    <IfModule mod_ssl.c>
+
+    <VirtualHost _default_:443>
+
+    ServerAdmin admin@miempresaxy.com
+
+    ServerName www.miempresaxy.com
+
+    ServerAlias www.miempresaxy.com
+
+    DocumentRoot /var/www/miempresaxy
+
+    <Directory /var/www/miempresaxy/>
+
+    DirectoryIndex index.html index.php
+
+    Options -Indexes
+
+    </Directory>
+
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+
+    SSLEngine on
+
+
+    SSLCertificateFile /etc/apache2/ssl/miempresaxy.crt
+
+    SSLCertificateKeyFile /etc/apache2/ssl/miempresaxy.key
+
+    SSLCACertificateFile /etc/ssl/certs/cacert.pem
+
+
+    <FilesMatch "\.(cgi|shtml|phtml|php)$">
+
+    SSLOptions +StdEnvVars
+
+    </FilesMatch>
+
+    <Directory /usr/lib/cgi-bin>
+
+    SSLOptions +StdEnvVars
+
+    </Directory>
+
+    sudo 
+
+    BrowserMatch "MSIE [2-6]" \
+
+    nokeepalive ssl-unclean-shutdown \
+
+    downgrade-1.0 force-response-1.0
+
+    BrowserMatch "MSIE [17-9]" ssl-unclean-shutdown
+
+    </VirtualHost>
+
+    </IfModule>
+
+
+
+Creamos la carpeta raíz de la web
+
+    $ sudo mkdir /var/www/miempresaxy
+
+
+Creamos un fichero HTML de prueba:
+
+    $ cd /var/www/miempresxy
+
+    $ sudo nano index.html
+
+
+Introducimos:
+
+    <h1>Finally you got miempresaxy.com working. Great!. You are the "Puto amo"</h1>
+
+
+Habilitamos el módulo ssl en Apache2
+
+    $ sudo a2enmod ssl
+
+
+Haibilitamos el Host Virtual
+
+    $ sudo a2ensite www.miempresaxy.com.conf
+
+
+Reiniciamos Apache
+
+Configuramos en nuestro equipo el fichero /etc/hosts para acceder al servidor
+
+Finalmente introducimos en el navegarod la URL del Host virtual accediendo al mismo por SSL:
+
+    https://www.miempresaxy.com
+
+
+Generando certificado para la web www.lanzarote.com
+
+Para generar el certificado ejecutamos:
+
+    $ cd ~/temp
+
+    $ openssl req -newkey rsa:1024 -nodes -out lanzarote.com.csr -keyout lanzarote.com.key
+
+
+Ponemos el mismo código de país, provincia, ciudad y empresa. En Domain FQDN ponemos www.lanzarote.com
+
+Una vez generado el certificado lo firmamos por la autoridad certificadora.:
+
+    $ sudo openssl ca -batch -notext -in lanzarote.com.csr -out lanzarote.com.crt
+
+
+Verificamos el certificado ejecutando:
+
+    $ openssl x509 -noout -text -in lanzarote.com.crt
+
+
+
+De la misma forma que en el apartado anterior creamos un Host Virtual con soporte para SSL para lanzarote.com y le ponemos los parámetros adecuados además de las rutas al certificado, a la clave privada y al certificado de la autoridad certificadora.
+
+Forzar SSL en servidor
+
+Para forzar que todo el tráfico a nuestro servidor web sea SSL c
+
+
+Creamos otro un host virtual para acceder a www.lanzarote.com sin ssl:
+
+
+    $ sudo nano /etc/apache2/sites-available/nossl.www.lanzarote.con.conf
+
+
+Lo configuramos de forma que tenga el mismo  docuemtRoot que www.lanzarote.con.conf (SSL)
+
+
+    ServerName www.lanzarote.com
+
+    ServerAlias www.lanzarote.com
+
+
+    ServerAdmin webmaster@lanzarote.net
+
+    DocumentRoot /var/www/user1/public_html
+
+
+    <Directory /var/www/user1/public_html/>
+
+    DirectoryIndex index.html index.php
+
+    Options -Indexes
+
+    AllowOverride All                             # añadimos esta  linea
+
+    </Directory>
+
+
+La línea AllowOverride permite que configuremos el Host Virtual desde las carpetas de los archivos añadiendo el contenido de la configuración al archivo .htaccess en la carpeta en la que queremos que se apliquen las reglas.
+
+Las reglas que vamos a aplicar hacen que cuando escribamos http://www.lanzarote.com la petición sea reescrita a https://www.lanzarote.com. Para ello debemos tener habilitado en Apache el módulo rewrite. Lo hacemos ejecutando:
+
+
+    $ sudo a2enmod rewrite
+
+
+Habilitamos el sitio
+
+
+    $ sudo a2ensite nossl.www.lanzarote.con.conf
+
+
+Creamos el archivo .htaccess en la carpeta raíz del host virtual 
+
+    $ sudo nano /var/www/user1/public_html/.htaccess
+
+
+Insertamos en el mismo:
+
+
+    RewriteEngine On 
+
+    RewriteCond %{SERVER_PORT} 80 
+
+    RewriteRule ^(.*)$ https://www.lanzarote.com/$1 [R,L]
+
+
+Lo que hacen las líneas anteriores, básicamente es que cuando accedemos un recurso de la web por el puerto 80 a la carpeta redirige la petición a https://www.lanzarote.com/$1 
+
+
+Acceso SSL por FTP
+
+Vamos a habilitar el acceso por SSL para el servidor FTP de la práctica SRC-UT5-A1 para el usuario de la web lanzarote.com de forma que pueda acceder a ftp.lanzarote.com utilizando SSL.
+
+Para ello los pasos que debemos dar son:
+
+1. Generar certificado firmado y clave privada para el FQDN ftp.lanzarote.com
+
+
+    $ cd ~/temp 
+
+
+    $ openssl req -newkey rsa:1024 -nodes -out ftp.lanzarote.com.csr -keyout ftp.lanzarote.com.key
+
+
+    $ sudo openssl ca -batch -notext -in ftp.lanzarote.com.csr -out ftp.lanzarote.com.crt 
+
+
+    $ openssl x509 -noout -text -in  ftp.lanzarote.com.crt
+
+
+
+
+Los copiamos a su carpeta final:
+
+    $ sudo cp ftp.lanzarote.com.crt /etc/ssl/private
+
+    $ sudo cp ftp.lanzarote.com.key /etc/ssl/private
+
+
+
+2. Habilitar SSL en el servidor de FTP
+
+Editamos el fichero de configuración
+
+    $ sudo nano /etc/vsftpd.conf
+
+
+Insertamos al final del archivo los parámetros de configuración de SSL:
+
+    ssl_enable=YES
+
+    allow_anon_ssl=NO
+
+    force_local_data_ssl=YES
+
+    force_local_logins_ssl=YES
+
+    ssl_tlsv1=YES
+
+    ssl_sslv2=NO
+
+    ssl_sslv3=NO
+
+    require_ssl_reuse=NO
+
+    ssl_ciphers=HIGH
+
+
+Buscamos las líneas:
+
+    rsa_cert_file
+
+    rsa_private_key_file
+
+
+Deberían quedar:
+
+    rsa_cert_file = /etc/ssl/private/ftp.lanzarote.com.crt
+
+    rsa_private_key_file = /etc/ssl/private/ftp.lanzarote.com.key
+
+
+Si están comentadas las descomentamos e insertamos en ellas las rutas del certificado y de la clave privada.
+
+4. Configurar el cliente de FTP para que acceda por SSL
+
+    Instrucciones en el apartado How To Connect to the Server with FileZilla de: https://www.digitalocean.com/community/tutorials/how-to-configure-vsftpd-to-use-ssl-tls-on-an-ubuntu-vps
+
+
+
+
+
+
+

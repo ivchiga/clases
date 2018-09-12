@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-06T12:37:17+01:00
+
+====== UT1. Introducción a las redes locales ======
+
+===== Recursos =====
+* [[https://smr.iesharia.org/course/view.php?id=16&section=1|Acceso al aula virtual]]
+* [[https://smr.iesharia.org/wiki/doku.php/rde:ut1:comunicacion-hoy|La comunicación]]
+* [[https://smr.iesharia.org/wiki/doku.php/rde:ut1:caracteristicas|Características y componentes básicos de las redes locales]]
+* [[https://smr.iesharia.org/wiki/doku.php/rde:ut1:clasificacion-rede|Clasificación de las redes locales]]
+* [[https://smr.iesharia.org/wiki/doku.php/rde:ut1:velocidad_t|Velocidad de transmisión de la información]]
+* [[https://smr.iesharia.org/wiki/doku.php/rde:ut1:arquitectura|Arquitectura de redes]]
+
+===== Actividades =====
+* [[https://smr.iesharia.org/mod/lesson/view.php?id=3032|UT1-A1. Lección. La comunicación]]
+* [[./actividades/rde-ut1-a2.mm|UT1-A2. Mapa conceptual.Introducción a Freeplane]]
+* [[./actividades/rde-ut1-a3.mm|UT1-A3. Mapa conceptual. Clasificación de las redes]]
+* [[./actividades/RDE-UT1-A4. firechat.odt|UT1-A4. firechat]]
+* UT1-A5. Preguntas. Características generales de las redes locales
+* [[./actividades/REO-UT1-A6-velocidad de transmision.odt|UT1-A6. Velocidad de transmisión de la información]]
+* [[./actividades/ut1-a7. internet por satelite.odt|UT1-A7. Internet por satélite]]
+* [[./actividades/REO-UT1-AC1-Intercambio de archivos con ssh.odt|UT1-AC2. Actividad complementaria. Intercambio de archivos por ssh]]
+
