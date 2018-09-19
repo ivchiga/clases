@@ -1,3 +1,4 @@
+
 # Unidad didáctica 1: La información en los sistemas informáticos
 ## Contextualización
 Esta unidad inaugura el bloque “Visión general” en el cual se introducirán conceptos básicos de sistemas informáticos, tratamiento de la información y sistemas operativos.
@@ -20,6 +21,7 @@ l) Detectar y analizar cambios tecnológicos para elegir nuevas alternativas y m
 **1. Reconoce las características de los sistemas operativos, analizando sus elementos y funciones** (1. Reconoce las características de los sistemas de archivo, describiendo sus tipos y aplicaciones.  **decreto**.)
 ## Criterios de evaluación
 **1.b) Se ha codificado y relacionado la información en los diferentes sistemas de representación.**
+
 |  Objetivos didácticos  |  Criterios de evaluación |
 |  ---  | :--- |
 | Reconocer que tipos de datos pueden ser representados en un sistema informático | Diferenciar entre tipos de datos representables y no representables |
@@ -40,4 +42,3 @@ l) Detectar y analizar cambios tecnológicos para elegir nuevas alternativas y m
 * Diferenciación de las formas de medir la cantidad de información.
 ### Actitudinales
 * Valoración de la necesidad de usar sistemas informáticos para el manejo de información
-
