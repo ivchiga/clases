@@ -1,0 +1,16 @@
+Coordinación TIC
+
+Informar Julia Propuesta de Sesiones TIC por temáticas para Planes de Formación en Centros (2018-2019)
+
+Información general para el Centro
+
+ - Itinerarios para englobar acciones puntuales
+ - Hora del código
+   - Objetivo: Fomento del Pensamiento Computacional a través de la realización de diferentes actividades de programación en los centros educativos de la Comunidad Autónoma de Canarias
+   - Convocatoria http://www3.gobiernodecanarias.org/medusa/ecoescuela/educarobot/2018/10/participa-en-la-hora-del-codigo-de-canarias-2018-19/
+   - Recursos: https://codeweek.eu/resources/
+   - Recursos en español: https://codeweek.eu/resources/spain
+
+Recursos en web tic cep
+ - Taller de gamificación: http://www3.gobiernodecanarias.org/medusa/ecoescuela/ticlanzarote/2018/07/02/taller-para-profesorado-gamifica-tu-aula/#more-1538
+ - Estación meteorológica
