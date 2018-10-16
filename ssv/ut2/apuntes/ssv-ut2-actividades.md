@@ -60,7 +60,7 @@ Esta unidad pone fin al primer bloque y está relacionado con la idea eje “Sis
     - Elementos, estructura y funciones del sistema operativo.
     - Recursos. Procesos y estados de los procesos. Prioridad.
     - Interfaces de usuario: tipos, propiedades y usos.
-    ### Procedimentales
+### Procedimentales
 -  Identificación de un sistema informático.
 -  Descripción del funcionamiento de un sistema informático.
 -  Diferenciación de las distintas partes de un ordenador
@@ -68,7 +68,7 @@ Esta unidad pone fin al primer bloque y está relacionado con la idea eje “Sis
 - Análisis del papel de los distintos tipos de componentes lógicos.
 - Diferenciación y clasificación de los distintos sistemas operativos
 - Diferenciación de las partes de un sistema operativo y descripción de sus funciones y su funcionamiento.
-    ### Actitudinales
+### Actitudinales
 - Interés por conocer el funcionamiento de los ordenadores.
 - Valoración de la utilidad de cada componente físico del ordenador.
 - Valoración de la importancia de la parte lógica de un equipo.

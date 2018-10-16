@@ -1,0 +1,102 @@
+Responder preguntas
+Incluir imágenes ilustrativas
+Incluir enlace a recursos bibliográficos
+
+¿Qué es un sistema operativo?
+
+Evolución de los sistemas operativos
+
+Para cada generación
+-Años que abarca
+-Dispositivo de procesamiento
+-Forma de programar
+- Forma de introducir datos
+-Características más importantes
+-Imágenes descriptivas
+
+Primera, segunda, tercera y cuarta generación
+
+Clasificiación de los sistemas operativos
+Tipos, ejemplos de cada tipo y características
+- Por el número de usuarios
+- Por el número de procesos
+- Por el número de procesadores
+- Por el tiempo de respuesta
+
+Funciones del sistema operativo
+
+El sistema operativo se encarga de gestionarl los recursos físicos y lógicos del ordenador. Explicar brevemente en que consiste:
+- gestión de procesos
+- Gestión de memoria
+- Gestión de almacenamiento secundario
+- Gestión de entrada salida
+- Gestión de red
+
+Kernel o núcleo
+  - qué es
+  - tipos
+
+Tipos de software
+- software del sistema
+  - sistemas opertivos
+  - controladores de dispositivos
+  - BIOS
+  - hipervisores
+  - gestor de arranque
+- software de programación
+  - compiladores
+  - editores
+  - enlazadores
+  - depuradores
+  - IDEs
+- software de aplicación
+  - paquetes ofimáticos
+  - juegos
+  - software empresarial
+  - software educativo
+
+Enumera los sistemas operativos de escritorio de Microsoft
+Nombre, año de publicación
+
+Enumera los sistemas operativos de Apple
+Nombre, año de publicación https://prezi.com/tye8-td8n90e/historia-del-sistema-operativo-de-apple/?webgl=0
+
+http://marilynayala.blogspot.com/2012/10/sistemas-operativos-de-apple.html
+
+Enumera los sistemas operativos de tipo servidor de Microsoft
+Nombre, año de publicación
+
+Unix. Características principales. Variantes de Unix
+
+Qué es una distribución de Linux. Qué incluye. Nombra las más conocidas.
+
+Licencias de software. Software privativo, software libre. Características generales.
+
+**Películas
+
+Código linux - revolution OS
+Piratas de silicon valley
+Wellcome to Macintosh 2008
+MacHeads
+
+**Índice libro 
+8.1. Introducción a los sistemas operativos
+8.2. Componentes de un sistema operativo
+     8.2.1. El núcleo
+     8.2.2. Los servicios
+     8.2.3. El intérprete de comandos, órdenes o SHELL
+8.3. Estructura de un sistema operativo
+     8.3.1. Sistemas operativos monolíticos
+     8.3.2. Sistemas operativos estructurados
+8.4. Funciones de un sistema operativo
+8.5. Tipos de sistemas operativos. Visión histórica
+      8.5.1. Primera etapa (1943-1955)
+      8.5.2. Segunda etapa (1956-1963)
+      8.5.3. Tercera etapa (1963-1979)
+      8.5.4. Cuarta etapa (1980-actualidad)
+8.6. Tipos de sistemas operativos según su uso
+8.7. Sistemas operativos comerciales
+      8.7.1. Microsoft
+      8.7.2. Unix y Gnu/Linux
+8.8. Sistemas operativos propietarios y libres
+      8.8.1. Tipos de licencias del software
