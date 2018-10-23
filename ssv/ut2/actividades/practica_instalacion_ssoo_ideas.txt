@@ -1,0 +1,36 @@
+práctica instalación sistema operativo
+
+- Características ssoo a instalar (Lubuntu 18.10/Elementary Juno/debian testing)
+  - fecha lanzamiento
+  - Tipo: escritorio/servidor/embebido/multiusuario
+  - características generales
+  - kernel
+  - soporte
+  - licencia
+  - Precio
+  - web oficial
+- Obtener imagen ssoo
+- Versión/Tipo de imagen instalada
+- Requisitos instalacion (recomendados/minimos)
+  - CPU
+  - RAM
+  - Espacio disco
+  - Acceso Internet
+- Software base de aplicación instalado
+  - navegador
+  - procesador de textos
+  - Hoja de cálculo
+  - Cliente de correo electrónico
+  - Reproductor multimedia
+
+Software base del sistema instalado
+  - intérprete de comandos
+  - explorador de archivos
+  - firewall
+- Documentación de la instalación
+  - Hardware
+  - Particiones
+  - Usuarios
+- Documentación de mantenimiento
+  - Software instalado
+  - Configuraciones
