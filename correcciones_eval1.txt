@@ -1,0 +1,12 @@
+RDE
+Actividad - peso - fecha
+UT0-A2       0     13/09  
+UT1-A1       0     17/9
+UT1-A2       0     18/9
+UT1-A3       1     21/9
+
+    La presentación y aspecto del mapa.
+    Que el mapa conceptual recoja toda la información e ideas incluidos en los apuntes.
+    La correcta estructuración del mapa.
+    Que en cada nodo del mapa sólo haya una idea o concepto.
+
