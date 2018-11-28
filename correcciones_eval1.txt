@@ -1,9 +1,26 @@
 RDE
 Actividad - peso - fecha
+
 UT0-A2       0     13/09  
+
 UT1-A1       0     17/9
 UT1-A2       0     18/9
 UT1-A3       1     21/9
+UT1-A4       1     21/9
+UT1-A5       1     26/9
+UT1-A6       2     27/9 - apartados puntuables 7, 9 y 10
+UT1-A9       1      1/10
+UT1-A10      0      4/10 - No evaluable
+UT1-AC3      1      28/9
+
+UT2-A1       0       5/10 - No evaluable
+UT2-A2       0       8/10 - No evaluable
+UT2-A3       0       9/10 - No evaluable. Hace profesor
+UT2-A4       0      15/10 - No evaluable
+UT2-A5       1      15/10
+UT2-A7       0      17/10 - No evaluable
+UT2-A8       2      18/10 - Pte corregir
+
 
     La presentación y aspecto del mapa.
     Que el mapa conceptual recoja toda la información e ideas incluidos en los apuntes.
