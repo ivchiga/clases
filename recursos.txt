@@ -1,6 +1,0 @@
-Apuntes online de las diferentes unidades: https://linux.delarioja.org
-Clases/recursos/curr_euskadi -> contenidos del módulo
-
-SISTEMA INFORMATICO
-Apuntes: http://edutecnomatica.pbworks.com/w/page/51294631/EL%20SISTEMA%20INFORMATICO%20Y%20SUS%20ELEMENTOS
-Diferencia entre BIOS y UEFI https://www.xataka.com/basics/uefi-y-bios-cuales-son-las-diferencias <- firmware
