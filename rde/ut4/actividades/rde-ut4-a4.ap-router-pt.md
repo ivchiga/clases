@@ -1,11 +1,14 @@
 # RDE-UT4-A4. Configuración AP y Router WIFI con PT
+
+[![hackmd-github-sync-badge](https://hackmd.io/JGGg8Ri3SFeKOTxS4DRt4A/badge)](https://hackmd.io/JGGg8Ri3SFeKOTxS4DRt4A)
+
 ![](https://i.imgur.com/XsfL1cB.png)
 
 ## Práctica
 Se partirá de la topología de packettracer inicial de la actividad anterior
 0. **Etiquetado**: Todas las IPs estáticas deberán aparecer en la topología correctamente etiquetadas
 ### Punto de acceso
-1. Conecta al switch de la red 192.168.20.0/24 un punto de acceso de tipo **AP-PT** y aplica la siguiente configuración
+1. Conecta al switch de la red 192.168.10.0/24 un punto de acceso de tipo **AP-PT** y aplica la siguiente configuración
 * Cambiar SSID a Empresa
 * Cambiar canal al 1
 * Seguridad WPA2-PSK con contraseña y cifrado AES
@@ -39,7 +42,7 @@ Se partirá de la topología de packettracer inicial de la actividad anterior
 * Seguridad: 
     * Modo: **WPA2 Personal**
     * Cifrado: **AES**
-    * Contraseña **smr1234**
+    * Contraseña **smr12345**
 10. Configura una tablet y un portatil para que accedan a dicha red inalámbrica. Comprueba que tienen acceso a Internet.
 ![](https://i.imgur.com/FBEJBSe.png)
 
