@@ -1,4 +1,7 @@
 # SGF-UT5-A3. Cortafuegos con PFSense. Zonas y reglas
+
+[![hackmd-github-sync-badge](https://hackmd.io/NfSv83TDS2-HrZo-drwzyg/badge)](https://hackmd.io/NfSv83TDS2-HrZo-drwzyg)
+
 ## Teoría. Zona desmilitarizada o DMZ
 
 En las empresas es habitual tener equipos que dan servicios tales cómo una web, correo electrónico, servidores de DNS, servidores de ficheros, etc. Estos servicios pueden ser accedidos por los empleados de la empresa y en el algunos casos por los clientes desde Internet.
@@ -16,6 +19,23 @@ Por lo general, una DMZ permite las conexiones procedentes tanto de Internet, co
 
 **Fuente**: [https://www.incibe.es/protege-tu-empresa/blog/dmz-y-te-puede-ayudar-proteger-tu-empresa](https://www.incibe.es/protege-tu-empresa/blog/dmz-y-te-puede-ayudar-proteger-tu-empresa)
 ## Práctica guiada
+### Paso 0. Copias de seguridad
+Cada vez que guardamos un cambio en la configuración del pfsense se hace una copia de seguridad de la nueva configuración.
+
+Podemos acceder a las copias de seguridad y restaurar versiones anteriores  desde la consola de pfsense, seleccionando la opción:
+
+**15) Restore recent configuration**
+
+![](https://i.imgur.com/G0tzwzg.png)
+
+>Al seleccionarla podemos listar las copias existentes y recuperar la configuración existente en el momento de la copia que seleccionemos.
+
+Además. Podemos configurar copias de seguridad, restaurarlas y hacerlas en **Services/Auto Configuration Backup / Settings**
+
+![](https://i.imgur.com/P5koX3N.png)
+
+Desde la opción **Backup now** podemos hacer copias. En la opción **Restore** podemos restaurar copias y descargarlas por si queremos tener una copia local de las mismas. 
+
 ### Paso 1. Preparando las máquinas virtuales
 Apaga la máquina virtual y conecta a la misma una tercera tarjeta de red conectada a una red interna de nombre **sw1**. Enciende la máquina virtual.
 ![](https://i.imgur.com/l70aIiH.png)
@@ -79,9 +99,30 @@ $ ssh usuario@172.30.109.200 -p 4444
 
 Con lo visto hasta ahora e investigando un poco, deberías ser capaz de realizar las siguientes acciones y comprobarlas
 
-* Crea una regla para poder acceder por ssh desde la máquina virtual de Xubuntu conectada a la LAN
+* Crea una regla para poder acceder por ssh desde el anfitrión a la máquina virtual de Xubuntu conectada a la LAN
 * Instala Apache2 en Ubuntu Server y crea las reglas necesarias para poder acceder a la WEB desde Xubuntu y desde el equipo anfitrión.
-* Cambia el puerto por el que se accede por https a la web de administración de **pfsense** al **44300**.
+### Paso 6. Acceso por diferente puerto para administrar pfsense
+Vamos a cambiar el puerto por el que se accede por https a la web de administración de **pfsense** al **44300**.
+
+Para ello tenemos que realizar dos acciones:
+1. Modificamos la regla del cortafuegos por la que permitimos el acceso desde la WAN a la web de administración. Vamos a **Firewall/rules/wan** y hacemos click en el icono del lápiz para editarla y cambiamos el puerto al que permitimos el acceso
+![](https://i.imgur.com/b0sguuc.png)
+
+Guardamos y aplicamos los cambios.
+
+2. Accedemos a **System/Advanced/Admin Access** y cambiamos el puerto
+
+![](https://i.imgur.com/5B3tVIm.png)
+
+Después de guardar seremos redireccionados pasados unos segundos para acceder desde el nuevo puerto.
+
+```
+https://172.30.109.200:44300
+```
+> Observa que la regla para la zona LAN que permite el acceso a la web de administración se modifica automáticamente para permitir el nuevo puerto. Por tanto, no tenemos que realizar ninguna acción para acceder desde la máquina interna de **Xubuntu** a la web, simplemente cambiar el puerto en la URL: `https://192.168.10.1:44300`
+
+![](https://i.imgur.com/SeyMYar.png)
+
 ### Paso 6. Instalando un caché de paquetes en Ubuntu Server
 El servicio **apt-cacher-ng** hace de proxy entre equipos con Ubuntu/Debian e Internet a la hora de instalar paquetes. 
 
